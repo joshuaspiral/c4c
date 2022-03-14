@@ -58,10 +58,11 @@ void printBoard(enum State board[HEIGHT][WIDTH]) {
         printf("|");
         printf("\n");
     }
+    printf("-----------------------------\n");
     for (int j = 1; j < WIDTH + 1; j++) {
         printf("  %d ", j);
     }
-    printf("\n");
+    printf("\n\n");
 }
 
 enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
