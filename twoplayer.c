@@ -58,12 +58,16 @@ void printBoard(enum State board[HEIGHT][WIDTH]) {
         printf("|");
         printf("\n");
     }
+    for (int j = 1; j < WIDTH + 1; j++) {
+        printf("  %d ", j);
+    }
     printf("\n");
 }
 
 enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
     for (int i = 0; i < HEIGHT - 3; i++) {
         for (int j = 0; j < WIDTH - 3; j++) {
+            /* Primary diagonal check */
             if (board[i][j] == board[i + 1][j + 1] && board [i + 1][j + 1] == board[i + 2][j + 2] && board[i + 2][j + 2] == board[i + 3][j + 3] && board[i][j] != UNCLAIMED) {
                 if (board[i][j] == piece) {
                     return WIN;
@@ -76,14 +80,25 @@ enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
             
     }
 
-    for (int i = 3; i < HEIGHT; i++) {
+    for (int i = 0; i < HEIGHT - 3; i++) {
         for (int j = 3; j < WIDTH; j++) {
-            if (board[i][j] == board[i - 1][j - 1] && board [i - 1][j - 1] == board[i - 2][j - 2] && board[i - 2][j - 2] == board[i - 3][j - 3] && board[i][j] != UNCLAIMED) {
+            /* Secondary diagonal check */
+            if (board[i][j] == board[i + 1][j - 1] && board [i + 1][j - 1] == board[i + 2][j - 2] && board[i + 2][j - 2] == board[i + 3][j - 3] && board[i][j] != UNCLAIMED) {
                 if (board[i][j] == piece) {
                     return WIN;
                 } else {
                     return LOSE;
                 }
+            }
+
+            /* Vertical check */ 
+            if (board[i][j] == board[i + 1][j] && board [i + 1][j] == board[i + 2][j] && board[i + 2][j] == board[i + 3][j] && board[i][j] != UNCLAIMED) {
+                if (board[i][j] == piece) {
+                    return WIN;
+                } else {
+                    return LOSE;
+                }
+                
             }
 
         }
@@ -92,8 +107,9 @@ enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
 
     for (int i = 0; i < HEIGHT; i++) {
         for (int j = 0; j < WIDTH - 3; j++) {
-            if (board[i][j] == board[i][j + 1] && board [i][j + 1] == board[2][j + 2] && board[2][j + 2] == board[3][j + 3] && board[i][j] != UNCLAIMED) {
-                if (board[j][i] == piece) {
+            /* Horizontal check */
+            if (board[i][j] == board[i][j + 1] && board [i][j + 1] == board[i][j + 2] && board[i][j + 2] == board[i][j + 3] && board[i][j] != UNCLAIMED) {
+                if (board[i][j] == piece) {
                     return WIN;
                 } else {
                     return LOSE;
@@ -105,14 +121,6 @@ enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
 
     for (int i = 0; i < HEIGHT - 3; i++) {
         for (int j = 0; j < WIDTH; j++) {
-            if (board[i][j] == board[i + 1][j] && board [i + 1][j] == board[i + 2][j] && board[i + 2][j] == board[i + 3][j] && board[i][j] != UNCLAIMED) {
-                if (board[i][j] == piece) {
-                    return WIN;
-                } else {
-                    return LOSE;
-                }
-                
-            }
         }
     }
 

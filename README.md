@@ -2,7 +2,7 @@
 Connect Four written in C to practice C
 
 # Todo
-- [ ] Write Connect 
+- [X] Write Connect Four
 - [ ] Write AI (https://en.wikipedia.org/wiki/Minimax)
 - [ ] Write alpha-beta pruning optimisation
 
