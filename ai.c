@@ -313,17 +313,15 @@ int main() {
 
             printf("HUMAN, enter your column from 1-7: ");
             scanf("%d", &col);
-            bool dpResult = dropPiece(col - 1, currPlayer);
-            while (!dpResult || col < 1 || col > 7) {
+            while (!dropPiece(col - 1, currPlayer) || col < 1 || col > 7) {
                 printf("HUMAN, Column already full or out of bounds. Re-enter your column from 1-7: ");
                 scanf("%d", &col);
-                dpResult = dropPiece(col - 1, currPlayer);
             }
             currPlayer = AI;
             
         } else if (currPlayer == AI) {
             printf("AI is thinking...\n");
-            aiMove(7); // Depth is how many moves the AI looks into the future //
+            aiMove(2); // Depth is how many moves the AI looks into the future //
             currPlayer = HUMAN;
         }
         printBoard();
