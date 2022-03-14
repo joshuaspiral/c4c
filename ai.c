@@ -41,6 +41,10 @@ void red() {
     printf("\033[1;31m");
 }
 
+void purple() {
+    printf("\033[0;35m");
+}
+
 void reset() {
   printf("\033[0m");
 }
@@ -59,18 +63,28 @@ bool dropPiece(int col, enum State piece) {
     }
 }
 
-void printBoard() {
+void printBoard(int highlightCol) {
     for (int i = 0; i < HEIGHT; i++) {
         for (int j = 0; j < WIDTH; j++) {
             printf("|");
             if (board[i][j] == UNCLAIMED) {
                 printf("   ");
             } else if (board[i][j] == YELLOW) {
-                yellow();
+                if (j == highlightCol) {
+                    purple();
+                    highlightCol = 100;
+                } else {
+                    yellow();
+                }
                 printf(" Y ");
                 reset();
             } else {
-                red();
+                if (j == highlightCol) {
+                    purple();
+                    highlightCol = 100;
+                } else {
+                    red();
+                }
                 printf(" R ");
                 reset();
             }
@@ -300,7 +314,7 @@ int minimax(int depth, bool isMaximising, double alpha, double beta) {
 }
 
 
-void aiMove(int depth) {
+int aiMove(int depth) {
     int bestMove;
     double bestScore = -INFINITY;
     
@@ -317,7 +331,7 @@ void aiMove(int depth) {
             bestMove = j;
         }
     }
-    dropPiece(bestMove, AI);
+    return bestMove;
 }
 
 
@@ -331,11 +345,11 @@ int main() {
     if (aiFirst) {
         currPlayer = AI;
     }
+    printBoard(100);
     while (true) {
+        int move;
+        int col;
         if (currPlayer == HUMAN) {
-            int col;
-
-            printBoard();
             printf("HUMAN, enter your column from 1-7: ");
             scanf("%d", &col);
             while (!dropPiece(col - 1, currPlayer) || col < 1 || col > 7) {
@@ -346,23 +360,24 @@ int main() {
             
         } else if (currPlayer == AI) {
             printf("AI is thinking...\n");
-            aiMove(difficulty); // Depth is how many moves the AI looks into the future //
+            move = aiMove(difficulty); // Depth is how many moves the AI looks into the future //
+            dropPiece(move, AI);
             currPlayer = HUMAN;
         }
-        printBoard();
+        printBoard((currPlayer == AI) ? move : col - 1);
 
         enum Result result = evaluateBoard(board, AI);
         if (result == WIN) {
             printf("AI wins!\n");
-            printBoard();
+            printBoard(100);
             break;
         } else if (result == LOSE){
             printf("HUMAN wins!\n");
-            printBoard();
+            printBoard(100);
             break;
         } else if (result == DRAW) {
             printf("DRAW!\n");
-            printBoard();
+            printBoard(100);
             break;
         } else {
             continue;
