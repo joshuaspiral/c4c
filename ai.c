@@ -33,6 +33,18 @@ enum State board[HEIGHT][WIDTH] = {
 enum State currPlayer = HUMAN;
 
 
+void yellow() {
+    printf("\033[1;33m");
+}
+
+void red() {
+    printf("\033[1;31m");
+}
+
+void reset() {
+  printf("\033[0m");
+}
+
 bool dropPiece(int col, enum State piece) {
     if (board[0][col] != UNCLAIMED) {
         return false;
@@ -54,9 +66,13 @@ void printBoard() {
             if (board[i][j] == UNCLAIMED) {
                 printf("   ");
             } else if (board[i][j] == YELLOW) {
+                yellow();
                 printf(" Y ");
+                reset();
             } else {
+                red();
                 printf(" R ");
+                reset();
             }
         }
         printf("|");
@@ -319,6 +335,7 @@ int main() {
         if (currPlayer == HUMAN) {
             int col;
 
+            printBoard();
             printf("HUMAN, enter your column from 1-7: ");
             scanf("%d", &col);
             while (!dropPiece(col - 1, currPlayer) || col < 1 || col > 7) {
