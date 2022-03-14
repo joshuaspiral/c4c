@@ -73,8 +73,12 @@ int getHeuristic(enum State board[HEIGHT][WIDTH], enum State piece) {
     int score;
     for (int i = 0; i < HEIGHT - 3; i++) {
         for (int j = 0; j < WIDTH - 3; j++) {
-            if (board[i][j] == board[i + 1][j + 1] && board [i + 1][j + 1] == board[i + 2][j + 2] && board[i][j] == piece) {
-                score += 4;
+            if (board[i][j] == board[i + 1][j + 1]  && board[i][j] == piece) {
+                if (board [i + 1][j + 1] == board[i + 2][j + 2]) {
+                    score += 3;
+                } else {
+                    score += 2;
+                }
             }
         }
     }
@@ -82,13 +86,21 @@ int getHeuristic(enum State board[HEIGHT][WIDTH], enum State piece) {
     for (int i = 0; i < HEIGHT - 3; i++) {
         for (int j = 3; j < WIDTH; j++) {
             /* Secondary diagonal check */
-            if (board[i][j] == board[i + 1][j - 1] && board [i + 1][j - 1] == board[i + 2][j - 2] && board[i][j] == piece) {
-                score += 4;
+            if (board[i][j] == board[i + 1][j - 1] && board[i][j] == piece) {
+                if (board [i + 1][j - 1] == board[i + 2][j - 2]) {
+                    score += 3;
+                } else {
+                    score += 2;
+                }
             }
 
             /* Vertical check */ 
-            if (board[i][j] == board[i + 1][j] && board [i + 1][j] == board[i + 2][j] && board[i][j] == piece) {
-                score += 4;
+            if (board[i][j] == board[i + 1][j] && board[i][j] == piece) {
+                if (board [i + 1][j] == board[i + 2][j] ) {
+                    score += 3;
+                } else {
+                    score += 2;
+                }
             }
 
         }
@@ -98,8 +110,12 @@ int getHeuristic(enum State board[HEIGHT][WIDTH], enum State piece) {
     for (int i = 0; i < HEIGHT; i++) {
         for (int j = 0; j < WIDTH - 3; j++) {
             /* Horizontal check */
-            if (board[i][j] == board[i][j + 1] && board [i][j + 1] == board[i][j + 2] && board[i][j] == piece) {
-                score += 4;
+            if (board[i][j] == board[i][j + 1] && board[i][j + 1] == board[i][j + 2] && board[i][j] == piece) {
+                if (board [i][j + 1] == board[i][j + 2]) {
+                    score += 2;
+                } else {
+                    score += 3;
+                }
             }
                 
         }
@@ -274,7 +290,6 @@ void aiMove(int depth) {
 
 
 int main() {
-    int count = 0;
     printBoard();
     while (true) {
         if (currPlayer == HUMAN) {
