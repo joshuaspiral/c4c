@@ -13,3 +13,6 @@ Connect Four written in C to practice C
 $ ./build.sh
 $ ./twoplayer or ./ai
 ```
+
+# Contributions
+@beepboopblap - Played the game for a few hours to figure out bugs
