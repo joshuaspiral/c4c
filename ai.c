@@ -30,7 +30,7 @@ enum State board[HEIGHT][WIDTH] = {
     {UNCLAIMED, UNCLAIMED, UNCLAIMED, UNCLAIMED, UNCLAIMED, UNCLAIMED, UNCLAIMED},
 };
 
-enum State currPlayer = RED;
+enum State currPlayer = YELLOW;
 
 
 bool dropPiece(int col, enum State piece) {
@@ -321,7 +321,7 @@ int main() {
             
         } else if (currPlayer == AI) {
             printf("AI is thinking...\n");
-            aiMove(7); // Depth is how many moves the AI looks into the future //
+            aiMove(4); // Depth is how many moves the AI looks into the future //
             currPlayer = HUMAN;
         }
         printBoard();
