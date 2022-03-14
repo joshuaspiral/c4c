@@ -71,8 +71,15 @@ void printBoard() {
 
 int getHeuristic(enum State board[HEIGHT][WIDTH], enum State piece) {
     int score;
-    for (int i = 0; i < HEIGHT - 3; i++) {
-        for (int j = 0; j < WIDTH - 3; j++) {
+    int center_col = WIDTH / 2;
+    for (int i = 0; i < HEIGHT - 2; i++) {
+        if (board[i][center_col] == piece) {
+            score++;
+        }
+    }
+
+    for (int i = 0; i < HEIGHT - 2; i++) {
+        for (int j = 0; j < WIDTH - 2; j++) {
             if (board[i][j] == board[i + 1][j + 1]  && board[i][j] == piece) {
                 if (board [i + 1][j + 1] == board[i + 2][j + 2]) {
                     score += 3;
@@ -83,7 +90,7 @@ int getHeuristic(enum State board[HEIGHT][WIDTH], enum State piece) {
         }
     }
 
-    for (int i = 0; i < HEIGHT - 3; i++) {
+    for (int i = 0; i < HEIGHT - 2; i++) {
         for (int j = 3; j < WIDTH; j++) {
             /* Secondary diagonal check */
             if (board[i][j] == board[i + 1][j - 1] && board[i][j] == piece) {
@@ -108,7 +115,7 @@ int getHeuristic(enum State board[HEIGHT][WIDTH], enum State piece) {
     }
 
     for (int i = 0; i < HEIGHT; i++) {
-        for (int j = 0; j < WIDTH - 3; j++) {
+        for (int j = 0; j < WIDTH - 2; j++) {
             /* Horizontal check */
             if (board[i][j] == board[i][j + 1] && board[i][j + 1] == board[i][j + 2] && board[i][j] == piece) {
                 if (board [i][j + 1] == board[i][j + 2]) {
