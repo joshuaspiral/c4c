@@ -30,7 +30,7 @@ enum State board[HEIGHT][WIDTH] = {
     {UNCLAIMED, UNCLAIMED, UNCLAIMED, UNCLAIMED, UNCLAIMED, UNCLAIMED, UNCLAIMED},
 };
 
-enum State currPlayer = YELLOW;
+enum State currPlayer = HUMAN;
 
 
 bool dropPiece(int col, enum State piece) {
@@ -306,6 +306,15 @@ void aiMove(int depth) {
 
 
 int main() {
+    int difficulty;
+    printf("AI difficulty? 1-7 (1 looks 1 move ahead and 7 looks 7 moves ahead, but 7 is very slow.): ");
+    scanf("%d", &difficulty);
+    int aiFirst;
+    printf("Do you want the AI to go first? 0 for no and 1 for yes: ");
+    scanf("%d", &aiFirst);
+    if (aiFirst) {
+        currPlayer = AI;
+    }
     while (true) {
         if (currPlayer == HUMAN) {
             int col;
@@ -320,7 +329,7 @@ int main() {
             
         } else if (currPlayer == AI) {
             printf("AI is thinking...\n");
-            aiMove(4); // Depth is how many moves the AI looks into the future //
+            aiMove(difficulty); // Depth is how many moves the AI looks into the future //
             currPlayer = HUMAN;
         }
         printBoard();
