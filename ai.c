@@ -91,7 +91,7 @@ int getHeuristic(enum State board[HEIGHT][WIDTH], enum State piece) {
     }
 
     for (int i = 0; i < HEIGHT - 2; i++) {
-        for (int j = 3; j < WIDTH; j++) {
+        for (int j = 2; j < WIDTH; j++) {
             /* Secondary diagonal check */
             if (board[i][j] == board[i + 1][j - 1] && board[i][j] == piece) {
                 if (board [i + 1][j - 1] == board[i + 2][j - 2]) {
@@ -102,6 +102,12 @@ int getHeuristic(enum State board[HEIGHT][WIDTH], enum State piece) {
             }
 
             /* Vertical check */ 
+
+        }
+            
+    }
+    for (int i = 0; i < HEIGHT - 2; i++) {
+        for (int j = 0; j < WIDTH; j++) {
             if (board[i][j] == board[i + 1][j] && board[i][j] == piece) {
                 if (board [i + 1][j] == board[i + 2][j] ) {
                     score += 3;
@@ -109,10 +115,9 @@ int getHeuristic(enum State board[HEIGHT][WIDTH], enum State piece) {
                     score += 2;
                 }
             }
-
         }
-            
     }
+
 
     for (int i = 0; i < HEIGHT; i++) {
         for (int j = 0; j < WIDTH - 2; j++) {
@@ -157,6 +162,12 @@ enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
                 }
             }
 
+
+        }
+            
+    }
+    for (int i = 0; i < HEIGHT - 3; i++) {
+        for (int j = 0; j < WIDTH; j++) {
             /* Vertical check */ 
             if (board[i][j] == board[i + 1][j] && board [i + 1][j] == board[i + 2][j] && board[i + 2][j] == board[i + 3][j] && board[i][j] != UNCLAIMED) {
                 if (board[i][j] == piece) {
@@ -166,9 +177,7 @@ enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
                 }
                 
             }
-
         }
-            
     }
 
     for (int i = 0; i < HEIGHT; i++) {
