@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #define HEIGHT 6
 #define WIDTH 7
+#define ANSI_COLOR_RED     "\x1b[31m" 
+#define ANSI_COLOR_YELLOW  "\x1b[33m" 
+#define ANSI_COLOR_RESET   "\x1b[0m" 
 
 enum State {
     YELLOW,
@@ -33,22 +36,6 @@ enum State board[HEIGHT][WIDTH] = {
 enum State currPlayer = HUMAN;
 
 
-void yellow() {
-    printf("\033[1;33m");
-}
-
-void red() {
-    printf("\033[1;31m");
-}
-
-void purple() {
-    printf("\033[0;35m");
-}
-
-void reset() {
-  printf("\033[0m");
-}
-
 bool dropPiece(int col, enum State piece) {
     if (board[0][col] != UNCLAIMED) {
         return false;
@@ -63,30 +50,16 @@ bool dropPiece(int col, enum State piece) {
     }
 }
 
-void printBoard(int highlightCol) {
+void printBoard() {
     for (int i = 0; i < HEIGHT; i++) {
         for (int j = 0; j < WIDTH; j++) {
             printf("|");
             if (board[i][j] == UNCLAIMED) {
                 printf("   ");
             } else if (board[i][j] == YELLOW) {
-                if (j == highlightCol) {
-                    purple();
-                    highlightCol = 100;
-                } else {
-                    yellow();
-                }
-                printf(" Y ");
-                reset();
+                printf(ANSI_COLOR_YELLOW " Y " ANSI_COLOR_RESET);
             } else {
-                if (j == highlightCol) {
-                    purple();
-                    highlightCol = 100;
-                } else {
-                    red();
-                }
-                printf(" R ");
-                reset();
+                printf(ANSI_COLOR_RED " R " ANSI_COLOR_RESET);
             }
         }
         printf("|");
@@ -345,7 +318,7 @@ int main() {
     if (aiFirst) {
         currPlayer = AI;
     }
-    printBoard(100);
+    printBoard();
     while (true) {
         int move;
         int col;
@@ -364,20 +337,20 @@ int main() {
             dropPiece(move, AI);
             currPlayer = HUMAN;
         }
-        printBoard((currPlayer == AI) ? col - 1: move);
+        printBoard();
 
         enum Result result = evaluateBoard(board, AI);
         if (result == WIN) {
             printf("AI wins!\n");
-            printBoard(100);
+            printBoard();
             break;
         } else if (result == LOSE){
             printf("HUMAN wins!\n");
-            printBoard(100);
+            printBoard();
             break;
         } else if (result == DRAW) {
             printf("DRAW!\n");
-            printBoard(100);
+            printBoard();
             break;
         } else {
             continue;
