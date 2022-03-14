@@ -314,7 +314,7 @@ int main() {
             
         } else if (currPlayer == AI) {
             printf("AI is thinking...\n");
-            aiMove(6); // Depth is how many moves the AI looks into the future //
+            aiMove(7); // Depth is how many moves the AI looks into the future //
             currPlayer = HUMAN;
         }
         printBoard();

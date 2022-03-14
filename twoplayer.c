@@ -92,6 +92,12 @@ enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
                 }
             }
 
+
+        }
+            
+    }
+    for (int i = 0; i < HEIGHT - 3; i++) {
+        for (int j = 0; j < WIDTH; j++) {
             /* Vertical check */ 
             if (board[i][j] == board[i + 1][j] && board [i + 1][j] == board[i + 2][j] && board[i + 2][j] == board[i + 3][j] && board[i][j] != UNCLAIMED) {
                 if (board[i][j] == piece) {
@@ -101,9 +107,7 @@ enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
                 }
                 
             }
-
         }
-            
     }
 
     for (int i = 0; i < HEIGHT; i++) {
