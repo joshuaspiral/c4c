@@ -364,7 +364,7 @@ int main() {
             dropPiece(move, AI);
             currPlayer = HUMAN;
         }
-        printBoard((currPlayer == AI) ? move : col - 1);
+        printBoard((currPlayer == AI) ? col - 1: move);
 
         enum Result result = evaluateBoard(board, AI);
         if (result == WIN) {
