@@ -306,7 +306,6 @@ void aiMove(int depth) {
 
 
 int main() {
-    printBoard();
     while (true) {
         if (currPlayer == HUMAN) {
             int col;

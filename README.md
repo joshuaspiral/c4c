@@ -15,4 +15,5 @@ $ ./twoplayer or ./ai
 ```
 
 # Contributions
-@beepboopblap - Played the game for a few hours to figure out bugs
+ - [https://github.com/beepboopblap](@beepboopblap) - Played the game for a while because he's a "Grandmaster in Connect Four."
+![@beepboopblap claiming to be a Connect Four Grandmaster](./image.png)
