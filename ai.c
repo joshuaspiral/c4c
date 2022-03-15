@@ -307,6 +307,7 @@ int aiMove(int depth) {
     return bestMove;
 }
 
+#include <time.h>
 
 int main() {
     int difficulty;
@@ -332,8 +333,11 @@ int main() {
             currPlayer = AI;
             
         } else if (currPlayer == AI) {
+            clock_t start = clock();
             printf("AI is thinking...\n");
             move = aiMove(difficulty); // Depth is how many moves the AI looks into the future //
+            clock_t end = clock();
+            printf("Time took for AI's move: %lf\n", ((double)end - start) / CLOCKS_PER_SEC);
             dropPiece(move, AI);
             currPlayer = HUMAN;
         }
