@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 #include <math.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -307,7 +308,6 @@ int aiMove(int depth) {
     return bestMove;
 }
 
-#include <time.h>
 
 int main() {
     int difficulty;
