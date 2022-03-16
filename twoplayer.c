@@ -33,7 +33,7 @@ bool dropPiece(int col, enum State piece) {
     if (board[0][col] != UNCLAIMED) {
         return false;
     } else {
-        for (int i = HEIGHT; i >= 0; i--) {
+        for (int i = HEIGHT - 1; i >= 0; i--) {
             if (board[i][col] == UNCLAIMED) {
                 board[i][col] = piece;
                 return true;

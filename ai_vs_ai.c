@@ -44,7 +44,7 @@ bool dropPiece(int col, enum State piece) {
     if (board[0][col] != UNCLAIMED) {
         return false;
     } else {
-        for (int i = HEIGHT; i >= 0; i--) {
+        for (int i = HEIGHT - 1; i >= 0; i--) {
             if (board[i][col] == UNCLAIMED) {
                 board[i][col] = piece;
                 return true;
@@ -77,7 +77,7 @@ void printBoard() {
 }
 
 int getHeuristic(enum State board[HEIGHT][WIDTH], enum State piece) {
-    int score;
+    int score = 0;
     int center_col = WIDTH / 2;
     for (int i = 0; i < HEIGHT - 2; i++) {
         if (board[i][center_col] == piece) {
@@ -288,7 +288,7 @@ int minimax(int depth, bool isMaximising, double alpha, double beta) {
 
 
 int aiMove(int depth, enum State player) {
-    int bestMove;
+    int bestMove = 0;
     double bestScore = -INFINITY;
     
     for (int j = 0;  j < WIDTH; j++) {

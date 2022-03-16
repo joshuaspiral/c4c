@@ -19,7 +19,6 @@ enum State const AI = YELLOW;
 enum State const HUMAN = RED;
 
 enum Result {
-    DOUBLEWIN,
     WIN,
     LOSE,
     DRAW,
@@ -42,7 +41,7 @@ bool dropPiece(int col, enum State piece) {
     if (board[0][col] != UNCLAIMED) {
         return false;
     } else {
-        for (int i = HEIGHT; i >= 0; i--) {
+        for (int i = HEIGHT - 1; i >= 0; i--) {
             if (board[i][col] == UNCLAIMED) {
                 board[i][col] = piece;
                 return true;
@@ -75,7 +74,7 @@ void printBoard() {
 }
 
 int getHeuristic(enum State board[HEIGHT][WIDTH], enum State piece) {
-    int score;
+    int score = 0;
     int center_col = WIDTH / 2;
     for (int i = 0; i < HEIGHT - 2; i++) {
         if (board[i][center_col] == piece) {
@@ -162,7 +161,7 @@ enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
             /* Secondary diagonal check */
             if (board[i][j] == board[i + 1][j - 1] && board [i + 1][j - 1] == board[i + 2][j - 2] && board[i + 2][j - 2] == board[i + 3][j - 3] && board[i][j] != UNCLAIMED) {
                 if (board[i][j] == piece) {
-                    wins++;
+                    return WIN;
                 } else {
                     return LOSE;
                 }
@@ -177,7 +176,7 @@ enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
             /* Vertical check */ 
             if (board[i][j] == board[i + 1][j] && board [i + 1][j] == board[i + 2][j] && board[i + 2][j] == board[i + 3][j] && board[i][j] != UNCLAIMED) {
                 if (board[i][j] == piece) {
-                    wins++;
+                    return WIN;
                 } else {
                     return LOSE;
                 }
@@ -191,7 +190,7 @@ enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
             /* Horizontal check */
             if (board[i][j] == board[i][j + 1] && board [i][j + 1] == board[i][j + 2] && board[i][j + 2] == board[i][j + 3] && board[i][j] != UNCLAIMED) {
                 if (board[i][j] == piece) {
-                    wins++;
+                    return WIN;
                 } else {
                     return LOSE;
                 }
@@ -200,10 +199,6 @@ enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
         }
     }
 
-    for (int i = 0; i < HEIGHT - 3; i++) {
-        for (int j = 0; j < WIDTH; j++) {
-        }
-    }
 
     bool draw = true;
     for (int i = 0; i < HEIGHT - 3; i++) {
@@ -212,11 +207,6 @@ enum Result evaluateBoard(enum State board[HEIGHT][WIDTH], enum State piece) {
                 draw = false;
             }
         }
-    }
-    if (wins > 1) {
-        return DOUBLEWIN;
-    } else if (wins == 1){
-        return WIN;
     }
 
     if (draw) {
@@ -243,8 +233,6 @@ int minimax(int depth, bool isMaximising, double alpha, double beta) {
     }
     if (result == WIN) {
         return 100000;
-    } else if (result == DOUBLEWIN) {
-        return 1000000;
     } else if (result == LOSE) {
         return -100000;
     } else if (result == DRAW) {
@@ -299,7 +287,7 @@ int minimax(int depth, bool isMaximising, double alpha, double beta) {
 
 
 int aiMove(int depth) {
-    int bestMove;
+    int bestMove = 0;
     double bestScore = -INFINITY;
     
     for (int j = 0;  j < WIDTH; j++) {
@@ -359,7 +347,7 @@ int main() {
         printBoard();
 
         enum Result result = evaluateBoard(board, AI);
-        if (result == WIN || result == DOUBLEWIN) {
+        if (result == WIN) {
             printf("AI wins!\n");
             printBoard();
             break;
