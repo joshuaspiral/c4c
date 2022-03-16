@@ -1,8 +1,8 @@
-# Connect Four C
+# C4C
 Connect Four written in C to practice C
 
 # Todo
-- [X] Write Connect Four
+- [X] Write Connect Four Two Player
 - [X] Write AI (https://en.wikipedia.org/wiki/Minimax)
 - [X] Write alpha-beta pruning optimisation
 - [ ] Further heuristic optimisations

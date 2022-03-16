@@ -313,6 +313,7 @@ int aiMove(int depth) {
 
 
 int main() {
+    printf("Welcome to C4C, this is the bitboard AI implementation. Try and see if you can beat the AI!\n");
     int difficulty;
     printf("AI difficulty? 1-7 (1 looks 1 move ahead and 7 looks 7 moves ahead, but 7 is very slow.): ");
     scanf("%d", &difficulty);
