@@ -16,6 +16,12 @@ $ ./twoplayer or ./ai or ./ai_bitboard
 ```
 
 # Details
-./twoplayer - You can play with a friend.
-./ai - The AI implementation I wrote originally
-./ai_bitboard - The AI implementation with bitboards. (not really a bitboard but still faster than the original implementation)
+./twoplayer - You can play with a friend.  
+./ai - The AI implementation I wrote originally. Uses a 2D array of characters to represent the board.  
+./ai_bitboard - The AI implementation with bitboards. Uses two 1D arrays of 8 bit unsigned integers and evaluated via bitwise logic. (not really a bitboard but still faster than the original implementation).  
+
+# Benchmarks
+Done on a Ryzen 5 3600
+Bitboard implementation: AI first, depth of 9 - 8.217635
+Standard implementation: AI first, depth of 9 - 32.516463
+
