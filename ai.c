@@ -307,7 +307,7 @@ int aiMove(int depth) {
             break;
         }
     }
-    printf("\nBest score is %d\nBest move is %d\n", (int)bestScore, bestMove);
+    printf("\nBest score is %d\nBest move is %d\n", (int)bestScore, bestMove + 1);
     return bestMove;
 }
 

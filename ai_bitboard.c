@@ -11,14 +11,14 @@
 #define ANSI_COLOR_YELLOW  "\x1b[33m" 
 #define ANSI_COLOR_RESET   "\x1b[0m" 
 
-enum State {
+void printBoardBinary();
+enum Player {
     YELLOW,
     RED,
-    UNCLAIMED
 };
 
-enum State const AI = YELLOW;
-enum State const HUMAN = RED;
+enum Player const AI = YELLOW;
+enum Player const HUMAN = RED;
 
 enum Result {
     WIN,
@@ -31,63 +31,93 @@ enum Result {
 uint8_t yBoard[] = {0b0, 0b0, 0b0, 0b0, 0b0, 0b0, 0b0};
 uint8_t rBoard[] = {0b0, 0b0, 0b0, 0b0, 0b0, 0b0, 0b0};
 // Each 0 is a column
+uint8_t heights[] = {0b0, 0b0, 0b0, 0b0, 0b0, 0b0, 0b0};
+// Stores top piece for each column
 
-enum State currPlayer = YELLOW; // Starting player
+enum Player currPlayer = RED; // Starting player
 
-bool dropPiece(int col, enum State piece) {
-    if ((yBoard[col] | rBoard[col]) == 255)
+// Drops the piece onto a column
+bool dropPiece(int col, enum Player piece) {
+    // Check if height of next piece >= max height
+    if (heights[col] >= HEIGHT)
         return false;
-    // Check if column is full
-    for (int i = 0; i <= HEIGHT; i++) {
-        // Check from down up if placing it there is ok
-        if (piece == YELLOW) {
-            yBoard[col] = ((1 << i) ^ yBoard[col]);
-            return true;
-        } else {
-            rBoard[col] = ((1 << i) ^ rBoard[col]);
-            return true;
-        }
-    }
-    // I don't know how you got here...
-    return false;
+    // Check piece
+    if (piece == YELLOW)
+        // Calculates new column using the height of the next piece
+        yBoard[col] ^= 1 << heights[col];
+    else
+        rBoard[col] ^= 1 << heights[col];
+    // Increase for next use
+    heights[col]++;
+    return true;
 }
 
-void popPiece(int col) {
-    for (int i = 7; i >= 0; i--) {
-        yBoard[col] = (~(1 << i) & (yBoard[col]));
-        rBoard[col] = (~(1 << i) & (yBoard[col]));
-        break;
-    }
+// Pops the last played piece of a column
+void popPiece(int col, enum Player piece) {
+    heights[col]--;
+    if (piece == YELLOW)
+        yBoard[col] &= ~(1 << heights[col]);
+    else
+        rBoard[col] &= ~(1 << heights[col]);
 }
 
+// From stackoverflow
+void print_binary(unsigned int number)
+{
+    if (number >> 1) {
+        print_binary(number >> 1);
+    }
+    putc((number & 1) ? '1' : '0', stdout);
+}
+
+// Prints board in binary
+void printBoardBinary() {
+    printf("Human\n");
+    for (int j = 0; j < WIDTH; j++) {
+        print_binary(rBoard[j]);
+        printf("\n");
+    }
+
+    printf("\nAI\n");
+    for (int j = 0; j < WIDTH; j++) {
+        print_binary(yBoard[j]);
+        printf("\n");
+    }
+    printf("\n");
+}
+
+// TODO
+// Prints and formats the board with ANSI colors.
 /* void printBoard() { */
-/*     for (int i = 0; i < HEIGHT; i++) { */
-/*         for (int j = 0; j < WIDTH; j++) { */
-/*             printf("|"); */
-/*             if (board[i][j] == UNCLAIMED) { */
-/*                 printf("   "); */
-/*             } else if (board[i][j] == YELLOW) { */
-/*                 printf(ANSI_COLOR_YELLOW " Y " ANSI_COLOR_RESET); */
-/*             } else { */
-/*                 printf(ANSI_COLOR_RED " R " ANSI_COLOR_RESET); */
-/*             } */
-/*         } */
-/*         printf("|"); */
-/*         printf("\n"); */
-/*     } */
-/*     printf("-----------------------------\n"); */
-/*     for (int j = 1; j < WIDTH + 1; j++) { */
-/*         printf("  %d ", j); */
-/*     } */
-/*     printf("\n\n"); */
+    /* for (int i = 0; i < HEIGHT; i++) { */
+    /*     for (int j = 0; j < WIDTH; j++) { */
+    /*         printf("|"); */
+    /*         if (board[i][j] == UNCLAIMED) { */
+    /*             printf("   "); */
+    /*         } else if (board[i][j] == YELLOW) { */
+    /*             printf(ANSI_COLOR_YELLOW " Y " ANSI_COLOR_RESET); */
+    /*         } else { */
+    /*             printf(ANSI_COLOR_RED " R " ANSI_COLOR_RESET); */
+    /*         } */
+    /*     } */
+    /*     printf("|"); */
+    /*     printf("\n"); */
+    /* } */
+    /* printf("-----------------------------\n"); */
+    /* for (int j = 1; j < WIDTH + 1; j++) { */
+    /*     printf("  %d ", j); */
+    /* } */
+    /* printf("\n\n"); */
 /* } */
 
-int getHeuristic(enum State piece) {
+// TODO
+// Returns the score of the board when depth == 0 depending on the player.
+int getHeuristic(enum Player piece) {
     return 0;
 }
 
-// I really did not want to use oppBoard :(
-enum Result evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum State piece) {
+// Evaluates the board's current state for enum Player piece. Returns enum Result.
+enum Result evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece) {
     // Column check
     for (int j = 0; j < WIDTH; j++) {
         if (piece == YELLOW) {
@@ -101,22 +131,29 @@ enum Result evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum State piece)
         }
     }
     
-    // Horizontal check TODO
+    // Horizontal check
+    for (int j = 0; j < WIDTH - 1; j+=3) {
+        if (board[j] & (board[j + 1]) & (board[j + 2]) & (board[j + 3])) {
+            return WIN;
+        } else if (oppBoard[j] & (oppBoard[j + 1]) & (oppBoard[j + 2]) & (oppBoard[j + 3])) {
+            return LOSE;
+        }
+    }
 
     // Primary diagonal check
     for (int j = 0; j < WIDTH - 1; j+=3) {
         if (board[j] & (board[j + 1] << 1) & (board[j + 2] << 2) & (board[j + 3] << 3)) {
             return WIN;
-        } else if (oppBoard[0] & (oppBoard[j + 1] << 1) & (oppBoard[j + 2] << 2) & (oppBoard[j + 3] << 3)) {
+        } else if (oppBoard[j] & (oppBoard[j + 1] << 1) & (oppBoard[j + 2] << 2) & (oppBoard[j + 3] << 3)) {
             return LOSE;
         }
     }
 
     // Secondary diagonal check
     for (int j = 0; j < WIDTH - 1; j+=3) {
-        if (board[0] & (board[j + 1] >> 1) & (board[j + 2] >> 2) & (board[j + 3] >> 3)) {
+        if (board[j] & (board[j + 1] >> 1) & (board[j + 2] >> 2) & (board[j + 3] >> 3)) {
             return WIN;
-        } else if (oppBoard[0] & (oppBoard[j + 1] >> 1) & (oppBoard[j + 2] >> 2) & (oppBoard[j + 3] >> 3)) {
+        } else if (oppBoard[j] & (oppBoard[j + 1] >> 1) & (oppBoard[j + 2] >> 2) & (oppBoard[j + 3] >> 3)) {
             return LOSE;
         }
     }
@@ -125,7 +162,7 @@ enum Result evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum State piece)
     bool draw = true;
     for (int j = 0; j < WIDTH; j++) {
         // Check if current column is full
-        draw = ((yBoard[j] | rBoard[j]) == 255);
+        draw = (yBoard[j] | rBoard[j]) == 255;
     }
 
     if (draw) {
@@ -137,6 +174,7 @@ enum Result evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum State piece)
 }
 
 
+// The minimax algorithm.
 int minimax(int depth, bool isMaximising, double alpha, double beta) {
     enum Result result = evaluateBoard(yBoard, rBoard, AI);
     if (depth == 0) {
@@ -160,7 +198,7 @@ int minimax(int depth, bool isMaximising, double alpha, double beta) {
             }
 
             int score = minimax(depth - 1, false, alpha, beta);
-            popPiece(j);
+            popPiece(j, YELLOW);
             if (score > bestScore) {
                 bestScore = score;
             }
@@ -181,7 +219,7 @@ int minimax(int depth, bool isMaximising, double alpha, double beta) {
             }
 
             int score = minimax(depth - 1, true, alpha, beta);
-            popPiece(j);
+            popPiece(j, RED);
             if (score < bestScore) {
                 bestScore = score;
             }
@@ -197,19 +235,20 @@ int minimax(int depth, bool isMaximising, double alpha, double beta) {
 }
 
 
+// Starts the minimax search.
 int aiMove(int depth) {
     int bestMove = 0;
     double bestScore = -INFINITY;
     
     for (int j = 0;  j < WIDTH; j++) {
-        bool dpRes = dropPiece(j, YELLOW);
+        bool dpRes = dropPiece(j, AI);
         if (!dpRes) {
             continue;
         }
 
         int score = minimax(depth, false, -INFINITY, INFINITY);
         printf("Score for column %d is %d\n", j + 1, score);
-        popPiece(j);
+        popPiece(j, AI);
         if (score > bestScore) {
             bestScore = score;
             bestMove = j;
@@ -218,32 +257,12 @@ int aiMove(int depth) {
             break;
         }
     }
-    printf("\nBest score is %d\nBest move is %d\n", (int)bestScore, bestMove);
+    printf("\nBest score is %d\nBest move is %d\n", (int)bestScore, bestMove + 1);
     return bestMove;
 }
 
-void print_binary(unsigned int number)
-{
-    if (number >> 1) {
-        print_binary(number >> 1);
-    }
-    putc((number & 1) ? '1' : '0', stdout);
-}
-
-void printBoardBinary() {
-    for (int j = 0; j < WIDTH; j++) {
-        print_binary(yBoard[j]);
-        printf("\n");
-    }
-    printf("\n");
-    for (int j = 0; j < WIDTH; j++) {
-        print_binary(rBoard[j]);
-        printf("\n");
-    }
-}
 
 int main() {
-    printBoardBinary();
     int difficulty;
     printf("AI difficulty? 1-7 (1 looks 1 move ahead and 7 looks 7 moves ahead, but 7 is very slow.): ");
     scanf("%d", &difficulty);
@@ -267,7 +286,7 @@ int main() {
             printBoardBinary();
             currPlayer = AI;
             
-        } else if (currPlayer == AI) {
+        } else {
             clock_t start = clock();
             printf("AI is thinking...\n");
             move = aiMove(difficulty); // Depth is how many moves the AI looks into the future //

@@ -313,6 +313,13 @@ int main() {
     printf("AI difficulty? 1-7 (1 looks 1 move ahead and 7 looks 7 moves ahead, but 7 is very slow.): ");
     scanf("%d", &difficulty);
     printf("AI VS AI... FIGHT!\n");
+    time_t t;
+    srand((unsigned) time(&t));
+    clock_t start = clock();
+    clock_t end = clock();
+    printf("Time took for YELLOW's move: %lf\n", ((double)end - start) / CLOCKS_PER_SEC);
+    dropPiece((rand() % 7) + 1, YELLOW);
+    currPlayer = RED;
     printBoard();
     while (true) {
         int move;
