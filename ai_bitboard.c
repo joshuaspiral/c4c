@@ -11,7 +11,6 @@
 #define ANSI_COLOR_YELLOW  "\x1b[33m" 
 #define ANSI_COLOR_RESET   "\x1b[0m" 
 
-void printBoardBinary();
 enum Player {
     YELLOW,
     RED,
@@ -55,30 +54,6 @@ void popPiece(int col, enum Player piece) {
         rBoard[col] &= ~(1 << heights[col]);
 }
 
-// From stackoverflow
-void print_binary(unsigned int number)
-{
-    if (number >> 1) {
-        print_binary(number >> 1);
-    }
-    putc((number & 1) ? '1' : '0', stdout);
-}
-
-// Prints board in binary
-void printBoardBinary() {
-    printf("Human\n");
-    for (int j = 0; j < WIDTH; j++) {
-        print_binary(rBoard[j]);
-        printf("\n");
-    }
-
-    printf("\nAI\n");
-    for (int j = 0; j < WIDTH; j++) {
-        print_binary(yBoard[j]);
-        printf("\n");
-    }
-    printf("\n");
-}
 
 // TODO still wrong direction
 // Prints and formats the board with ANSI colors.
@@ -86,15 +61,12 @@ void printBoard() {
     for (int j = 0; j < WIDTH; j++) {
         for (int i = 0; i < 6; i++) {
             printf("|");
-            if ((yBoard[j]) & bitPowers[i]) {
+            if (yBoard[j] & bitPowers[i])
                 printf(ANSI_COLOR_YELLOW " Y " ANSI_COLOR_RESET);
-            }
-            else if ((rBoard[j]) & bitPowers[i]) {
+            else if (rBoard[j] & bitPowers[i])
                 printf(ANSI_COLOR_RED " R " ANSI_COLOR_RESET);
-            }
-            else {
+            else
                 printf(" . ");
-            }
         }
         printf("|\n");
     }
@@ -104,6 +76,11 @@ void printBoard() {
 // Evaluates the board's current state for enum Player piece. Returns integer score.
 int evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece) {
     int score = 0;
+    int centerCol = WIDTH / 2;
+    for (int i = 0; i < 6; i++)
+        if (board[centerCol] & bitPowers[i])
+            score++;
+    
     // Column check
     for (int j = 0; j < WIDTH; j++) {
         if (piece == YELLOW) {
@@ -119,7 +96,7 @@ int evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece) {
     }
     
     // Horizontal check
-    for (int j = 0; j < WIDTH - 1; j+=3) {
+    for (int j = 0; j < WIDTH - 3; j++) {
         if (board[j] & (board[j + 1]) & (board[j + 2]) & (board[j + 3])) {
             return 100000;
         } else if (oppBoard[j] & (oppBoard[j + 1]) & (oppBoard[j + 2]) & (oppBoard[j + 3])) {
@@ -130,7 +107,7 @@ int evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece) {
     }
 
     // Primary diagonal check
-    for (int j = 0; j < WIDTH - 1; j+=3) {
+    for (int j = 0; j < WIDTH - 3; j++) {
         if (board[j] & (board[j + 1] << 1) & (board[j + 2] << 2) & (board[j + 3] << 3)) {
             return 100000;
         } else if (oppBoard[j] & (oppBoard[j + 1] << 1) & (oppBoard[j + 2] << 2) & (oppBoard[j + 3] << 3)) {
@@ -267,7 +244,6 @@ int main() {
                 printf("HUMAN, Column already full or out of bounds. Re-enter your column from 1-7: ");
                 scanf("%d", &col);
             }
-            printBoardBinary();
             currPlayer = AI;
             
         } else {

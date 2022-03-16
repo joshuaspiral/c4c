@@ -6,14 +6,16 @@ Connect Four written in C to practice C
 - [X] Write AI (https://en.wikipedia.org/wiki/Minimax)
 - [X] Write alpha-beta pruning optimisation
 - [ ] Further heuristic optimisations
-- [ ] Bitboard optimisation (https://en.wikipedia.org/wiki/Bitboard)
-- [ ] GUI Game (https://www.raylib.com/)
+- [X] Bitboard optimisation (https://en.wikipedia.org/wiki/Bitboard)
+- [ ] GUI Game (https://www.raylib.com/ or SDL)
 
 # Usage
 ```
 $ ./build.sh
-$ ./twoplayer or ./ai
+$ ./twoplayer or ./ai or ./ai_bitboard
 ```
 
-# Contributions
- - [@beepboopblap](https://github.com/beepboopblap) - Played the game for a while because he's a "Grandmaster in Connect Four."
+# Details
+./twoplayer - You can play with a friend.
+./ai - The AI implementation I wrote originally
+./ai_bitboard - The AI implementation with bitboards. (not really a bitboard but still faster than the original implementation)
