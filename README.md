@@ -11,7 +11,7 @@ Connect Four written in C to practice C
 
 # Usage
 ```
-$ ./build.sh
+$ make or make ai/ai_bitboard/twoplayer
 $ ./twoplayer or ./ai or ./ai_bitboard
 ```
 
