@@ -297,7 +297,6 @@ int aiMove(int depth) {
         }
 
         int score = minimax(depth, false, -INFINITY, INFINITY);
-        printf("Score for column %d is %d\n", j + 1, score);
         popPiece(j);
         if (score > bestScore) {
             bestScore = score;

@@ -32,7 +32,7 @@ enum Player currPlayer = RED; // Starting player
 // Drops the piece onto a column
 bool dropPiece(int col, enum Player piece) {
     // Check if height of next piece >= max height
-    if (heights[col] >= HEIGHT)
+    if (heights[col] > HEIGHT)
         return false;
     // Check piece
     if (piece == YELLOW)
@@ -58,15 +58,15 @@ void popPiece(int col, enum Player piece) {
 // TODO still wrong direction
 // Prints and formats the board with ANSI colors.
 void printBoard() {
-    for (int j = 0; j < WIDTH; j++) {
-        for (int i = 0; i < 6; i++) {
+    for (int i = 6; i >= 0; i--) {
+        for (int offset = 0; offset < WIDTH; offset++) {
             printf("|");
-            if (yBoard[j] & bitPowers[i])
+            if (yBoard[offset] & bitPowers[i])
                 printf(ANSI_COLOR_YELLOW " Y " ANSI_COLOR_RESET);
-            else if (rBoard[j] & bitPowers[i])
+            else if (rBoard[offset] & bitPowers[i])
                 printf(ANSI_COLOR_RED " R " ANSI_COLOR_RESET);
             else
-                printf(" . ");
+            printf(" . ");
         }
         printf("|\n");
     }
@@ -74,7 +74,7 @@ void printBoard() {
 
 
 // Evaluates the board's current state for enum Player piece. Returns integer score.
-int evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece) {
+int evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece, int depth) {
     int score = 0;
     int centerCol = WIDTH / 2;
     for (int i = 0; i < 6; i++)
@@ -89,7 +89,7 @@ int evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece) {
                 return 100000;
             } else if ((oppBoard[j] == (0b1111) || oppBoard[j] == (0b1111 << 1) || oppBoard[j] == (0b1111 << 2))) {
                 return -100000;
-            } else if (board[j] == (0b111) || board[j] == (0b111 << 1) || board[j] == (0b111 << 2) || board[j] == (0b111 << 3)) {
+            } if (board[j] == (0b111) || board[j] == (0b111 << 1) || board[j] == (0b111 << 2) || board[j] == (0b111 << 3)) {
                 score += 3;
             }
         }
@@ -101,7 +101,7 @@ int evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece) {
             return 100000;
         } else if (oppBoard[j] & (oppBoard[j + 1]) & (oppBoard[j + 2]) & (oppBoard[j + 3])) {
             return -100000;
-        } else if ((board[j] & (board[j + 1]) & (board[j + 2])) || (board[j + 1] & (board[j + 2]) & (board[j + 3]))) {
+        } if ((board[j] & (board[j + 1]) & (board[j + 2])) || (board[j + 1] & (board[j + 2]) & (board[j + 3]))) {
             score += 3;
         }
     }
@@ -136,7 +136,7 @@ int evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece) {
     if (draw)
         return 0;
 
-    if (score > 0)
+    if (!depth)
         return score;
 
     return 420;
@@ -145,7 +145,7 @@ int evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece) {
 
 // The minimax algorithm.
 int minimax(int depth, bool isMaximising, double alpha, double beta) {
-    int result = evaluateBoard(yBoard, rBoard, AI);
+    int result = evaluateBoard(yBoard, rBoard, AI, depth);
     if (depth == 0 || result != 420)
         return result;
 
@@ -208,7 +208,6 @@ int aiMove(int depth) {
         }
 
         int score = minimax(depth, false, -INFINITY, INFINITY);
-        printf("Score for column %d is %d\n", j + 1, score);
         popPiece(j, AI);
         if (score > bestScore) {
             bestScore = score;
@@ -258,8 +257,7 @@ int main() {
         }
         printBoard();
 
-        int result = evaluateBoard(yBoard, rBoard, AI);
-        printf("Result: %d\n", result);
+        int result = evaluateBoard(yBoard, rBoard, AI, 1);
         if (result == 100000) {
             printf("AI wins!\n");
             printBoard();
