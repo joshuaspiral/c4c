@@ -21,7 +21,10 @@ $ ./twoplayer or ./ai or ./ai_bitboard
 ./ai_bitboard - The AI implementation with bitboards. Uses two 1D arrays of 8 bit unsigned integers and evaluated via bitwise logic. (not really a bitboard but still faster than the original implementation).  
 
 # Benchmarks
-Done on a Ryzen 5 3600
-Bitboard implementation: AI first, depth of 9 - 8.217635
-Standard implementation: AI first, depth of 9 - 32.516463
-
+Done on a Ryzen 5 3600 with AI picking first
+| Implementation | Depth | Time (s)  |
+|----------------|-------|-----------|
+| AI             | 9     | 32.516463 |
+| Bitboard AI    | 9     | 8.217365  |
+| AI             | 8     | 4.637645  |
+| Bitboard AI    | 8     | 1.228031  |
