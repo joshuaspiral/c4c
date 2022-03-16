@@ -20,13 +20,7 @@ enum Player {
 enum Player const AI = YELLOW;
 enum Player const HUMAN = RED;
 
-enum Result {
-    WIN,
-    LOSE,
-    DRAW,
-    CONTINUE
-};
-
+uint8_t bitPowers[8] = {1, 2, 4, 8, 16, 32, 64, 128};
 
 uint8_t yBoard[] = {0b0, 0b0, 0b0, 0b0, 0b0, 0b0, 0b0};
 uint8_t rBoard[] = {0b0, 0b0, 0b0, 0b0, 0b0, 0b0, 0b0};
@@ -86,75 +80,72 @@ void printBoardBinary() {
     printf("\n");
 }
 
-// TODO
+// TODO still wrong direction
 // Prints and formats the board with ANSI colors.
-/* void printBoard() { */
-    /* for (int i = 0; i < HEIGHT; i++) { */
-    /*     for (int j = 0; j < WIDTH; j++) { */
-    /*         printf("|"); */
-    /*         if (board[i][j] == UNCLAIMED) { */
-    /*             printf("   "); */
-    /*         } else if (board[i][j] == YELLOW) { */
-    /*             printf(ANSI_COLOR_YELLOW " Y " ANSI_COLOR_RESET); */
-    /*         } else { */
-    /*             printf(ANSI_COLOR_RED " R " ANSI_COLOR_RESET); */
-    /*         } */
-    /*     } */
-    /*     printf("|"); */
-    /*     printf("\n"); */
-    /* } */
-    /* printf("-----------------------------\n"); */
-    /* for (int j = 1; j < WIDTH + 1; j++) { */
-    /*     printf("  %d ", j); */
-    /* } */
-    /* printf("\n\n"); */
-/* } */
-
-// TODO
-// Returns the score of the board when depth == 0 depending on the player.
-int getHeuristic(enum Player piece) {
-    return 0;
+void printBoard() {
+    for (int j = 0; j < WIDTH; j++) {
+        for (int i = 0; i < 6; i++) {
+            printf("|");
+            if ((yBoard[j]) & bitPowers[i]) {
+                printf(ANSI_COLOR_YELLOW " Y " ANSI_COLOR_RESET);
+            }
+            else if ((rBoard[j]) & bitPowers[i]) {
+                printf(ANSI_COLOR_RED " R " ANSI_COLOR_RESET);
+            }
+            else {
+                printf(" . ");
+            }
+        }
+        printf("|\n");
+    }
 }
 
-// Evaluates the board's current state for enum Player piece. Returns enum Result.
-enum Result evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece) {
+
+// Evaluates the board's current state for enum Player piece. Returns integer score.
+int evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece) {
+    int score = 0;
     // Column check
     for (int j = 0; j < WIDTH; j++) {
         if (piece == YELLOW) {
             // Checks if the column has 1111 or
             if (board[j] == (0b1111) || board[j] == (0b1111 << 1) || board[j] == (0b1111 << 2)) {
-                return WIN;
+                return 100000;
             } else if ((oppBoard[j] == (0b1111) || oppBoard[j] == (0b1111 << 1) || oppBoard[j] == (0b1111 << 2))) {
-                return LOSE;
+                return -100000;
+            } else if (board[j] == (0b111) || board[j] == (0b111 << 1) || board[j] == (0b111 << 2) || board[j] == (0b111 << 3)) {
+                score += 3;
             }
-                
         }
     }
     
     // Horizontal check
     for (int j = 0; j < WIDTH - 1; j+=3) {
         if (board[j] & (board[j + 1]) & (board[j + 2]) & (board[j + 3])) {
-            return WIN;
+            return 100000;
         } else if (oppBoard[j] & (oppBoard[j + 1]) & (oppBoard[j + 2]) & (oppBoard[j + 3])) {
-            return LOSE;
+            return -100000;
+        } else if ((board[j] & (board[j + 1]) & (board[j + 2])) || (board[j + 1] & (board[j + 2]) & (board[j + 3]))) {
+            score += 3;
         }
     }
 
     // Primary diagonal check
     for (int j = 0; j < WIDTH - 1; j+=3) {
         if (board[j] & (board[j + 1] << 1) & (board[j + 2] << 2) & (board[j + 3] << 3)) {
-            return WIN;
+            return 100000;
         } else if (oppBoard[j] & (oppBoard[j + 1] << 1) & (oppBoard[j + 2] << 2) & (oppBoard[j + 3] << 3)) {
-            return LOSE;
+            return -100000;
+        } else if ((board[j] & (board[j + 1] << 1) & (board[j + 2] << 2)) || (board[j + 1] << 1) & (board[j + 2] << 2) & (board[j + 3] << 3)) {
+            score += 3;
         }
-    }
 
-    // Secondary diagonal check
-    for (int j = 0; j < WIDTH - 1; j+=3) {
+        // Secondary diagonal check
         if (board[j] & (board[j + 1] >> 1) & (board[j + 2] >> 2) & (board[j + 3] >> 3)) {
-            return WIN;
+            return 100000;
         } else if (oppBoard[j] & (oppBoard[j + 1] >> 1) & (oppBoard[j + 2] >> 2) & (oppBoard[j + 3] >> 3)) {
-            return LOSE;
+            return -100000;
+        } else if ((board[j] & (board[j + 1] >> 1) & (board[j + 2] >> 2)) || (board[j + 1] >> 1) & (board[j + 2] >> 2) & (board[j + 3] >> 3)) {
+            score += 3;
         }
     }
 
@@ -165,28 +156,21 @@ enum Result evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece
         draw = (yBoard[j] | rBoard[j]) == 255;
     }
 
-    if (draw) {
-        return DRAW;
-    }
+    if (draw)
+        return 0;
 
-    return CONTINUE;
+    if (score > 0)
+        return score;
 
+    return 420;
 }
 
 
 // The minimax algorithm.
 int minimax(int depth, bool isMaximising, double alpha, double beta) {
-    enum Result result = evaluateBoard(yBoard, rBoard, AI);
-    if (depth == 0) {
-        return getHeuristic(AI);
-    }
-    if (result == WIN) {
-        return 100000;
-    } else if (result == LOSE) {
-        return -100000;
-    } else if (result == DRAW) {
-        return 0;
-    } 
+    int result = evaluateBoard(yBoard, rBoard, AI);
+    if (depth == 0 || result != 420)
+        return result;
 
 
     if (isMaximising) {
@@ -272,7 +256,7 @@ int main() {
     if (aiFirst) {
         currPlayer = AI;
     }
-    /* printBoard(); */
+    printBoard();
     while (true) {
         int move;
         int col;
@@ -295,22 +279,23 @@ int main() {
             dropPiece(move, AI);
             currPlayer = HUMAN;
         }
-        /* printBoard(); */
+        printBoard();
 
-        enum Result result = evaluateBoard(yBoard, rBoard, AI);
-        if (result == WIN) {
+        int result = evaluateBoard(yBoard, rBoard, AI);
+        printf("Result: %d\n", result);
+        if (result == 100000) {
             printf("AI wins!\n");
-            /* printBoard(); */
+            printBoard();
             break;
-        } else if (result == LOSE){
+        } else if (result == -100000){
             printf("HUMAN wins!\n");
-            /* printBoard(); */
+            printBoard();
             break;
-        } else if (result == DRAW) {
+        } else if (result == 0) {
             printf("DRAW!\n");
-            /* printBoard(); */
+            printBoard();
             break;
-        } else {
+        } else if (result == 420){
             continue;
         }
 
