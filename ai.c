@@ -59,9 +59,9 @@ void printBoard() {
             if (board[i][j] == UNCLAIMED) {
                 printf(" . ");
             } else if (board[i][j] == YELLOW) {
-                printf(ANSI_COLOR_YELLOW " Y " ANSI_COLOR_RESET);
+                printf(ANSI_COLOR_YELLOW " \u2584 " ANSI_COLOR_RESET);
             } else {
-                printf(ANSI_COLOR_RED " R " ANSI_COLOR_RESET);
+                printf(ANSI_COLOR_RED " \u2584 " ANSI_COLOR_RESET);
             }
         }
         printf("|");

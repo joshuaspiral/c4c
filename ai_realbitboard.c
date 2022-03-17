@@ -68,9 +68,9 @@ void printBoard() {
         column++;
         printf("|");
         if ((Boards.yellow & place) == place)
-            printf(ANSI_COLOR_YELLOW " Y " ANSI_COLOR_RESET);
+            printf(ANSI_COLOR_YELLOW " \u2584 " ANSI_COLOR_RESET);
         else if ((Boards.red & place) == place)
-            printf(ANSI_COLOR_RED " R " ANSI_COLOR_RESET);
+            printf(ANSI_COLOR_RED " \u2584 " ANSI_COLOR_RESET);
         else
             printf(" . ");
 
