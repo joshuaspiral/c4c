@@ -56,7 +56,7 @@ void printBoard() {
         for (int j = 0; j < WIDTH; j++) {
             printf("|");
             if (board[i][j] == UNCLAIMED) {
-                printf("   ");
+                printf(" . ");
             } else if (board[i][j] == YELLOW) {
                 printf(ANSI_COLOR_YELLOW " Y " ANSI_COLOR_RESET);
             } else {

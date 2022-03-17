@@ -55,7 +55,6 @@ void popPiece(int col, enum Player piece) {
 }
 
 
-// TODO still wrong direction
 // Prints and formats the board with ANSI colors.
 void printBoard() {
     for (int i = 6; i >= 0; i--) {
@@ -70,6 +69,11 @@ void printBoard() {
         }
         printf("|\n");
     }
+    printf("-----------------------------\n ");
+    for (int i = 1; i < WIDTH + 1; i++) {
+        printf(" %d  ", i);
+    }
+    printf("\n");
 }
 
 
