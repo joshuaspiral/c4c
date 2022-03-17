@@ -10,6 +10,7 @@
 #define ANSI_COLOR_RED     "\x1b[31m" 
 #define ANSI_COLOR_YELLOW  "\x1b[33m" 
 #define ANSI_COLOR_RESET   "\x1b[0m" 
+unsigned long long count = 0;
 
 enum Player {
     YELLOW,
@@ -61,9 +62,9 @@ void printBoard() {
         for (int offset = 0; offset < WIDTH; offset++) {
             printf("|");
             if (yBoard[offset] & bitPowers[i])
-                printf(ANSI_COLOR_YELLOW " Y " ANSI_COLOR_RESET);
+                printf(ANSI_COLOR_YELLOW " \u2584 " ANSI_COLOR_RESET);
             else if (rBoard[offset] & bitPowers[i])
-                printf(ANSI_COLOR_RED " R " ANSI_COLOR_RESET);
+                printf(ANSI_COLOR_RED " \u2584 " ANSI_COLOR_RESET);
             else
             printf(" . ");
         }
@@ -149,6 +150,7 @@ int evaluateBoard(uint8_t board[], uint8_t oppBoard[], enum Player piece, int de
 
 // The minimax algorithm.
 int minimax(int depth, bool isMaximising, double alpha, double beta) {
+    count++;
     int result = evaluateBoard(yBoard, rBoard, AI, depth);
     if (depth == 0 || result != 420)
         return result;
@@ -221,6 +223,7 @@ int aiMove(int depth) {
             break;
         }
     }
+    printf("Visited nodes: %llu", count);
     printf("\nBest score is %d\nBest move is %d\n", (int)bestScore, bestMove + 1);
     return bestMove;
 }
