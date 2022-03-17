@@ -1,4 +1,4 @@
-CC=clang
+CC=cc
 CFLAGS=-Wall -Wextra -ggdb -O3
 
 make all: ai_bitboard.c ai.c twoplayer.c
