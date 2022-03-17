@@ -8,6 +8,7 @@
 #define ANSI_COLOR_RED     "\x1b[31m" 
 #define ANSI_COLOR_YELLOW  "\x1b[33m" 
 #define ANSI_COLOR_RESET   "\x1b[0m" 
+unsigned long long count = 0;
 
 enum State {
     YELLOW,
@@ -227,6 +228,7 @@ void popPiece(int col) {
 }
 
 int minimax(int depth, bool isMaximising, double alpha, double beta) {
+    count++;
     enum Result result = evaluateBoard(board, AI);
     if (depth == 0) {
         return getHeuristic(board, AI);
@@ -306,6 +308,7 @@ int aiMove(int depth) {
             break;
         }
     }
+    printf("Visited nodes: %llu\n", count);
     printf("\nBest score is %d\nBest move is %d\n", (int)bestScore, bestMove + 1);
     return bestMove;
 }
