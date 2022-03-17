@@ -59,12 +59,15 @@ void popPiece(int col, enum Player piece) {
 }
 
 
-// TODO still prints the last column
 // Prints and formats the board with ANSI colors.
 void printBoard() {
     unsigned short column = 0;
     unsigned long long place = 1UL << 47;
     for (int i = 16; i < 64; i++) {
+        if ((i % 8 == 7)) {
+            place >>= 1;
+            continue;
+        }
         column++;
         printf("|");
         if ((Boards.yellow & place) == place)
@@ -74,7 +77,7 @@ void printBoard() {
         else
             printf(" . ");
 
-        if (!(column % 8))
+        if (!(column % 7))
             printf("|\n");
         place >>= 1;
     }

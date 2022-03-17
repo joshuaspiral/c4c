@@ -19,7 +19,7 @@ $ ./twoplayer or ./ai or ./ai_bitboard
 ./twoplayer - You can play with a friend.  
 ./ai - The AI implementation I wrote originally. Uses a 2D array of characters to represent the board.  
 ./ai_bitboard - The AI implementation with pseudo-bitboards. Uses two 1D arrays of 8 bit unsigned integers and evaluated via bitwise logic. (not really a bitboard but still faster than the original implementation).  
-./ai_realbitboard - The AI implementation with bitboards. Uses 1 2D arrays of a 64 bit unsigned integer and evaluated via bitwise logic.
+./ai_realbitboard - The AI implementation with bitboards. Uses 1 2D array of a 64 bit unsigned integer and evaluated via bitwise logic.
 
 # Benchmarks
 Done on a Ryzen 5 3600 with AI picking first
