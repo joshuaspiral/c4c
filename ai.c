@@ -308,7 +308,8 @@ int aiMove(int depth) {
             break;
         }
     }
-    printf("Visited nodes: %llu\n", count);
+    printf("Nodes visited: %llu\n", count);
+    count = 0;
     printf("\nBest score is %d\nBest move is %d\n", (int)bestScore, bestMove + 1);
     return bestMove;
 }

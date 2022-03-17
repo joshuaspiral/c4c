@@ -39,13 +39,11 @@ bool dropPiece(int col, enum Player piece) {
     if (heights[col] < 16 || col < 0 || col > 6)
         return false;
     // Check piece
-    if (piece == YELLOW) {
+    if (piece == YELLOW)
         // Calculates new column using the height of the next piece
-        Boards.yellow = Boards.yellow | (unsigned long long)(1UL << (BOARDLEN - 1 - heights[col]));
-    }
-    else {
-        Boards.red = Boards.red | (unsigned long long)(1UL << (BOARDLEN - 1 - heights[col]));
-    }
+        Boards.yellow ^= 1ULL << (BOARDLEN - 1 - heights[col]);
+    else
+        Boards.red ^= 1ULL << (BOARDLEN - 1 - heights[col]);
     // Move for next use
     heights[col] -= 8;
     return true;
@@ -61,7 +59,7 @@ void popPiece(int col, enum Player piece) {
 }
 
 
-// TODO
+// TODO still prints the last column
 // Prints and formats the board with ANSI colors.
 void printBoard() {
     unsigned short column = 0;
@@ -75,14 +73,14 @@ void printBoard() {
             printf(ANSI_COLOR_RED " R " ANSI_COLOR_RESET);
         else
             printf(" . ");
+
         if (!(column % 8))
             printf("|\n");
-        place = place >> 1;
+        place >>= 1;
     }
-    printf("\n-----------------------------\n ");
-    for (int i = 1; i < WIDTH + 1; i++) {
+    printf("-----------------------------\n ");
+    for (int i = 1; i < WIDTH + 1; i++)
         printf(" %d  ", i);
-    }
     printf("\n");
 }
 
@@ -90,14 +88,15 @@ void printBoard() {
 int evaluateBoard(unsigned long long bitboard, unsigned long long oppBitboard, int depth) {
     int score = 0;
     // Center heuristic TODO
-    /* int centerCol = WIDTH / 2; */
-    /* for (int i = 0; i < 6; i++) */
-    /*     if (board[centerCol] & bitPowers[i]) */
-    /*         score++; */
+    unsigned long long shifted = 1L << (63 - 19);
+    for (int i = 0; i < HEIGHT; i++) {
+        if (bitboard & shifted)
+            score++;
+        shifted >>= 8;
+    }
     
     // Vertical check
     if ((bitboard & (bitboard >> 8) & (bitboard >> 16) & (bitboard >> 24)) != 0) {
-        printf("Vertical win\n");
         return 100000;
     } else if ((oppBitboard & (oppBitboard >> 8) & (oppBitboard >> 16) & (oppBitboard >> 24)) != 0) {
         return -100000; 
@@ -109,7 +108,6 @@ int evaluateBoard(unsigned long long bitboard, unsigned long long oppBitboard, i
 
     // Horizontal check
     if ((bitboard & (bitboard >> 1) & (bitboard >> 2) & (bitboard >> 3)) != 0) {
-        printf("Horizontal win\n");
         return 100000;
     } else if ((oppBitboard & (oppBitboard >> 1) & (oppBitboard >> 2) & (oppBitboard >> 3)) != 0) {
         return -100000;
@@ -121,7 +119,6 @@ int evaluateBoard(unsigned long long bitboard, unsigned long long oppBitboard, i
 
     // Primary diagonal check (/)
     if ((bitboard & (bitboard >> 7) & (bitboard >> 14) & (bitboard >> 21)) != 0) {
-        printf("PriDiag win\n");
         return 100000;
     } else if ((oppBitboard & (oppBitboard >> 7) & (oppBitboard >> 14) & (oppBitboard >> 21)) != 0) {
         return -100000;
@@ -133,7 +130,6 @@ int evaluateBoard(unsigned long long bitboard, unsigned long long oppBitboard, i
 
     // Secondary diagonal check (\)
     if ((bitboard & (bitboard >> 9) & (bitboard >> 18) & (bitboard >> 27)) != 0) {
-        printf("SecDiag win\n");
         return 100000;
     } else if ((oppBitboard & (oppBitboard >> 9) & (oppBitboard >> 18) & (oppBitboard >> 27)) != 0) {
         return -100000;
@@ -229,7 +225,8 @@ int aiMove(int depth) {
             break;
         }
     }
-    printf("Visited nodes: %llu\n", count);
+    printf("Nodes visited: %llu\n", count);
+    count = 0;
     printf("\nBest score is %d\nBest move is %d\n", (int)bestScore, bestMove + 1);
     return bestMove;
 }
@@ -246,6 +243,7 @@ int main() {
     if (aiFirst) {
         currPlayer = AI;
     }
+    printBoard();
     while (true) {
         int move;
         int col;
@@ -270,7 +268,6 @@ int main() {
         printBoard();
 
         int result = evaluateBoard(Boards.yellow, Boards.red, 1);
-        printf("%d", result);
         if (result == 100000) {
             printf("AI wins!\n");
             printBoard();

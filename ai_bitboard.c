@@ -223,14 +223,15 @@ int aiMove(int depth) {
             break;
         }
     }
-    printf("Visited nodes: %llu", count);
+    printf("Nodes visited: %llu", count);
+    count = 0;
     printf("\nBest score is %d\nBest move is %d\n", (int)bestScore, bestMove + 1);
     return bestMove;
 }
 
 
 int main() {
-    printf("Welcome to C4C, this is the bitboard AI implementation. Try and see if you can beat the AI!\n");
+    printf("Welcome to C4C, this is the pseudo-bitboard AI implementation. Try and see if you can beat the AI!\n");
     int difficulty;
     printf("AI difficulty? 1-7 (1 looks 1 move ahead and 7 looks 7 moves ahead, but 7 is very slow.): ");
     scanf("%d", &difficulty);

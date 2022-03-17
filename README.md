@@ -18,13 +18,19 @@ $ ./twoplayer or ./ai or ./ai_bitboard
 # Details
 ./twoplayer - You can play with a friend.  
 ./ai - The AI implementation I wrote originally. Uses a 2D array of characters to represent the board.  
-./ai_bitboard - The AI implementation with bitboards. Uses two 1D arrays of 8 bit unsigned integers and evaluated via bitwise logic. (not really a bitboard but still faster than the original implementation).  
+./ai_bitboard - The AI implementation with pseudo-bitboards. Uses two 1D arrays of 8 bit unsigned integers and evaluated via bitwise logic. (not really a bitboard but still faster than the original implementation).  
+./ai_realbitboard - The AI implementation with bitboards. Uses 1 2D arrays of a 64 bit unsigned integer and evaluated via bitwise logic.
 
 # Benchmarks
 Done on a Ryzen 5 3600 with AI picking first
-| Implementation | Depth | Time (s)  |
-|----------------|-------|-----------|
-| AI             | 9     | 32.516463 |
-| Bitboard AI    | 9     | 8.217365  |
-| AI             | 8     | 4.637645  |
-| Bitboard AI    | 8     | 1.228031  |
+| Implementation        | Depth | Time (s)  | Visited nodes  |
+|-----------------------|-------|-----------|----------------|
+| 2D Array Board AI     | 7     | 1.250252  | 6634026        |
+| "Pseudo-bitboard" AI  | 7     | 0.171348  | 6602778        |
+| Bitboard AI           | 7     | 0.051276  | 6601433        |
+| 2D Array Board AI     | 8     | 4.637645  | 46028598       |
+| "Pseudo-bitboard" AI  | 8     | 1.180703  | 45414144       |
+| Bitboard AI           | 8     | 0.384628  | 45386033       |
+| 2D Array Board AI     | 9     | 32.516463 | 314060244      |
+| "Pseudo-bitboard" AI  | 9     | 1.250252  | 6634026        |
+| Bitboard AI           | 9     | 2.373259  | 310528499      |
