@@ -2,3 +2,4 @@ ai
 twoplayer
 ai_bitboard
 ai_realbitboard
+ai_transposition_table

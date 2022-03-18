@@ -220,6 +220,7 @@ int aiMove(int depth) {
 
         int score = minimax(depth, false, -INFINITY, INFINITY);
         popPiece(j, AI);
+        printf("Score for %d is %d\n", j, score);
         if (score > bestScore) {
             bestScore = score;
             bestMove = j;
