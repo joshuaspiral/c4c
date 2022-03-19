@@ -1,0 +1,1 @@
+/usr/bin/cc  -O0 -Wall -Werror -fdump-rtl-expand CMakeFiles/c4c.dir/main.c.o CMakeFiles/c4c.dir/render.c.o CMakeFiles/c4c.dir/logic.c.o -o c4c  -L/usr/local/lib -Wl,-rpath,/usr/local/lib -Wl,--enable-new-dtags -lSDL2 -lSDL2_gfx -lSDL2_ttf -lSDL2 

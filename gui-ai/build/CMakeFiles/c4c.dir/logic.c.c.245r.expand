@@ -1,0 +1,3155 @@
+
+;; Function dropPiece (dropPiece, funcdef_no=6, decl_uid=3619, cgraph_uid=7, symbol_order=6)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 81.
+Merging block 12 into block 11...
+Merged blocks 11 and 12.
+Merged 11 and 12 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 8 NOTE_INSN_DELETED)
+(note 8 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 8 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 yellow+0 S8 A64])
+        (reg:DI 5 di [ yellow ])) "/home/joshua/Code/c4c/gui-ai/logic.c":6:118 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 red+0 S8 A64])
+        (reg:DI 4 si [ red ])) "/home/joshua/Code/c4c/gui-ai/logic.c":6:118 -1
+     (nil))
+(insn 4 3 5 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])
+        (reg:SI 1 dx [ col ])) "/home/joshua/Code/c4c/gui-ai/logic.c":6:118 -1
+     (nil))
+(insn 5 4 6 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [3 player+0 S4 A32])
+        (reg:SI 2 cx [ player ])) "/home/joshua/Code/c4c/gui-ai/logic.c":6:118 -1
+     (nil))
+(insn 6 5 7 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 heights+0 S8 A64])
+        (reg:DI 36 r8 [ heights ])) "/home/joshua/Code/c4c/gui-ai/logic.c":6:118 -1
+     (nil))
+(note 7 6 10 2 NOTE_INSN_FUNCTION_BEG)
+(insn 10 7 11 2 (set (reg/f:DI 97)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":8:19 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 99)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":8:19 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:DI 98)
+        (sign_extend:DI (reg:SI 99))) "/home/joshua/Code/c4c/gui-ai/logic.c":8:19 -1
+     (nil))
+(insn 13 12 16 2 (set (reg:QI 82 [ _1 ])
+        (mem:QI (plus:DI (reg/f:DI 97)
+                (reg:DI 98)) [0 (*heights_18(D))[col_19(D)]+0 S1 A8])) "/home/joshua/Code/c4c/gui-ai/logic.c":8:19 -1
+     (nil))
+(insn 16 13 17 2 (set (reg:CC 17 flags)
+        (compare:CC (reg:QI 82 [ _1 ])
+            (const_int 15 [0xf]))) "/home/joshua/Code/c4c/gui-ai/logic.c":8:8 -1
+     (nil))
+(jump_insn 17 16 18 2 (set (pc)
+        (if_then_else (leu (reg:CC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 28)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":8:8 -1
+     (nil)
+ -> 28)
+(note 18 17 21 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 21 18 22 4 (set (reg:CCGOC 17 flags)
+        (compare:CCGOC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":8:30 -1
+     (nil))
+(jump_insn 22 21 23 4 (set (pc)
+        (if_then_else (lt (reg:CCGOC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 28)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":8:30 -1
+     (nil)
+ -> 28)
+(note 23 22 26 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 26 23 27 5 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])
+            (const_int 6 [0x6]))) "/home/joshua/Code/c4c/gui-ai/logic.c":8:41 -1
+     (nil))
+(jump_insn 27 26 28 5 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 33)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":8:41 -1
+     (nil)
+ -> 33)
+(code_label 28 27 29 6 2 (nil) [2 uses])
+(note 29 28 30 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 6 (set (reg:QI 95 [ _14 ])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":9:16 -1
+     (nil))
+(jump_insn 31 30 32 6 (set (pc)
+        (label_ref 78)) "/home/joshua/Code/c4c/gui-ai/logic.c":9:16 -1
+     (nil)
+ -> 78)
+(barrier 32 31 33)
+(code_label 33 32 34 7 3 (nil) [1 uses])
+(note 34 33 35 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 35 34 36 7 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [3 player+0 S4 A32])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":11:8 -1
+     (nil))
+(jump_insn 36 35 37 7 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 52)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":11:8 -1
+     (nil)
+ -> 52)
+(note 37 36 38 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 38 37 39 8 (set (reg/f:DI 100)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":13:17 -1
+     (nil))
+(insn 39 38 40 8 (set (reg:DI 83 [ _2 ])
+        (mem:DI (reg/f:DI 100) [1 *yellow_23(D)+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":13:17 -1
+     (nil))
+(insn 40 39 41 8 (set (reg/f:DI 101)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":13:54 -1
+     (nil))
+(insn 41 40 42 8 (set (reg:SI 103)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":13:54 -1
+     (nil))
+(insn 42 41 43 8 (set (reg:DI 102)
+        (sign_extend:DI (reg:SI 103))) "/home/joshua/Code/c4c/gui-ai/logic.c":13:54 -1
+     (nil))
+(insn 43 42 44 8 (set (reg:QI 84 [ _3 ])
+        (mem:QI (plus:DI (reg/f:DI 101)
+                (reg:DI 102)) [0 (*heights_18(D))[col_19(D)]+0 S1 A8])) "/home/joshua/Code/c4c/gui-ai/logic.c":13:54 -1
+     (nil))
+(insn 44 43 45 8 (set (reg:SI 85 [ _4 ])
+        (zero_extend:SI (reg:QI 84 [ _3 ]))) "/home/joshua/Code/c4c/gui-ai/logic.c":13:54 -1
+     (nil))
+(insn 45 44 46 8 (set (reg:DI 104)
+        (const_int -9223372036854775808 [0x8000000000000000])) "/home/joshua/Code/c4c/gui-ai/logic.c":13:25 -1
+     (nil))
+(insn 46 45 47 8 (parallel [
+            (set (reg:DI 86 [ _5 ])
+                (lshiftrt:DI (reg:DI 104)
+                    (subreg:QI (reg:SI 85 [ _4 ]) 0)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":13:25 -1
+     (nil))
+(insn 47 46 48 8 (parallel [
+            (set (reg:DI 87 [ _6 ])
+                (xor:DI (reg:DI 83 [ _2 ])
+                    (reg:DI 86 [ _5 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":13:17 -1
+     (nil))
+(insn 48 47 49 8 (set (reg/f:DI 105)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":13:17 -1
+     (nil))
+(insn 49 48 50 8 (set (mem:DI (reg/f:DI 105) [1 *yellow_23(D)+0 S8 A64])
+        (reg:DI 87 [ _6 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":13:17 -1
+     (nil))
+(jump_insn 50 49 51 8 (set (pc)
+        (label_ref 66)) -1
+     (nil)
+ -> 66)
+(barrier 51 50 52)
+(code_label 52 51 53 9 5 (nil) [1 uses])
+(note 53 52 54 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 54 53 55 9 (set (reg/f:DI 106)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":15:14 -1
+     (nil))
+(insn 55 54 56 9 (set (reg:DI 88 [ _7 ])
+        (mem:DI (reg/f:DI 106) [1 *red_21(D)+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":15:14 -1
+     (nil))
+(insn 56 55 57 9 (set (reg/f:DI 107)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":15:51 -1
+     (nil))
+(insn 57 56 58 9 (set (reg:SI 109)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":15:51 -1
+     (nil))
+(insn 58 57 59 9 (set (reg:DI 108)
+        (sign_extend:DI (reg:SI 109))) "/home/joshua/Code/c4c/gui-ai/logic.c":15:51 -1
+     (nil))
+(insn 59 58 60 9 (set (reg:QI 89 [ _8 ])
+        (mem:QI (plus:DI (reg/f:DI 107)
+                (reg:DI 108)) [0 (*heights_18(D))[col_19(D)]+0 S1 A8])) "/home/joshua/Code/c4c/gui-ai/logic.c":15:51 -1
+     (nil))
+(insn 60 59 61 9 (set (reg:SI 90 [ _9 ])
+        (zero_extend:SI (reg:QI 89 [ _8 ]))) "/home/joshua/Code/c4c/gui-ai/logic.c":15:51 -1
+     (nil))
+(insn 61 60 62 9 (set (reg:DI 110)
+        (const_int -9223372036854775808 [0x8000000000000000])) "/home/joshua/Code/c4c/gui-ai/logic.c":15:22 -1
+     (nil))
+(insn 62 61 63 9 (parallel [
+            (set (reg:DI 91 [ _10 ])
+                (lshiftrt:DI (reg:DI 110)
+                    (subreg:QI (reg:SI 90 [ _9 ]) 0)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":15:22 -1
+     (nil))
+(insn 63 62 64 9 (parallel [
+            (set (reg:DI 92 [ _11 ])
+                (xor:DI (reg:DI 88 [ _7 ])
+                    (reg:DI 91 [ _10 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":15:14 -1
+     (nil))
+(insn 64 63 65 9 (set (reg/f:DI 111)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":15:14 -1
+     (nil))
+(insn 65 64 66 9 (set (mem:DI (reg/f:DI 111) [1 *red_21(D)+0 S8 A64])
+        (reg:DI 92 [ _11 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":15:14 -1
+     (nil))
+(code_label 66 65 67 10 6 (nil) [1 uses])
+(note 67 66 68 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 68 67 69 10 (set (reg/f:DI 112)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":17:21 -1
+     (nil))
+(insn 69 68 70 10 (set (reg:SI 114)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":17:21 -1
+     (nil))
+(insn 70 69 71 10 (set (reg:DI 113)
+        (sign_extend:DI (reg:SI 114))) "/home/joshua/Code/c4c/gui-ai/logic.c":17:21 -1
+     (nil))
+(insn 71 70 72 10 (set (reg:QI 93 [ _12 ])
+        (mem:QI (plus:DI (reg/f:DI 112)
+                (reg:DI 113)) [0 (*heights_18(D))[col_19(D)]+0 S1 A8])) "/home/joshua/Code/c4c/gui-ai/logic.c":17:21 -1
+     (nil))
+(insn 72 71 73 10 (parallel [
+            (set (reg:QI 94 [ _13 ])
+                (plus:QI (reg:QI 93 [ _12 ])
+                    (const_int -8 [0xfffffffffffffff8])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":17:21 -1
+     (nil))
+(insn 73 72 74 10 (set (reg/f:DI 115)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":17:21 -1
+     (nil))
+(insn 74 73 75 10 (set (reg:SI 117)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":17:21 -1
+     (nil))
+(insn 75 74 76 10 (set (reg:DI 116)
+        (sign_extend:DI (reg:SI 117))) "/home/joshua/Code/c4c/gui-ai/logic.c":17:21 -1
+     (nil))
+(insn 76 75 77 10 (set (mem:QI (plus:DI (reg/f:DI 115)
+                (reg:DI 116)) [0 (*heights_18(D))[col_19(D)]+0 S1 A8])
+        (reg:QI 94 [ _13 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":17:21 -1
+     (nil))
+(insn 77 76 78 10 (set (reg:QI 95 [ _14 ])
+        (const_int 1 [0x1])) "/home/joshua/Code/c4c/gui-ai/logic.c":18:12 -1
+     (nil))
+(code_label 78 77 79 11 4 (nil) [1 uses])
+(note 79 78 80 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 80 79 84 11 (set (reg:QI 96 [ <retval> ])
+        (reg:QI 95 [ _14 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":19:1 -1
+     (nil))
+(insn 84 80 85 11 (set (reg/i:QI 0 ax)
+        (reg:QI 96 [ <retval> ])) "/home/joshua/Code/c4c/gui-ai/logic.c":19:1 -1
+     (nil))
+(insn 85 84 0 11 (use (reg/i:QI 0 ax)) "/home/joshua/Code/c4c/gui-ai/logic.c":19:1 -1
+     (nil))
+
+;; Function popPiece (popPiece, funcdef_no=7, decl_uid=3625, cgraph_uid=8, symbol_order=7)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 35 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 8 NOTE_INSN_DELETED)
+(note 8 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 8 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 yellow+0 S8 A64])
+        (reg:DI 5 di [ yellow ])) "/home/joshua/Code/c4c/gui-ai/logic.c":22:115 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 red+0 S8 A64])
+        (reg:DI 4 si [ red ])) "/home/joshua/Code/c4c/gui-ai/logic.c":22:115 -1
+     (nil))
+(insn 4 3 5 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])
+        (reg:SI 1 dx [ col ])) "/home/joshua/Code/c4c/gui-ai/logic.c":22:115 -1
+     (nil))
+(insn 5 4 6 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [3 player+0 S4 A32])
+        (reg:SI 2 cx [ player ])) "/home/joshua/Code/c4c/gui-ai/logic.c":22:115 -1
+     (nil))
+(insn 6 5 7 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 heights+0 S8 A64])
+        (reg:DI 36 r8 [ heights ])) "/home/joshua/Code/c4c/gui-ai/logic.c":22:115 -1
+     (nil))
+(note 7 6 10 2 NOTE_INSN_FUNCTION_BEG)
+(insn 10 7 11 2 (set (reg/f:DI 96)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":23:21 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 98)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":23:21 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:DI 97)
+        (sign_extend:DI (reg:SI 98))) "/home/joshua/Code/c4c/gui-ai/logic.c":23:21 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:QI 82 [ _1 ])
+        (mem:QI (plus:DI (reg/f:DI 96)
+                (reg:DI 97)) [0 (*heights_17(D))[col_18(D)]+0 S1 A8])) "/home/joshua/Code/c4c/gui-ai/logic.c":23:21 -1
+     (nil))
+(insn 14 13 15 2 (parallel [
+            (set (reg:QI 83 [ _2 ])
+                (plus:QI (reg:QI 82 [ _1 ])
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":23:21 -1
+     (nil))
+(insn 15 14 16 2 (set (reg/f:DI 99)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":23:21 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 101)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":23:21 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 100)
+        (sign_extend:DI (reg:SI 101))) "/home/joshua/Code/c4c/gui-ai/logic.c":23:21 -1
+     (nil))
+(insn 18 17 19 2 (set (mem:QI (plus:DI (reg/f:DI 99)
+                (reg:DI 100)) [0 (*heights_17(D))[col_18(D)]+0 S1 A8])
+        (reg:QI 83 [ _2 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":23:21 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [3 player+0 S4 A32])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":24:8 -1
+     (nil))
+(jump_insn 20 19 21 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 37)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":24:8 -1
+     (nil)
+ -> 37)
+(note 21 20 22 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 23 4 (set (reg/f:DI 102)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":25:17 -1
+     (nil))
+(insn 23 22 24 4 (set (reg:DI 84 [ _3 ])
+        (mem:DI (reg/f:DI 102) [1 *yellow_23(D)+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":25:17 -1
+     (nil))
+(insn 24 23 25 4 (set (reg/f:DI 103)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":25:55 -1
+     (nil))
+(insn 25 24 26 4 (set (reg:SI 105)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":25:55 -1
+     (nil))
+(insn 26 25 27 4 (set (reg:DI 104)
+        (sign_extend:DI (reg:SI 105))) "/home/joshua/Code/c4c/gui-ai/logic.c":25:55 -1
+     (nil))
+(insn 27 26 28 4 (set (reg:QI 85 [ _4 ])
+        (mem:QI (plus:DI (reg/f:DI 103)
+                (reg:DI 104)) [0 (*heights_17(D))[col_18(D)]+0 S1 A8])) "/home/joshua/Code/c4c/gui-ai/logic.c":25:55 -1
+     (nil))
+(insn 28 27 29 4 (set (reg:SI 86 [ _5 ])
+        (zero_extend:SI (reg:QI 85 [ _4 ]))) "/home/joshua/Code/c4c/gui-ai/logic.c":25:55 -1
+     (nil))
+(insn 29 28 30 4 (set (reg:DI 106)
+        (const_int -9223372036854775808 [0x8000000000000000])) "/home/joshua/Code/c4c/gui-ai/logic.c":25:26 -1
+     (nil))
+(insn 30 29 31 4 (parallel [
+            (set (reg:DI 87 [ _6 ])
+                (lshiftrt:DI (reg:DI 106)
+                    (subreg:QI (reg:SI 86 [ _5 ]) 0)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":25:26 -1
+     (nil))
+(insn 31 30 32 4 (set (reg:DI 88 [ _7 ])
+        (not:DI (reg:DI 87 [ _6 ]))) "/home/joshua/Code/c4c/gui-ai/logic.c":25:20 -1
+     (nil))
+(insn 32 31 33 4 (parallel [
+            (set (reg:DI 89 [ _8 ])
+                (and:DI (reg:DI 84 [ _3 ])
+                    (reg:DI 88 [ _7 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":25:17 -1
+     (nil))
+(insn 33 32 34 4 (set (reg/f:DI 107)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":25:17 -1
+     (nil))
+(insn 34 33 35 4 (set (mem:DI (reg/f:DI 107) [1 *yellow_23(D)+0 S8 A64])
+        (reg:DI 89 [ _8 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":25:17 -1
+     (nil))
+(jump_insn 35 34 36 4 (set (pc)
+        (label_ref:DI 54)) 807 {jump}
+     (nil)
+ -> 54)
+(barrier 36 35 37)
+(code_label 37 36 38 5 8 (nil) [1 uses])
+(note 38 37 39 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 39 38 40 5 (set (reg/f:DI 108)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":27:14 -1
+     (nil))
+(insn 40 39 41 5 (set (reg:DI 90 [ _9 ])
+        (mem:DI (reg/f:DI 108) [1 *red_21(D)+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":27:14 -1
+     (nil))
+(insn 41 40 42 5 (set (reg/f:DI 109)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":27:52 -1
+     (nil))
+(insn 42 41 43 5 (set (reg:SI 111)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 col+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":27:52 -1
+     (nil))
+(insn 43 42 44 5 (set (reg:DI 110)
+        (sign_extend:DI (reg:SI 111))) "/home/joshua/Code/c4c/gui-ai/logic.c":27:52 -1
+     (nil))
+(insn 44 43 45 5 (set (reg:QI 91 [ _10 ])
+        (mem:QI (plus:DI (reg/f:DI 109)
+                (reg:DI 110)) [0 (*heights_17(D))[col_18(D)]+0 S1 A8])) "/home/joshua/Code/c4c/gui-ai/logic.c":27:52 -1
+     (nil))
+(insn 45 44 46 5 (set (reg:SI 92 [ _11 ])
+        (zero_extend:SI (reg:QI 91 [ _10 ]))) "/home/joshua/Code/c4c/gui-ai/logic.c":27:52 -1
+     (nil))
+(insn 46 45 47 5 (set (reg:DI 112)
+        (const_int -9223372036854775808 [0x8000000000000000])) "/home/joshua/Code/c4c/gui-ai/logic.c":27:23 -1
+     (nil))
+(insn 47 46 48 5 (parallel [
+            (set (reg:DI 93 [ _12 ])
+                (lshiftrt:DI (reg:DI 112)
+                    (subreg:QI (reg:SI 92 [ _11 ]) 0)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":27:23 -1
+     (nil))
+(insn 48 47 49 5 (set (reg:DI 94 [ _13 ])
+        (not:DI (reg:DI 93 [ _12 ]))) "/home/joshua/Code/c4c/gui-ai/logic.c":27:17 -1
+     (nil))
+(insn 49 48 50 5 (parallel [
+            (set (reg:DI 95 [ _14 ])
+                (and:DI (reg:DI 90 [ _9 ])
+                    (reg:DI 94 [ _13 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":27:14 -1
+     (nil))
+(insn 50 49 51 5 (set (reg/f:DI 113)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":27:14 -1
+     (nil))
+(insn 51 50 54 5 (set (mem:DI (reg/f:DI 113) [1 *red_21(D)+0 S8 A64])
+        (reg:DI 95 [ _14 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":27:14 -1
+     (nil))
+(code_label 54 51 55 7 7 (nil) [1 uses])
+(note 55 54 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function evaluateBoard (evaluateBoard, funcdef_no=8, decl_uid=3629, cgraph_uid=9, symbol_order=8)
+
+Partition 1: size 8 align 8
+	shifted_77
+Partition 2: size 4 align 4
+	i_78
+Partition 0: size 4 align 4
+	score_71
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+;; Generating RTL for gimple basic block 20
+
+;; Generating RTL for gimple basic block 21
+
+;; Generating RTL for gimple basic block 22
+
+;; Generating RTL for gimple basic block 23
+
+;; Generating RTL for gimple basic block 24
+
+;; Generating RTL for gimple basic block 25
+
+;; Generating RTL for gimple basic block 26
+
+;; Generating RTL for gimple basic block 27
+
+;; Generating RTL for gimple basic block 28
+
+;; Generating RTL for gimple basic block 29
+
+;; Generating RTL for gimple basic block 30
+
+;; Generating RTL for gimple basic block 31
+
+;; Generating RTL for gimple basic block 32
+
+;; Generating RTL for gimple basic block 33
+
+;; Generating RTL for gimple basic block 34
+
+;; Generating RTL for gimple basic block 35
+
+;; Generating RTL for gimple basic block 36
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 245.
+Merging block 38 into block 37...
+Merged blocks 37 and 38.
+Merged 37 and 38 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+        (reg:DI 5 di [ bitboard ])) "/home/joshua/Code/c4c/gui-ai/logic.c":32:91 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+        (reg:DI 4 si [ oppBitboard ])) "/home/joshua/Code/c4c/gui-ai/logic.c":32:91 -1
+     (nil))
+(insn 4 3 5 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -36 [0xffffffffffffffdc])) [3 depth+0 S4 A32])
+        (reg:SI 1 dx [ depth ])) "/home/joshua/Code/c4c/gui-ai/logic.c":32:91 -1
+     (nil))
+(note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 5 9 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [3 score+0 S4 A64])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":33:9 -1
+     (nil))
+(insn 9 8 10 2 (set (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 shifted+0 S8 A64])
+        (const_int 17592186044416 [0x100000000000])) "/home/joshua/Code/c4c/gui-ai/logic.c":35:24 -1
+     (nil))
+(insn 10 9 11 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [3 i+0 S4 A32])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":36:14 -1
+     (nil))
+(jump_insn 11 10 12 2 (set (pc)
+        (label_ref 24)) "/home/joshua/Code/c4c/gui-ai/logic.c":36:5 -1
+     (nil)
+ -> 24)
+(barrier 12 11 26)
+(code_label 26 12 13 4 14 (nil) [1 uses])
+(note 13 26 14 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 14 13 15 4 (set (reg:DI 154)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":37:22 -1
+     (nil))
+(insn 15 14 16 4 (parallel [
+            (set (reg:DI 82 [ _1 ])
+                (and:DI (reg:DI 154)
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -8 [0xfffffffffffffff8])) [1 shifted+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":37:22 -1
+     (expr_list:REG_EQUAL (and:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -8 [0xfffffffffffffff8])) [1 shifted+0 S8 A64]))
+        (nil)))
+(insn 16 15 17 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 82 [ _1 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":37:12 -1
+     (nil))
+(jump_insn 17 16 18 4 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 20)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":37:12 -1
+     (nil)
+ -> 20)
+(note 18 17 19 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 19 18 20 5 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -16 [0xfffffffffffffff0])) [3 score+0 S4 A64])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16 [0xfffffffffffffff0])) [3 score+0 S4 A64])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":38:18 -1
+     (nil))
+(code_label 20 19 21 6 13 (nil) [1 uses])
+(note 21 20 22 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 23 6 (parallel [
+            (set (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -8 [0xfffffffffffffff8])) [1 shifted+0 S8 A64])
+                (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -8 [0xfffffffffffffff8])) [1 shifted+0 S8 A64])
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":39:17 -1
+     (nil))
+(insn 23 22 24 6 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -12 [0xfffffffffffffff4])) [3 i+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -12 [0xfffffffffffffff4])) [3 i+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":36:34 -1
+     (nil))
+(code_label 24 23 25 7 12 (nil) [1 uses])
+(note 25 24 29 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 29 25 30 7 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -12 [0xfffffffffffffff4])) [3 i+0 S4 A32])
+            (const_int 5 [0x5]))) "/home/joshua/Code/c4c/gui-ai/logic.c":36:23 -1
+     (nil))
+(jump_insn 30 29 31 7 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 26)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":36:23 -1
+     (nil)
+ -> 26)
+(note 31 30 32 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 32 31 33 8 (set (reg:DI 155)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":43:31 -1
+     (nil))
+(insn 33 32 34 8 (parallel [
+            (set (reg:DI 83 [ _2 ])
+                (lshiftrt:DI (reg:DI 155)
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":43:31 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 8 [0x8]))
+        (nil)))
+(insn 34 33 35 8 (parallel [
+            (set (reg:DI 84 [ _3 ])
+                (and:DI (reg:DI 83 [ _2 ])
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":43:19 -1
+     (nil))
+(insn 35 34 36 8 (set (reg:DI 156)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":43:49 -1
+     (nil))
+(insn 36 35 37 8 (parallel [
+            (set (reg:DI 85 [ _4 ])
+                (lshiftrt:DI (reg:DI 156)
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":43:49 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 16 [0x10]))
+        (nil)))
+(insn 37 36 38 8 (parallel [
+            (set (reg:DI 86 [ _5 ])
+                (and:DI (reg:DI 84 [ _3 ])
+                    (reg:DI 85 [ _4 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":43:37 -1
+     (nil))
+(insn 38 37 39 8 (set (reg:DI 157)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":43:68 -1
+     (nil))
+(insn 39 38 40 8 (parallel [
+            (set (reg:DI 87 [ _6 ])
+                (lshiftrt:DI (reg:DI 157)
+                    (const_int 24 [0x18])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":43:68 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 24 [0x18]))
+        (nil)))
+(insn 40 39 41 8 (parallel [
+            (set (reg:DI 88 [ _7 ])
+                (and:DI (reg:DI 86 [ _5 ])
+                    (reg:DI 87 [ _6 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":43:56 -1
+     (nil))
+(insn 41 40 42 8 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 88 [ _7 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":43:8 -1
+     (nil))
+(jump_insn 42 41 43 8 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 47)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":43:8 -1
+     (nil)
+ -> 47)
+(note 43 42 44 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 44 43 45 9 (set (reg:SI 152 [ _79 ])
+        (const_int 100000 [0x186a0])) "/home/joshua/Code/c4c/gui-ai/logic.c":44:16 -1
+     (nil))
+(jump_insn 45 44 46 9 (set (pc)
+        (label_ref 242)) "/home/joshua/Code/c4c/gui-ai/logic.c":44:16 -1
+     (nil)
+ -> 242)
+(barrier 46 45 47)
+(code_label 47 46 48 10 15 (nil) [1 uses])
+(note 48 47 49 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 49 48 50 10 (set (reg:DI 158)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":45:44 -1
+     (nil))
+(insn 50 49 51 10 (parallel [
+            (set (reg:DI 89 [ _8 ])
+                (lshiftrt:DI (reg:DI 158)
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":45:44 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+            (const_int 8 [0x8]))
+        (nil)))
+(insn 51 50 52 10 (parallel [
+            (set (reg:DI 90 [ _9 ])
+                (and:DI (reg:DI 89 [ _8 ])
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":45:29 -1
+     (nil))
+(insn 52 51 53 10 (set (reg:DI 159)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":45:65 -1
+     (nil))
+(insn 53 52 54 10 (parallel [
+            (set (reg:DI 91 [ _10 ])
+                (lshiftrt:DI (reg:DI 159)
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":45:65 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+            (const_int 16 [0x10]))
+        (nil)))
+(insn 54 53 55 10 (parallel [
+            (set (reg:DI 92 [ _11 ])
+                (and:DI (reg:DI 90 [ _9 ])
+                    (reg:DI 91 [ _10 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":45:50 -1
+     (nil))
+(insn 55 54 56 10 (set (reg:DI 160)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":45:87 -1
+     (nil))
+(insn 56 55 57 10 (parallel [
+            (set (reg:DI 93 [ _12 ])
+                (lshiftrt:DI (reg:DI 160)
+                    (const_int 24 [0x18])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":45:87 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+            (const_int 24 [0x18]))
+        (nil)))
+(insn 57 56 58 10 (parallel [
+            (set (reg:DI 94 [ _13 ])
+                (and:DI (reg:DI 92 [ _11 ])
+                    (reg:DI 93 [ _12 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":45:72 -1
+     (nil))
+(insn 58 57 59 10 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 94 [ _13 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":45:15 -1
+     (nil))
+(jump_insn 59 58 60 10 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 64)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":45:15 -1
+     (nil)
+ -> 64)
+(note 60 59 61 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 61 60 62 11 (set (reg:SI 152 [ _79 ])
+        (const_int -100000 [0xfffffffffffe7960])) "/home/joshua/Code/c4c/gui-ai/logic.c":46:16 -1
+     (nil))
+(jump_insn 62 61 63 11 (set (pc)
+        (label_ref 242)) "/home/joshua/Code/c4c/gui-ai/logic.c":46:16 -1
+     (nil)
+ -> 242)
+(barrier 63 62 64)
+(code_label 64 63 65 12 17 (nil) [1 uses])
+(note 65 64 66 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 66 65 67 12 (set (reg:DI 161)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":50:31 -1
+     (nil))
+(insn 67 66 68 12 (parallel [
+            (set (reg:DI 95 [ _14 ])
+                (lshiftrt:DI (reg:DI 161)
+                    (const_int 8 [0x8])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":50:31 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 8 [0x8]))
+        (nil)))
+(insn 68 67 69 12 (parallel [
+            (set (reg:DI 96 [ _15 ])
+                (and:DI (reg:DI 95 [ _14 ])
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":50:19 -1
+     (nil))
+(insn 69 68 70 12 (set (reg:DI 162)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":50:49 -1
+     (nil))
+(insn 70 69 71 12 (parallel [
+            (set (reg:DI 97 [ _16 ])
+                (lshiftrt:DI (reg:DI 162)
+                    (const_int 16 [0x10])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":50:49 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 16 [0x10]))
+        (nil)))
+(insn 71 70 72 12 (parallel [
+            (set (reg:DI 98 [ _17 ])
+                (and:DI (reg:DI 96 [ _15 ])
+                    (reg:DI 97 [ _16 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":50:37 -1
+     (nil))
+(insn 72 71 73 12 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 98 [ _17 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":50:8 -1
+     (nil))
+(jump_insn 73 72 74 12 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 76)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":50:8 -1
+     (nil)
+ -> 76)
+(note 74 73 75 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 75 74 76 13 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -16 [0xfffffffffffffff0])) [3 score+0 S4 A64])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16 [0xfffffffffffffff0])) [3 score+0 S4 A64])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":51:15 -1
+     (nil))
+(code_label 76 75 77 14 18 (nil) [1 uses])
+(note 77 76 78 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 78 77 79 14 (set (reg:DI 163)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":54:31 -1
+     (nil))
+(insn 79 78 80 14 (parallel [
+            (set (reg:DI 99 [ _18 ])
+                (lshiftrt:DI (reg:DI 163)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":54:31 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 1 [0x1]))
+        (nil)))
+(insn 80 79 81 14 (parallel [
+            (set (reg:DI 100 [ _19 ])
+                (and:DI (reg:DI 99 [ _18 ])
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":54:19 -1
+     (nil))
+(insn 81 80 82 14 (set (reg:DI 164)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":54:49 -1
+     (nil))
+(insn 82 81 83 14 (parallel [
+            (set (reg:DI 101 [ _20 ])
+                (lshiftrt:DI (reg:DI 164)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":54:49 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 2 [0x2]))
+        (nil)))
+(insn 83 82 84 14 (parallel [
+            (set (reg:DI 102 [ _21 ])
+                (and:DI (reg:DI 100 [ _19 ])
+                    (reg:DI 101 [ _20 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":54:37 -1
+     (nil))
+(insn 84 83 85 14 (set (reg:DI 165)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":54:67 -1
+     (nil))
+(insn 85 84 86 14 (parallel [
+            (set (reg:DI 103 [ _22 ])
+                (lshiftrt:DI (reg:DI 165)
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":54:67 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 3 [0x3]))
+        (nil)))
+(insn 86 85 87 14 (parallel [
+            (set (reg:DI 104 [ _23 ])
+                (and:DI (reg:DI 102 [ _21 ])
+                    (reg:DI 103 [ _22 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":54:55 -1
+     (nil))
+(insn 87 86 88 14 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 104 [ _23 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":54:8 -1
+     (nil))
+(jump_insn 88 87 89 14 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 93)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":54:8 -1
+     (nil)
+ -> 93)
+(note 89 88 90 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 90 89 91 15 (set (reg:SI 152 [ _79 ])
+        (const_int 100000 [0x186a0])) "/home/joshua/Code/c4c/gui-ai/logic.c":55:16 -1
+     (nil))
+(jump_insn 91 90 92 15 (set (pc)
+        (label_ref 242)) "/home/joshua/Code/c4c/gui-ai/logic.c":55:16 -1
+     (nil)
+ -> 242)
+(barrier 92 91 93)
+(code_label 93 92 94 16 19 (nil) [1 uses])
+(note 94 93 95 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 95 94 96 16 (set (reg:DI 166)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":56:44 -1
+     (nil))
+(insn 96 95 97 16 (parallel [
+            (set (reg:DI 105 [ _24 ])
+                (lshiftrt:DI (reg:DI 166)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":56:44 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+            (const_int 1 [0x1]))
+        (nil)))
+(insn 97 96 98 16 (parallel [
+            (set (reg:DI 106 [ _25 ])
+                (and:DI (reg:DI 105 [ _24 ])
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":56:29 -1
+     (nil))
+(insn 98 97 99 16 (set (reg:DI 167)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":56:65 -1
+     (nil))
+(insn 99 98 100 16 (parallel [
+            (set (reg:DI 107 [ _26 ])
+                (lshiftrt:DI (reg:DI 167)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":56:65 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+            (const_int 2 [0x2]))
+        (nil)))
+(insn 100 99 101 16 (parallel [
+            (set (reg:DI 108 [ _27 ])
+                (and:DI (reg:DI 106 [ _25 ])
+                    (reg:DI 107 [ _26 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":56:50 -1
+     (nil))
+(insn 101 100 102 16 (set (reg:DI 168)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":56:86 -1
+     (nil))
+(insn 102 101 103 16 (parallel [
+            (set (reg:DI 109 [ _28 ])
+                (lshiftrt:DI (reg:DI 168)
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":56:86 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+            (const_int 3 [0x3]))
+        (nil)))
+(insn 103 102 104 16 (parallel [
+            (set (reg:DI 110 [ _29 ])
+                (and:DI (reg:DI 108 [ _27 ])
+                    (reg:DI 109 [ _28 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":56:71 -1
+     (nil))
+(insn 104 103 105 16 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 110 [ _29 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":56:15 -1
+     (nil))
+(jump_insn 105 104 106 16 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 110)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":56:15 -1
+     (nil)
+ -> 110)
+(note 106 105 107 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 107 106 108 17 (set (reg:SI 152 [ _79 ])
+        (const_int -100000 [0xfffffffffffe7960])) "/home/joshua/Code/c4c/gui-ai/logic.c":57:16 -1
+     (nil))
+(jump_insn 108 107 109 17 (set (pc)
+        (label_ref 242)) "/home/joshua/Code/c4c/gui-ai/logic.c":57:16 -1
+     (nil)
+ -> 242)
+(barrier 109 108 110)
+(code_label 110 109 111 18 20 (nil) [1 uses])
+(note 111 110 112 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 112 111 113 18 (set (reg:DI 169)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":61:31 -1
+     (nil))
+(insn 113 112 114 18 (parallel [
+            (set (reg:DI 111 [ _30 ])
+                (lshiftrt:DI (reg:DI 169)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":61:31 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 1 [0x1]))
+        (nil)))
+(insn 114 113 115 18 (parallel [
+            (set (reg:DI 112 [ _31 ])
+                (and:DI (reg:DI 111 [ _30 ])
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":61:19 -1
+     (nil))
+(insn 115 114 116 18 (set (reg:DI 170)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":61:49 -1
+     (nil))
+(insn 116 115 117 18 (parallel [
+            (set (reg:DI 113 [ _32 ])
+                (lshiftrt:DI (reg:DI 170)
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":61:49 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 2 [0x2]))
+        (nil)))
+(insn 117 116 118 18 (parallel [
+            (set (reg:DI 114 [ _33 ])
+                (and:DI (reg:DI 112 [ _31 ])
+                    (reg:DI 113 [ _32 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":61:37 -1
+     (nil))
+(insn 118 117 119 18 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 114 [ _33 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":61:8 -1
+     (nil))
+(jump_insn 119 118 120 18 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 122)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":61:8 -1
+     (nil)
+ -> 122)
+(note 120 119 121 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 121 120 122 19 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -16 [0xfffffffffffffff0])) [3 score+0 S4 A64])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16 [0xfffffffffffffff0])) [3 score+0 S4 A64])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":62:15 -1
+     (nil))
+(code_label 122 121 123 20 21 (nil) [1 uses])
+(note 123 122 124 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(insn 124 123 125 20 (set (reg:DI 171)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":65:31 -1
+     (nil))
+(insn 125 124 126 20 (parallel [
+            (set (reg:DI 115 [ _34 ])
+                (lshiftrt:DI (reg:DI 171)
+                    (const_int 7 [0x7])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":65:31 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 7 [0x7]))
+        (nil)))
+(insn 126 125 127 20 (parallel [
+            (set (reg:DI 116 [ _35 ])
+                (and:DI (reg:DI 115 [ _34 ])
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":65:19 -1
+     (nil))
+(insn 127 126 128 20 (set (reg:DI 172)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":65:49 -1
+     (nil))
+(insn 128 127 129 20 (parallel [
+            (set (reg:DI 117 [ _36 ])
+                (lshiftrt:DI (reg:DI 172)
+                    (const_int 14 [0xe])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":65:49 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 14 [0xe]))
+        (nil)))
+(insn 129 128 130 20 (parallel [
+            (set (reg:DI 118 [ _37 ])
+                (and:DI (reg:DI 116 [ _35 ])
+                    (reg:DI 117 [ _36 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":65:37 -1
+     (nil))
+(insn 130 129 131 20 (set (reg:DI 173)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":65:68 -1
+     (nil))
+(insn 131 130 132 20 (parallel [
+            (set (reg:DI 119 [ _38 ])
+                (lshiftrt:DI (reg:DI 173)
+                    (const_int 21 [0x15])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":65:68 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 21 [0x15]))
+        (nil)))
+(insn 132 131 133 20 (parallel [
+            (set (reg:DI 120 [ _39 ])
+                (and:DI (reg:DI 118 [ _37 ])
+                    (reg:DI 119 [ _38 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":65:56 -1
+     (nil))
+(insn 133 132 134 20 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 120 [ _39 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":65:8 -1
+     (nil))
+(jump_insn 134 133 135 20 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 139)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":65:8 -1
+     (nil)
+ -> 139)
+(note 135 134 136 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+(insn 136 135 137 21 (set (reg:SI 152 [ _79 ])
+        (const_int 100000 [0x186a0])) "/home/joshua/Code/c4c/gui-ai/logic.c":66:16 -1
+     (nil))
+(jump_insn 137 136 138 21 (set (pc)
+        (label_ref 242)) "/home/joshua/Code/c4c/gui-ai/logic.c":66:16 -1
+     (nil)
+ -> 242)
+(barrier 138 137 139)
+(code_label 139 138 140 22 22 (nil) [1 uses])
+(note 140 139 141 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+(insn 141 140 142 22 (set (reg:DI 174)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":67:44 -1
+     (nil))
+(insn 142 141 143 22 (parallel [
+            (set (reg:DI 121 [ _40 ])
+                (lshiftrt:DI (reg:DI 174)
+                    (const_int 7 [0x7])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":67:44 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+            (const_int 7 [0x7]))
+        (nil)))
+(insn 143 142 144 22 (parallel [
+            (set (reg:DI 122 [ _41 ])
+                (and:DI (reg:DI 121 [ _40 ])
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":67:29 -1
+     (nil))
+(insn 144 143 145 22 (set (reg:DI 175)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":67:65 -1
+     (nil))
+(insn 145 144 146 22 (parallel [
+            (set (reg:DI 123 [ _42 ])
+                (lshiftrt:DI (reg:DI 175)
+                    (const_int 14 [0xe])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":67:65 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+            (const_int 14 [0xe]))
+        (nil)))
+(insn 146 145 147 22 (parallel [
+            (set (reg:DI 124 [ _43 ])
+                (and:DI (reg:DI 122 [ _41 ])
+                    (reg:DI 123 [ _42 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":67:50 -1
+     (nil))
+(insn 147 146 148 22 (set (reg:DI 176)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":67:87 -1
+     (nil))
+(insn 148 147 149 22 (parallel [
+            (set (reg:DI 125 [ _44 ])
+                (lshiftrt:DI (reg:DI 176)
+                    (const_int 21 [0x15])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":67:87 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+            (const_int 21 [0x15]))
+        (nil)))
+(insn 149 148 150 22 (parallel [
+            (set (reg:DI 126 [ _45 ])
+                (and:DI (reg:DI 124 [ _43 ])
+                    (reg:DI 125 [ _44 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":67:72 -1
+     (nil))
+(insn 150 149 151 22 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 126 [ _45 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":67:15 -1
+     (nil))
+(jump_insn 151 150 152 22 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 156)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":67:15 -1
+     (nil)
+ -> 156)
+(note 152 151 153 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
+(insn 153 152 154 23 (set (reg:SI 152 [ _79 ])
+        (const_int -100000 [0xfffffffffffe7960])) "/home/joshua/Code/c4c/gui-ai/logic.c":68:16 -1
+     (nil))
+(jump_insn 154 153 155 23 (set (pc)
+        (label_ref 242)) "/home/joshua/Code/c4c/gui-ai/logic.c":68:16 -1
+     (nil)
+ -> 242)
+(barrier 155 154 156)
+(code_label 156 155 157 24 23 (nil) [1 uses])
+(note 157 156 158 24 [bb 24] NOTE_INSN_BASIC_BLOCK)
+(insn 158 157 159 24 (set (reg:DI 177)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":72:31 -1
+     (nil))
+(insn 159 158 160 24 (parallel [
+            (set (reg:DI 127 [ _46 ])
+                (lshiftrt:DI (reg:DI 177)
+                    (const_int 7 [0x7])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":72:31 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 7 [0x7]))
+        (nil)))
+(insn 160 159 161 24 (parallel [
+            (set (reg:DI 128 [ _47 ])
+                (and:DI (reg:DI 127 [ _46 ])
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":72:19 -1
+     (nil))
+(insn 161 160 162 24 (set (reg:DI 178)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":72:49 -1
+     (nil))
+(insn 162 161 163 24 (parallel [
+            (set (reg:DI 129 [ _48 ])
+                (lshiftrt:DI (reg:DI 178)
+                    (const_int 14 [0xe])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":72:49 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 14 [0xe]))
+        (nil)))
+(insn 163 162 164 24 (parallel [
+            (set (reg:DI 130 [ _49 ])
+                (and:DI (reg:DI 128 [ _47 ])
+                    (reg:DI 129 [ _48 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":72:37 -1
+     (nil))
+(insn 164 163 165 24 (set (reg:DI 179)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":72:68 -1
+     (nil))
+(insn 165 164 166 24 (parallel [
+            (set (reg:DI 131 [ _50 ])
+                (lshiftrt:DI (reg:DI 179)
+                    (const_int 21 [0x15])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":72:68 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 21 [0x15]))
+        (nil)))
+(insn 166 165 167 24 (parallel [
+            (set (reg:DI 132 [ _51 ])
+                (and:DI (reg:DI 130 [ _49 ])
+                    (reg:DI 131 [ _50 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":72:56 -1
+     (nil))
+(insn 167 166 168 24 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 132 [ _51 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":72:8 -1
+     (nil))
+(jump_insn 168 167 169 24 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 171)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":72:8 -1
+     (nil)
+ -> 171)
+(note 169 168 170 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
+(insn 170 169 171 25 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -16 [0xfffffffffffffff0])) [3 score+0 S4 A64])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16 [0xfffffffffffffff0])) [3 score+0 S4 A64])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":73:15 -1
+     (nil))
+(code_label 171 170 172 26 24 (nil) [1 uses])
+(note 172 171 173 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
+(insn 173 172 174 26 (set (reg:DI 180)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":76:31 -1
+     (nil))
+(insn 174 173 175 26 (parallel [
+            (set (reg:DI 133 [ _52 ])
+                (lshiftrt:DI (reg:DI 180)
+                    (const_int 9 [0x9])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":76:31 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 9 [0x9]))
+        (nil)))
+(insn 175 174 176 26 (parallel [
+            (set (reg:DI 134 [ _53 ])
+                (and:DI (reg:DI 133 [ _52 ])
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":76:19 -1
+     (nil))
+(insn 176 175 177 26 (set (reg:DI 181)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":76:49 -1
+     (nil))
+(insn 177 176 178 26 (parallel [
+            (set (reg:DI 135 [ _54 ])
+                (lshiftrt:DI (reg:DI 181)
+                    (const_int 18 [0x12])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":76:49 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 18 [0x12]))
+        (nil)))
+(insn 178 177 179 26 (parallel [
+            (set (reg:DI 136 [ _55 ])
+                (and:DI (reg:DI 134 [ _53 ])
+                    (reg:DI 135 [ _54 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":76:37 -1
+     (nil))
+(insn 179 178 180 26 (set (reg:DI 182)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":76:68 -1
+     (nil))
+(insn 180 179 181 26 (parallel [
+            (set (reg:DI 137 [ _56 ])
+                (lshiftrt:DI (reg:DI 182)
+                    (const_int 27 [0x1b])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":76:68 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 27 [0x1b]))
+        (nil)))
+(insn 181 180 182 26 (parallel [
+            (set (reg:DI 138 [ _57 ])
+                (and:DI (reg:DI 136 [ _55 ])
+                    (reg:DI 137 [ _56 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":76:56 -1
+     (nil))
+(insn 182 181 183 26 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 138 [ _57 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":76:8 -1
+     (nil))
+(jump_insn 183 182 184 26 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 188)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":76:8 -1
+     (nil)
+ -> 188)
+(note 184 183 185 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
+(insn 185 184 186 27 (set (reg:SI 152 [ _79 ])
+        (const_int 100000 [0x186a0])) "/home/joshua/Code/c4c/gui-ai/logic.c":77:16 -1
+     (nil))
+(jump_insn 186 185 187 27 (set (pc)
+        (label_ref 242)) "/home/joshua/Code/c4c/gui-ai/logic.c":77:16 -1
+     (nil)
+ -> 242)
+(barrier 187 186 188)
+(code_label 188 187 189 28 25 (nil) [1 uses])
+(note 189 188 190 28 [bb 28] NOTE_INSN_BASIC_BLOCK)
+(insn 190 189 191 28 (set (reg:DI 183)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":78:44 -1
+     (nil))
+(insn 191 190 192 28 (parallel [
+            (set (reg:DI 139 [ _58 ])
+                (lshiftrt:DI (reg:DI 183)
+                    (const_int 9 [0x9])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":78:44 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+            (const_int 9 [0x9]))
+        (nil)))
+(insn 192 191 193 28 (parallel [
+            (set (reg:DI 140 [ _59 ])
+                (and:DI (reg:DI 139 [ _58 ])
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":78:29 -1
+     (nil))
+(insn 193 192 194 28 (set (reg:DI 184)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":78:65 -1
+     (nil))
+(insn 194 193 195 28 (parallel [
+            (set (reg:DI 141 [ _60 ])
+                (lshiftrt:DI (reg:DI 184)
+                    (const_int 18 [0x12])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":78:65 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+            (const_int 18 [0x12]))
+        (nil)))
+(insn 195 194 196 28 (parallel [
+            (set (reg:DI 142 [ _61 ])
+                (and:DI (reg:DI 140 [ _59 ])
+                    (reg:DI 141 [ _60 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":78:50 -1
+     (nil))
+(insn 196 195 197 28 (set (reg:DI 185)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":78:87 -1
+     (nil))
+(insn 197 196 198 28 (parallel [
+            (set (reg:DI 143 [ _62 ])
+                (lshiftrt:DI (reg:DI 185)
+                    (const_int 27 [0x1b])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":78:87 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])
+            (const_int 27 [0x1b]))
+        (nil)))
+(insn 198 197 199 28 (parallel [
+            (set (reg:DI 144 [ _63 ])
+                (and:DI (reg:DI 142 [ _61 ])
+                    (reg:DI 143 [ _62 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":78:72 -1
+     (nil))
+(insn 199 198 200 28 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 144 [ _63 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":78:15 -1
+     (nil))
+(jump_insn 200 199 201 28 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 205)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":78:15 -1
+     (nil)
+ -> 205)
+(note 201 200 202 29 [bb 29] NOTE_INSN_BASIC_BLOCK)
+(insn 202 201 203 29 (set (reg:SI 152 [ _79 ])
+        (const_int -100000 [0xfffffffffffe7960])) "/home/joshua/Code/c4c/gui-ai/logic.c":79:16 -1
+     (nil))
+(jump_insn 203 202 204 29 (set (pc)
+        (label_ref 242)) "/home/joshua/Code/c4c/gui-ai/logic.c":79:16 -1
+     (nil)
+ -> 242)
+(barrier 204 203 205)
+(code_label 205 204 206 30 26 (nil) [1 uses])
+(note 206 205 207 30 [bb 30] NOTE_INSN_BASIC_BLOCK)
+(insn 207 206 208 30 (set (reg:DI 186)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":83:31 -1
+     (nil))
+(insn 208 207 209 30 (parallel [
+            (set (reg:DI 145 [ _64 ])
+                (lshiftrt:DI (reg:DI 186)
+                    (const_int 9 [0x9])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":83:31 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 9 [0x9]))
+        (nil)))
+(insn 209 208 210 30 (parallel [
+            (set (reg:DI 146 [ _65 ])
+                (and:DI (reg:DI 145 [ _64 ])
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":83:19 -1
+     (nil))
+(insn 210 209 211 30 (set (reg:DI 187)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":83:49 -1
+     (nil))
+(insn 211 210 212 30 (parallel [
+            (set (reg:DI 147 [ _66 ])
+                (lshiftrt:DI (reg:DI 187)
+                    (const_int 18 [0x12])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":83:49 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 18 [0x12]))
+        (nil)))
+(insn 212 211 213 30 (parallel [
+            (set (reg:DI 148 [ _67 ])
+                (and:DI (reg:DI 146 [ _65 ])
+                    (reg:DI 147 [ _66 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":83:37 -1
+     (nil))
+(insn 213 212 214 30 (set (reg:DI 188)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":83:68 -1
+     (nil))
+(insn 214 213 215 30 (parallel [
+            (set (reg:DI 149 [ _68 ])
+                (lshiftrt:DI (reg:DI 188)
+                    (const_int 27 [0x1b])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":83:68 -1
+     (expr_list:REG_EQUAL (lshiftrt:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (const_int 27 [0x1b]))
+        (nil)))
+(insn 215 214 216 30 (parallel [
+            (set (reg:DI 150 [ _69 ])
+                (and:DI (reg:DI 148 [ _67 ])
+                    (reg:DI 149 [ _68 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":83:56 -1
+     (nil))
+(insn 216 215 217 30 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 150 [ _69 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":83:8 -1
+     (nil))
+(jump_insn 217 216 218 30 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 220)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":83:8 -1
+     (nil)
+ -> 220)
+(note 218 217 219 31 [bb 31] NOTE_INSN_BASIC_BLOCK)
+(insn 219 218 220 31 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -16 [0xfffffffffffffff0])) [3 score+0 S4 A64])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16 [0xfffffffffffffff0])) [3 score+0 S4 A64])
+                    (const_int 3 [0x3])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":84:15 -1
+     (nil))
+(code_label 220 219 221 32 27 (nil) [1 uses])
+(note 221 220 222 32 [bb 32] NOTE_INSN_BASIC_BLOCK)
+(insn 222 221 223 32 (set (reg:DI 189)
+        (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":87:19 -1
+     (nil))
+(insn 223 222 224 32 (parallel [
+            (set (reg:DI 151 [ _70 ])
+                (ior:DI (reg:DI 189)
+                    (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":87:19 -1
+     (expr_list:REG_EQUAL (ior:DI (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [1 bitboard+0 S8 A64])
+            (mem/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [1 oppBitboard+0 S8 A64]))
+        (nil)))
+(insn 224 223 225 32 (set (reg:DI 190)
+        (const_int 280371153272574 [0xfefefefefefe])) "/home/joshua/Code/c4c/gui-ai/logic.c":87:8 -1
+     (nil))
+(insn 225 224 226 32 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:DI 151 [ _70 ])
+            (reg:DI 190))) "/home/joshua/Code/c4c/gui-ai/logic.c":87:8 -1
+     (nil))
+(jump_insn 226 225 227 32 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 231)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":87:8 -1
+     (nil)
+ -> 231)
+(note 227 226 228 33 [bb 33] NOTE_INSN_BASIC_BLOCK)
+(insn 228 227 229 33 (set (reg:SI 152 [ _79 ])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":88:16 -1
+     (nil))
+(jump_insn 229 228 230 33 (set (pc)
+        (label_ref 242)) "/home/joshua/Code/c4c/gui-ai/logic.c":88:16 -1
+     (nil)
+ -> 242)
+(barrier 230 229 231)
+(code_label 231 230 232 34 28 (nil) [1 uses])
+(note 232 231 233 34 [bb 34] NOTE_INSN_BASIC_BLOCK)
+(insn 233 232 234 34 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -36 [0xffffffffffffffdc])) [3 depth+0 S4 A32])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":90:8 -1
+     (nil))
+(jump_insn 234 233 235 34 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 239)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":90:8 -1
+     (nil)
+ -> 239)
+(note 235 234 236 35 [bb 35] NOTE_INSN_BASIC_BLOCK)
+(insn 236 235 237 35 (set (reg:SI 152 [ _79 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [3 score+0 S4 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":91:16 -1
+     (nil))
+(jump_insn 237 236 238 35 (set (pc)
+        (label_ref 242)) "/home/joshua/Code/c4c/gui-ai/logic.c":91:16 -1
+     (nil)
+ -> 242)
+(barrier 238 237 239)
+(code_label 239 238 240 36 29 (nil) [1 uses])
+(note 240 239 241 36 [bb 36] NOTE_INSN_BASIC_BLOCK)
+(insn 241 240 242 36 (set (reg:SI 152 [ _79 ])
+        (const_int 420 [0x1a4])) "/home/joshua/Code/c4c/gui-ai/logic.c":93:12 -1
+     (nil))
+(code_label 242 241 243 37 16 (nil) [10 uses])
+(note 243 242 244 37 [bb 37] NOTE_INSN_BASIC_BLOCK)
+(insn 244 243 248 37 (set (reg:SI 153 [ <retval> ])
+        (reg:SI 152 [ _79 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":94:1 -1
+     (nil))
+(insn 248 244 249 37 (set (reg/i:SI 0 ax)
+        (reg:SI 153 [ <retval> ])) "/home/joshua/Code/c4c/gui-ai/logic.c":94:1 -1
+     (nil))
+(insn 249 248 0 37 (use (reg/i:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/logic.c":94:1 -1
+     (nil))
+
+;; Function minimax (minimax, funcdef_no=9, decl_uid=3637, cgraph_uid=10, symbol_order=9)
+
+Partition 2: size 8 align 8
+	bestScore_22
+Partition 0: size 8 align 8
+	bestScore_17
+Partition 8: size 4 align 4
+	score_61
+Partition 6: size 4 align 4
+	score_50
+Partition 4: size 4 align 4
+	result_40
+Partition 3: size 4 align 4
+	j_26
+Partition 1: size 4 align 4
+	j_21
+Partition 7: size 1 align 1
+	dpRes_59
+Partition 5: size 1 align 1
+	dpRes_47
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+;; Generating RTL for gimple basic block 20
+
+;; Generating RTL for gimple basic block 21
+
+;; Generating RTL for gimple basic block 22
+
+;; Generating RTL for gimple basic block 23
+
+;; Generating RTL for gimple basic block 24
+
+;; Generating RTL for gimple basic block 25
+
+;; Generating RTL for gimple basic block 26
+
+;; Generating RTL for gimple basic block 27
+
+;; Generating RTL for gimple basic block 28
+
+;; Generating RTL for gimple basic block 29
+
+;; Generating RTL for gimple basic block 30
+Purged non-fallthru edges from bb 34
+Purged non-fallthru edges from bb 36
+Purged non-fallthru edges from bb 38
+Purged non-fallthru edges from bb 40
+Purged non-fallthru edges from bb 42
+Purged non-fallthru edges from bb 44
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 8->9 to 22 failed.
+Edge 10->12 redirected to 13
+Forwarding edge 10->11 to 14 failed.
+Forwarding edge 10->11 to 14 failed.
+deleting block 12
+Edge 14->16 redirected to 17
+Forwarding edge 14->15 to 18 failed.
+Forwarding edge 14->15 to 18 failed.
+deleting block 16
+Edge 18->20 redirected to 24
+Forwarding edge 18->19 to 22 failed.
+Forwarding edge 18->19 to 22 failed.
+deleting block 20
+deleting block 21
+Removing jump 120.
+Forwarding edge 26->27 to 40 failed.
+Edge 28->30 redirected to 31
+Forwarding edge 28->29 to 32 failed.
+Forwarding edge 28->29 to 32 failed.
+deleting block 30
+Edge 32->34 redirected to 35
+Forwarding edge 32->33 to 36 failed.
+Forwarding edge 32->33 to 36 failed.
+deleting block 34
+Edge 36->38 redirected to 42
+Forwarding edge 36->37 to 40 failed.
+Forwarding edge 36->37 to 40 failed.
+deleting block 38
+deleting block 39
+Removing jump 224.
+Removing jump 247.
+Merging block 44 into block 43...
+Merged blocks 43 and 44.
+Merged 43 and 44 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 8->9 to 22 failed.
+Forwarding edge 10->11 to 14 failed.
+Forwarding edge 14->15 to 18 failed.
+Forwarding edge 18->19 to 22 failed.
+Forwarding edge 26->27 to 40 failed.
+Forwarding edge 28->29 to 32 failed.
+Forwarding edge 32->33 to 36 failed.
+Forwarding edge 36->37 to 40 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 12 NOTE_INSN_DELETED)
+(note 12 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 12 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -56 [0xffffffffffffffc8])) [2 yellow+0 S8 A64])
+        (reg:DI 5 di [ yellow ])) "/home/joshua/Code/c4c/gui-ai/logic.c":96:150 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [2 red+0 S8 A64])
+        (reg:DI 4 si [ red ])) "/home/joshua/Code/c4c/gui-ai/logic.c":96:150 -1
+     (nil))
+(insn 4 3 5 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [4 heights+0 S8 A64])
+        (reg:DI 1 dx [ heights ])) "/home/joshua/Code/c4c/gui-ai/logic.c":96:150 -1
+     (nil))
+(insn 5 4 6 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -76 [0xffffffffffffffb4])) [3 depth+0 S4 A32])
+        (reg:SI 2 cx [ depth ])) "/home/joshua/Code/c4c/gui-ai/logic.c":96:150 -1
+     (nil))
+(insn 6 5 9 2 (set (reg:SI 94)
+        (reg:SI 36 r8 [ isMaximising ])) "/home/joshua/Code/c4c/gui-ai/logic.c":96:150 -1
+     (nil))
+(insn 9 6 10 2 (set (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [5 alpha+0 S8 A64])
+        (reg:DF 20 xmm0 [ alpha ])) "/home/joshua/Code/c4c/gui-ai/logic.c":96:150 -1
+     (nil))
+(insn 10 9 7 2 (set (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [5 beta+0 S8 A64])
+        (reg:DF 21 xmm1 [ beta ])) "/home/joshua/Code/c4c/gui-ai/logic.c":96:150 -1
+     (nil))
+(insn 7 10 8 2 (set (reg:QI 95)
+        (subreg:QI (reg:SI 94) 0)) "/home/joshua/Code/c4c/gui-ai/logic.c":96:150 -1
+     (nil))
+(insn 8 7 11 2 (set (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -80 [0xffffffffffffffb0])) [6 isMaximising+0 S1 A32])
+        (reg:QI 95)) "/home/joshua/Code/c4c/gui-ai/logic.c":96:150 -1
+     (nil))
+(note 11 8 14 2 NOTE_INSN_FUNCTION_BEG)
+(insn 14 11 15 2 (set (reg/f:DI 96)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":97:18 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:DI 82 [ _1 ])
+        (mem:DI (reg/f:DI 96) [1 *red_36(D)+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":97:18 -1
+     (nil))
+(insn 16 15 17 2 (set (reg/f:DI 97)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -56 [0xffffffffffffffc8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":97:18 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 83 [ _2 ])
+        (mem:DI (reg/f:DI 97) [1 *yellow_37(D)+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":97:18 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 98)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -76 [0xffffffffffffffb4])) [3 depth+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":97:18 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 1 dx)
+        (reg:SI 98)) "/home/joshua/Code/c4c/gui-ai/logic.c":97:18 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:DI 4 si)
+        (reg:DI 82 [ _1 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":97:18 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:DI 5 di)
+        (reg:DI 83 [ _2 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":97:18 -1
+     (nil))
+(call_insn 22 21 23 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("evaluateBoard") [flags 0x3]  <function_decl 0x7f7f046b0400 evaluateBoard>) [0 evaluateBoard S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":97:18 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (nil)))))
+(insn 23 22 24 2 (set (reg:SI 99)
+        (reg:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/logic.c":97:18 -1
+     (nil))
+(insn 24 23 25 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -28 [0xffffffffffffffe4])) [3 result+0 S4 A32])
+        (reg:SI 99)) "/home/joshua/Code/c4c/gui-ai/logic.c":97:18 -1
+     (nil))
+(insn 25 24 26 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -76 [0xffffffffffffffb4])) [3 depth+0 S4 A32])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":98:8 -1
+     (nil))
+(jump_insn 26 25 27 2 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 30)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":98:8 -1
+     (nil)
+ -> 30)
+(note 27 26 28 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -28 [0xffffffffffffffe4])) [3 result+0 S4 A32])
+            (const_int 420 [0x1a4]))) "/home/joshua/Code/c4c/gui-ai/logic.c":98:20 -1
+     (nil))
+(jump_insn 29 28 30 4 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 35)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":98:20 -1
+     (nil)
+ -> 35)
+(code_label 30 29 31 5 31 (nil) [1 uses])
+(note 31 30 32 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 32 31 33 5 (set (reg:SI 92 [ _27 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -28 [0xffffffffffffffe4])) [3 result+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":99:16 -1
+     (nil))
+(jump_insn 33 32 34 5 (set (pc)
+        (label_ref 244)) "/home/joshua/Code/c4c/gui-ai/logic.c":99:16 -1
+     (nil)
+ -> 244)
+(barrier 34 33 35)
+(code_label 35 34 36 6 32 (nil) [1 uses])
+(note 36 35 37 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 38 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -80 [0xffffffffffffffb0])) [6 isMaximising+0 S1 A32])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":102:8 -1
+     (nil))
+(jump_insn 38 37 39 6 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 142)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":102:8 -1
+     (nil)
+ -> 142)
+(note 39 38 40 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 40 39 41 7 (set (reg:DF 100)
+        (mem/u/c:DF (symbol_ref/u:DI ("*.LC0") [flags 0x2]) [0  S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":103:16 -1
+     (nil))
+(insn 41 40 42 7 (set (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [5 bestScore+0 S8 A64])
+        (reg:DF 100)) "/home/joshua/Code/c4c/gui-ai/logic.c":103:16 -1
+     (nil))
+(insn 42 41 43 7 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -36 [0xffffffffffffffdc])) [3 j+0 S4 A32])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":104:18 -1
+     (nil))
+(jump_insn 43 42 44 7 (set (pc)
+        (label_ref 129)) "/home/joshua/Code/c4c/gui-ai/logic.c":104:9 -1
+     (nil)
+ -> 129)
+(barrier 44 43 131)
+(code_label 131 44 45 8 44 (nil) [1 uses])
+(note 45 131 46 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 46 45 47 8 (set (reg:DI 101)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":105:26 -1
+     (nil))
+(insn 47 46 48 8 (set (reg:SI 102)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -36 [0xffffffffffffffdc])) [3 j+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":105:26 -1
+     (nil))
+(insn 48 47 49 8 (set (reg:DI 103)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":105:26 -1
+     (nil))
+(insn 49 48 50 8 (set (reg:DI 104)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -56 [0xffffffffffffffc8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":105:26 -1
+     (nil))
+(insn 50 49 51 8 (set (reg:DI 36 r8)
+        (reg:DI 101)) "/home/joshua/Code/c4c/gui-ai/logic.c":105:26 -1
+     (nil))
+(insn 51 50 52 8 (set (reg:SI 2 cx)
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":105:26 -1
+     (nil))
+(insn 52 51 53 8 (set (reg:SI 1 dx)
+        (reg:SI 102)) "/home/joshua/Code/c4c/gui-ai/logic.c":105:26 -1
+     (nil))
+(insn 53 52 54 8 (set (reg:DI 4 si)
+        (reg:DI 103)) "/home/joshua/Code/c4c/gui-ai/logic.c":105:26 -1
+     (nil))
+(insn 54 53 55 8 (set (reg:DI 5 di)
+        (reg:DI 104)) "/home/joshua/Code/c4c/gui-ai/logic.c":105:26 -1
+     (nil))
+(call_insn 55 54 56 8 (set (reg:QI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("dropPiece") [flags 0x3]  <function_decl 0x7f7f046b0200 dropPiece>) [0 dropPiece S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":105:26 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:DI (use (reg:DI 36 r8))
+                        (nil)))))))
+(insn 56 55 57 8 (set (reg:QI 105)
+        (reg:QI 0 ax)) "/home/joshua/Code/c4c/gui-ai/logic.c":105:26 -1
+     (nil))
+(insn 57 56 58 8 (set (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -37 [0xffffffffffffffdb])) [6 dpRes+0 S1 A8])
+        (reg:QI 105)) "/home/joshua/Code/c4c/gui-ai/logic.c":105:26 -1
+     (nil))
+(insn 58 57 59 8 (set (reg:QI 106)
+        (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -37 [0xffffffffffffffdb])) [6 dpRes+0 S1 A8])) "/home/joshua/Code/c4c/gui-ai/logic.c":106:17 -1
+     (nil))
+(insn 59 58 60 8 (parallel [
+            (set (reg:QI 84 [ _3 ])
+                (xor:QI (reg:QI 106)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":106:17 -1
+     (expr_list:REG_EQUAL (xor:QI (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -37 [0xffffffffffffffdb])) [6 dpRes+0 S1 A8])
+            (const_int 1 [0x1]))
+        (nil)))
+(insn 60 59 61 8 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 84 [ _3 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":106:16 -1
+     (nil))
+(jump_insn 61 60 62 8 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 65)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":106:16 -1
+     (nil)
+ -> 65)
+(note 62 61 63 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 63 62 64 9 (set (pc)
+        (label_ref 126)) "/home/joshua/Code/c4c/gui-ai/logic.c":107:17 -1
+     (nil)
+ -> 126)
+(barrier 64 63 65)
+(code_label 65 64 66 10 36 (nil) [1 uses])
+(note 66 65 67 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 67 66 68 10 (set (reg:SI 107)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -76 [0xffffffffffffffb4])) [3 depth+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 68 67 69 10 (parallel [
+            (set (reg:SI 85 [ _4 ])
+                (plus:SI (reg:SI 107)
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (expr_list:REG_EQUAL (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -76 [0xffffffffffffffb4])) [3 depth+0 S4 A32])
+            (const_int -1 [0xffffffffffffffff]))
+        (nil)))
+(insn 69 68 70 10 (set (reg:DF 108)
+        (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [5 beta+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 70 69 71 10 (set (reg:DF 109)
+        (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [5 alpha+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 71 70 72 10 (set (reg:DI 110)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 72 71 73 10 (set (reg:DI 111)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 73 72 74 10 (set (reg:DI 112)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -56 [0xffffffffffffffc8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 74 73 75 10 (set (reg:DF 21 xmm1)
+        (reg:DF 108)) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 75 74 76 10 (set (reg:DF 20 xmm0)
+        (reg:DF 109)) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 76 75 77 10 (set (reg:SI 36 r8)
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 77 76 78 10 (set (reg:SI 2 cx)
+        (reg:SI 85 [ _4 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 78 77 79 10 (set (reg:DI 1 dx)
+        (reg:DI 110)) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 79 78 80 10 (set (reg:DI 4 si)
+        (reg:DI 111)) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 80 79 81 10 (set (reg:DI 5 di)
+        (reg:DI 112)) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(call_insn 81 80 82 10 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("minimax") [flags 0x3]  <function_decl 0x7f7f046b0500 minimax>) [0 minimax S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:SI (use (reg:SI 36 r8))
+                        (expr_list:DF (use (reg:DF 20 xmm0))
+                            (expr_list:DF (use (reg:DF 21 xmm1))
+                                (nil)))))))))
+(insn 82 81 83 10 (set (reg:SI 113)
+        (reg:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 83 82 84 10 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 score+0 S4 A32])
+        (reg:SI 113)) "/home/joshua/Code/c4c/gui-ai/logic.c":110:25 -1
+     (nil))
+(insn 84 83 85 10 (set (reg:DI 114)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":111:13 -1
+     (nil))
+(insn 85 84 86 10 (set (reg:SI 115)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -36 [0xffffffffffffffdc])) [3 j+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":111:13 -1
+     (nil))
+(insn 86 85 87 10 (set (reg:DI 116)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":111:13 -1
+     (nil))
+(insn 87 86 88 10 (set (reg:DI 117)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -56 [0xffffffffffffffc8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":111:13 -1
+     (nil))
+(insn 88 87 89 10 (set (reg:DI 36 r8)
+        (reg:DI 114)) "/home/joshua/Code/c4c/gui-ai/logic.c":111:13 -1
+     (nil))
+(insn 89 88 90 10 (set (reg:SI 2 cx)
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":111:13 -1
+     (nil))
+(insn 90 89 91 10 (set (reg:SI 1 dx)
+        (reg:SI 115)) "/home/joshua/Code/c4c/gui-ai/logic.c":111:13 -1
+     (nil))
+(insn 91 90 92 10 (set (reg:DI 4 si)
+        (reg:DI 116)) "/home/joshua/Code/c4c/gui-ai/logic.c":111:13 -1
+     (nil))
+(insn 92 91 93 10 (set (reg:DI 5 di)
+        (reg:DI 117)) "/home/joshua/Code/c4c/gui-ai/logic.c":111:13 -1
+     (nil))
+(call_insn 93 92 94 10 (call (mem:QI (symbol_ref:DI ("popPiece") [flags 0x3]  <function_decl 0x7f7f046b0300 popPiece>) [0 popPiece S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":111:13 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:DI (use (reg:DI 36 r8))
+                        (nil)))))))
+(insn 94 93 95 10 (set (reg:DF 86 [ _5 ])
+        (float:DF (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -20 [0xffffffffffffffec])) [3 score+0 S4 A32]))) "/home/joshua/Code/c4c/gui-ai/logic.c":113:23 -1
+     (nil))
+(insn 95 94 96 10 (set (reg:CCFP 17 flags)
+        (compare:CCFP (reg:DF 86 [ _5 ])
+            (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16 [0xfffffffffffffff0])) [5 bestScore+0 S8 A64]))) "/home/joshua/Code/c4c/gui-ai/logic.c":113:16 -1
+     (nil))
+(jump_insn 96 95 253 10 (set (pc)
+        (if_then_else (gt (reg:CCFP 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 265)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":113:16 806 {*jcc}
+     (nil)
+ -> 265)
+(note 253 96 97 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 97 253 98 11 (set (pc)
+        (label_ref 103)) "/home/joshua/Code/c4c/gui-ai/logic.c":113:16 -1
+     (nil)
+ -> 103)
+(barrier 98 97 265)
+(code_label 265 98 100 13 55 (nil) [1 uses])
+(note 100 265 101 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 101 100 102 13 (set (reg:DF 118)
+        (float:DF (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -20 [0xffffffffffffffec])) [3 score+0 S4 A32]))) "/home/joshua/Code/c4c/gui-ai/logic.c":114:27 -1
+     (nil))
+(insn 102 101 103 13 (set (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [5 bestScore+0 S8 A64])
+        (reg:DF 118)) "/home/joshua/Code/c4c/gui-ai/logic.c":114:27 -1
+     (nil))
+(code_label 103 102 104 14 38 (nil) [1 uses])
+(note 104 103 105 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 105 104 106 14 (set (reg:DF 87 [ _6 ])
+        (float:DF (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -20 [0xffffffffffffffec])) [3 score+0 S4 A32]))) "/home/joshua/Code/c4c/gui-ai/logic.c":116:23 -1
+     (nil))
+(insn 106 105 107 14 (set (reg:DF 119)
+        (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [5 alpha+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":116:16 -1
+     (nil))
+(insn 107 106 108 14 (set (reg:CCFP 17 flags)
+        (compare:CCFP (reg:DF 119)
+            (reg:DF 87 [ _6 ]))) "/home/joshua/Code/c4c/gui-ai/logic.c":116:16 -1
+     (nil))
+(jump_insn 108 107 255 14 (set (pc)
+        (if_then_else (gt (reg:CCFP 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 266)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":116:16 806 {*jcc}
+     (nil)
+ -> 266)
+(note 255 108 109 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 109 255 110 15 (set (pc)
+        (label_ref 115)) "/home/joshua/Code/c4c/gui-ai/logic.c":116:16 -1
+     (nil)
+ -> 115)
+(barrier 110 109 266)
+(code_label 266 110 112 17 56 (nil) [1 uses])
+(note 112 266 113 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 113 112 114 17 (set (reg:DF 120)
+        (float:DF (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -20 [0xffffffffffffffec])) [3 score+0 S4 A32]))) "/home/joshua/Code/c4c/gui-ai/logic.c":117:23 -1
+     (nil))
+(insn 114 113 115 17 (set (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [5 alpha+0 S8 A64])
+        (reg:DF 120)) "/home/joshua/Code/c4c/gui-ai/logic.c":117:23 -1
+     (nil))
+(code_label 115 114 116 18 40 (nil) [1 uses])
+(note 116 115 117 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 117 116 118 18 (set (reg:DF 121)
+        (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [5 alpha+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":119:16 -1
+     (nil))
+(insn 118 117 119 18 (set (reg:CCFP 17 flags)
+        (compare:CCFP (reg:DF 121)
+            (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -96 [0xffffffffffffffa0])) [5 beta+0 S8 A64]))) "/home/joshua/Code/c4c/gui-ai/logic.c":119:16 -1
+     (nil))
+(jump_insn 119 118 257 18 (set (pc)
+        (if_then_else (ge (reg:CCFP 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 136)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":119:16 806 {*jcc}
+     (nil)
+ -> 136)
+(note 257 119 126 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(code_label 126 257 127 22 37 (nil) [1 uses])
+(note 127 126 128 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+(insn 128 127 129 22 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -36 [0xffffffffffffffdc])) [3 j+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -36 [0xffffffffffffffdc])) [3 j+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":104:38 -1
+     (nil))
+(code_label 129 128 130 23 35 (nil) [1 uses])
+(note 130 129 134 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
+(insn 134 130 135 23 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -36 [0xffffffffffffffdc])) [3 j+0 S4 A32])
+            (const_int 6 [0x6]))) "/home/joshua/Code/c4c/gui-ai/logic.c":104:28 -1
+     (nil))
+(jump_insn 135 134 136 23 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 131)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":104:28 -1
+     (nil)
+ -> 131)
+(code_label 136 135 137 24 43 (nil) [1 uses])
+(note 137 136 138 24 [bb 24] NOTE_INSN_BASIC_BLOCK)
+(insn 138 137 139 24 (set (reg:DF 122)
+        (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [5 bestScore+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":123:16 -1
+     (nil))
+(insn 139 138 140 24 (set (reg:SI 92 [ _27 ])
+        (fix:SI (reg:DF 122))) "/home/joshua/Code/c4c/gui-ai/logic.c":123:16 -1
+     (nil))
+(jump_insn 140 139 141 24 (set (pc)
+        (label_ref 244)) "/home/joshua/Code/c4c/gui-ai/logic.c":123:16 -1
+     (nil)
+ -> 244)
+(barrier 141 140 142)
+(code_label 142 141 143 25 34 (nil) [1 uses])
+(note 143 142 144 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
+(insn 144 143 145 25 (set (reg:DF 123)
+        (mem/u/c:DF (symbol_ref/u:DI ("*.LC1") [flags 0x2]) [0  S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":125:16 -1
+     (nil))
+(insn 145 144 146 25 (set (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [5 bestScore+0 S8 A64])
+        (reg:DF 123)) "/home/joshua/Code/c4c/gui-ai/logic.c":125:16 -1
+     (nil))
+(insn 146 145 147 25 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [3 j+0 S4 A64])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":126:18 -1
+     (nil))
+(jump_insn 147 146 148 25 (set (pc)
+        (label_ref 233)) "/home/joshua/Code/c4c/gui-ai/logic.c":126:9 -1
+     (nil)
+ -> 233)
+(barrier 148 147 235)
+(code_label 235 148 149 26 54 (nil) [1 uses])
+(note 149 235 150 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
+(insn 150 149 151 26 (set (reg:DI 124)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":127:26 -1
+     (nil))
+(insn 151 150 152 26 (set (reg:SI 125)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [3 j+0 S4 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":127:26 -1
+     (nil))
+(insn 152 151 153 26 (set (reg:DI 126)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":127:26 -1
+     (nil))
+(insn 153 152 154 26 (set (reg:DI 127)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -56 [0xffffffffffffffc8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":127:26 -1
+     (nil))
+(insn 154 153 155 26 (set (reg:DI 36 r8)
+        (reg:DI 124)) "/home/joshua/Code/c4c/gui-ai/logic.c":127:26 -1
+     (nil))
+(insn 155 154 156 26 (set (reg:SI 2 cx)
+        (const_int 1 [0x1])) "/home/joshua/Code/c4c/gui-ai/logic.c":127:26 -1
+     (nil))
+(insn 156 155 157 26 (set (reg:SI 1 dx)
+        (reg:SI 125)) "/home/joshua/Code/c4c/gui-ai/logic.c":127:26 -1
+     (nil))
+(insn 157 156 158 26 (set (reg:DI 4 si)
+        (reg:DI 126)) "/home/joshua/Code/c4c/gui-ai/logic.c":127:26 -1
+     (nil))
+(insn 158 157 159 26 (set (reg:DI 5 di)
+        (reg:DI 127)) "/home/joshua/Code/c4c/gui-ai/logic.c":127:26 -1
+     (nil))
+(call_insn 159 158 160 26 (set (reg:QI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("dropPiece") [flags 0x3]  <function_decl 0x7f7f046b0200 dropPiece>) [0 dropPiece S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":127:26 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:DI (use (reg:DI 36 r8))
+                        (nil)))))))
+(insn 160 159 161 26 (set (reg:QI 128)
+        (reg:QI 0 ax)) "/home/joshua/Code/c4c/gui-ai/logic.c":127:26 -1
+     (nil))
+(insn 161 160 162 26 (set (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -38 [0xffffffffffffffda])) [6 dpRes+0 S1 A16])
+        (reg:QI 128)) "/home/joshua/Code/c4c/gui-ai/logic.c":127:26 -1
+     (nil))
+(insn 162 161 163 26 (set (reg:QI 129)
+        (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -38 [0xffffffffffffffda])) [6 dpRes+0 S1 A16])) "/home/joshua/Code/c4c/gui-ai/logic.c":128:17 -1
+     (nil))
+(insn 163 162 164 26 (parallel [
+            (set (reg:QI 88 [ _7 ])
+                (xor:QI (reg:QI 129)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":128:17 -1
+     (expr_list:REG_EQUAL (xor:QI (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -38 [0xffffffffffffffda])) [6 dpRes+0 S1 A16])
+            (const_int 1 [0x1]))
+        (nil)))
+(insn 164 163 165 26 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 88 [ _7 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":128:16 -1
+     (nil))
+(jump_insn 165 164 166 26 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 169)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":128:16 -1
+     (nil)
+ -> 169)
+(note 166 165 167 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 167 166 168 27 (set (pc)
+        (label_ref 230)) "/home/joshua/Code/c4c/gui-ai/logic.c":129:17 -1
+     (nil)
+ -> 230)
+(barrier 168 167 169)
+(code_label 169 168 170 28 46 (nil) [1 uses])
+(note 170 169 171 28 [bb 28] NOTE_INSN_BASIC_BLOCK)
+(insn 171 170 172 28 (set (reg:SI 130)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -76 [0xffffffffffffffb4])) [3 depth+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 172 171 173 28 (parallel [
+            (set (reg:SI 89 [ _8 ])
+                (plus:SI (reg:SI 130)
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (expr_list:REG_EQUAL (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -76 [0xffffffffffffffb4])) [3 depth+0 S4 A32])
+            (const_int -1 [0xffffffffffffffff]))
+        (nil)))
+(insn 173 172 174 28 (set (reg:DF 131)
+        (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [5 beta+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 174 173 175 28 (set (reg:DF 132)
+        (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [5 alpha+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 175 174 176 28 (set (reg:DI 133)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 176 175 177 28 (set (reg:DI 134)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 177 176 178 28 (set (reg:DI 135)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -56 [0xffffffffffffffc8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 178 177 179 28 (set (reg:DF 21 xmm1)
+        (reg:DF 131)) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 179 178 180 28 (set (reg:DF 20 xmm0)
+        (reg:DF 132)) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 180 179 181 28 (set (reg:SI 36 r8)
+        (const_int 1 [0x1])) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 181 180 182 28 (set (reg:SI 2 cx)
+        (reg:SI 89 [ _8 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 182 181 183 28 (set (reg:DI 1 dx)
+        (reg:DI 133)) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 183 182 184 28 (set (reg:DI 4 si)
+        (reg:DI 134)) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 184 183 185 28 (set (reg:DI 5 di)
+        (reg:DI 135)) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(call_insn 185 184 186 28 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("minimax") [flags 0x3]  <function_decl 0x7f7f046b0500 minimax>) [0 minimax S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:SI (use (reg:SI 36 r8))
+                        (expr_list:DF (use (reg:DF 20 xmm0))
+                            (expr_list:DF (use (reg:DF 21 xmm1))
+                                (nil)))))))))
+(insn 186 185 187 28 (set (reg:SI 136)
+        (reg:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 187 186 188 28 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [3 score+0 S4 A64])
+        (reg:SI 136)) "/home/joshua/Code/c4c/gui-ai/logic.c":132:25 -1
+     (nil))
+(insn 188 187 189 28 (set (reg:DI 137)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":133:13 -1
+     (nil))
+(insn 189 188 190 28 (set (reg:SI 138)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -32 [0xffffffffffffffe0])) [3 j+0 S4 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":133:13 -1
+     (nil))
+(insn 190 189 191 28 (set (reg:DI 139)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":133:13 -1
+     (nil))
+(insn 191 190 192 28 (set (reg:DI 140)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -56 [0xffffffffffffffc8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":133:13 -1
+     (nil))
+(insn 192 191 193 28 (set (reg:DI 36 r8)
+        (reg:DI 137)) "/home/joshua/Code/c4c/gui-ai/logic.c":133:13 -1
+     (nil))
+(insn 193 192 194 28 (set (reg:SI 2 cx)
+        (const_int 1 [0x1])) "/home/joshua/Code/c4c/gui-ai/logic.c":133:13 -1
+     (nil))
+(insn 194 193 195 28 (set (reg:SI 1 dx)
+        (reg:SI 138)) "/home/joshua/Code/c4c/gui-ai/logic.c":133:13 -1
+     (nil))
+(insn 195 194 196 28 (set (reg:DI 4 si)
+        (reg:DI 139)) "/home/joshua/Code/c4c/gui-ai/logic.c":133:13 -1
+     (nil))
+(insn 196 195 197 28 (set (reg:DI 5 di)
+        (reg:DI 140)) "/home/joshua/Code/c4c/gui-ai/logic.c":133:13 -1
+     (nil))
+(call_insn 197 196 198 28 (call (mem:QI (symbol_ref:DI ("popPiece") [flags 0x3]  <function_decl 0x7f7f046b0300 popPiece>) [0 popPiece S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":133:13 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:DI (use (reg:DI 36 r8))
+                        (nil)))))))
+(insn 198 197 199 28 (set (reg:DF 90 [ _9 ])
+        (float:DF (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [3 score+0 S4 A64]))) "/home/joshua/Code/c4c/gui-ai/logic.c":135:23 -1
+     (nil))
+(insn 199 198 200 28 (set (reg:DF 141)
+        (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [5 bestScore+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":135:16 -1
+     (nil))
+(insn 200 199 201 28 (set (reg:CCFP 17 flags)
+        (compare:CCFP (reg:DF 141)
+            (reg:DF 90 [ _9 ]))) "/home/joshua/Code/c4c/gui-ai/logic.c":135:16 -1
+     (nil))
+(jump_insn 201 200 259 28 (set (pc)
+        (if_then_else (gt (reg:CCFP 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 267)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":135:16 806 {*jcc}
+     (nil)
+ -> 267)
+(note 259 201 202 29 [bb 29] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 202 259 203 29 (set (pc)
+        (label_ref 208)) "/home/joshua/Code/c4c/gui-ai/logic.c":135:16 -1
+     (nil)
+ -> 208)
+(barrier 203 202 267)
+(code_label 267 203 205 31 57 (nil) [1 uses])
+(note 205 267 206 31 [bb 31] NOTE_INSN_BASIC_BLOCK)
+(insn 206 205 207 31 (set (reg:DF 142)
+        (float:DF (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [3 score+0 S4 A64]))) "/home/joshua/Code/c4c/gui-ai/logic.c":136:27 -1
+     (nil))
+(insn 207 206 208 31 (set (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [5 bestScore+0 S8 A64])
+        (reg:DF 142)) "/home/joshua/Code/c4c/gui-ai/logic.c":136:27 -1
+     (nil))
+(code_label 208 207 209 32 48 (nil) [1 uses])
+(note 209 208 210 32 [bb 32] NOTE_INSN_BASIC_BLOCK)
+(insn 210 209 211 32 (set (reg:DF 91 [ _10 ])
+        (float:DF (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [3 score+0 S4 A64]))) "/home/joshua/Code/c4c/gui-ai/logic.c":138:22 -1
+     (nil))
+(insn 211 210 212 32 (set (reg:CCFP 17 flags)
+        (compare:CCFP (reg:DF 91 [ _10 ])
+            (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -96 [0xffffffffffffffa0])) [5 beta+0 S8 A64]))) "/home/joshua/Code/c4c/gui-ai/logic.c":138:16 -1
+     (nil))
+(jump_insn 212 211 261 32 (set (pc)
+        (if_then_else (gt (reg:CCFP 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 268)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":138:16 806 {*jcc}
+     (nil)
+ -> 268)
+(note 261 212 213 33 [bb 33] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 213 261 214 33 (set (pc)
+        (label_ref 219)) "/home/joshua/Code/c4c/gui-ai/logic.c":138:16 -1
+     (nil)
+ -> 219)
+(barrier 214 213 268)
+(code_label 268 214 216 35 58 (nil) [1 uses])
+(note 216 268 217 35 [bb 35] NOTE_INSN_BASIC_BLOCK)
+(insn 217 216 218 35 (set (reg:DF 143)
+        (float:DF (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -24 [0xffffffffffffffe8])) [3 score+0 S4 A64]))) "/home/joshua/Code/c4c/gui-ai/logic.c":139:22 -1
+     (nil))
+(insn 218 217 219 35 (set (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -96 [0xffffffffffffffa0])) [5 beta+0 S8 A64])
+        (reg:DF 143)) "/home/joshua/Code/c4c/gui-ai/logic.c":139:22 -1
+     (nil))
+(code_label 219 218 220 36 50 (nil) [1 uses])
+(note 220 219 221 36 [bb 36] NOTE_INSN_BASIC_BLOCK)
+(insn 221 220 222 36 (set (reg:DF 144)
+        (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [5 alpha+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":141:16 -1
+     (nil))
+(insn 222 221 223 36 (set (reg:CCFP 17 flags)
+        (compare:CCFP (reg:DF 144)
+            (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -96 [0xffffffffffffffa0])) [5 beta+0 S8 A64]))) "/home/joshua/Code/c4c/gui-ai/logic.c":141:16 -1
+     (nil))
+(jump_insn 223 222 263 36 (set (pc)
+        (if_then_else (ge (reg:CCFP 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 240)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":141:16 806 {*jcc}
+     (nil)
+ -> 240)
+(note 263 223 230 37 [bb 37] NOTE_INSN_BASIC_BLOCK)
+(code_label 230 263 231 40 47 (nil) [1 uses])
+(note 231 230 232 40 [bb 40] NOTE_INSN_BASIC_BLOCK)
+(insn 232 231 233 40 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -32 [0xffffffffffffffe0])) [3 j+0 S4 A64])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -32 [0xffffffffffffffe0])) [3 j+0 S4 A64])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":126:38 -1
+     (nil))
+(code_label 233 232 234 41 45 (nil) [1 uses])
+(note 234 233 238 41 [bb 41] NOTE_INSN_BASIC_BLOCK)
+(insn 238 234 239 41 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -32 [0xffffffffffffffe0])) [3 j+0 S4 A64])
+            (const_int 6 [0x6]))) "/home/joshua/Code/c4c/gui-ai/logic.c":126:28 -1
+     (nil))
+(jump_insn 239 238 240 41 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 235)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":126:28 -1
+     (nil)
+ -> 235)
+(code_label 240 239 241 42 53 (nil) [1 uses])
+(note 241 240 242 42 [bb 42] NOTE_INSN_BASIC_BLOCK)
+(insn 242 241 243 42 (set (reg:DF 145)
+        (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [5 bestScore+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":145:16 -1
+     (nil))
+(insn 243 242 244 42 (set (reg:SI 92 [ _27 ])
+        (fix:SI (reg:DF 145))) "/home/joshua/Code/c4c/gui-ai/logic.c":145:16 -1
+     (nil))
+(code_label 244 243 245 43 33 (nil) [2 uses])
+(note 245 244 246 43 [bb 43] NOTE_INSN_BASIC_BLOCK)
+(insn 246 245 250 43 (set (reg:SI 93 [ <retval> ])
+        (reg:SI 92 [ _27 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":147:1 -1
+     (nil))
+(insn 250 246 251 43 (set (reg/i:SI 0 ax)
+        (reg:SI 93 [ <retval> ])) "/home/joshua/Code/c4c/gui-ai/logic.c":147:1 -1
+     (nil))
+(insn 251 250 0 43 (use (reg/i:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/logic.c":147:1 -1
+     (nil))
+
+;; Function aiMove (aiMove, funcdef_no=10, decl_uid=3642, cgraph_uid=11, symbol_order=10)
+
+Partition 1: size 8 align 8
+	bestScore_8
+Partition 4: size 4 align 4
+	score_26
+Partition 2: size 4 align 4
+	j_11
+Partition 0: size 4 align 4
+	bestMove_4
+Partition 3: size 1 align 1
+	dpRes_23
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+Purged non-fallthru edges from bb 16
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 4->5 to 12 failed.
+Edge 6->8 redirected to 9
+Forwarding edge 6->7 to 10 failed.
+Forwarding edge 6->7 to 10 failed.
+deleting block 8
+Forwarding edge 10->11 to 14 failed.
+Merging block 15 into block 14...
+Merged blocks 14 and 15.
+Merged 14 and 15 without moving.
+Removing jump 100.
+Merging block 16 into block 14...
+Merged blocks 14 and 16.
+Merged 14 and 16 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 4->5 to 12 failed.
+Forwarding edge 6->7 to 10 failed.
+Forwarding edge 10->11 to 14 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -40 [0xffffffffffffffd8])) [2 yellow+0 S8 A64])
+        (reg:DI 5 di [ yellow ])) "/home/joshua/Code/c4c/gui-ai/logic.c":149:103 -1
+     (nil))
+(insn 3 2 4 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -48 [0xffffffffffffffd0])) [2 red+0 S8 A64])
+        (reg:DI 4 si [ red ])) "/home/joshua/Code/c4c/gui-ai/logic.c":149:103 -1
+     (nil))
+(insn 4 3 5 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -52 [0xffffffffffffffcc])) [3 depth+0 S4 A32])
+        (reg:SI 1 dx [ depth ])) "/home/joshua/Code/c4c/gui-ai/logic.c":149:103 -1
+     (nil))
+(insn 5 4 6 2 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [4 heights+0 S8 A64])
+        (reg:DI 2 cx [ heights ])) "/home/joshua/Code/c4c/gui-ai/logic.c":149:103 -1
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 bestMove+0 S4 A32])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":150:9 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:DF 87)
+        (mem/u/c:DF (symbol_ref/u:DI ("*.LC0") [flags 0x2]) [0  S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":151:12 -1
+     (nil))
+(insn 11 10 12 2 (set (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [5 bestScore+0 S8 A64])
+        (reg:DF 87)) "/home/joshua/Code/c4c/gui-ai/logic.c":151:12 -1
+     (nil))
+(insn 12 11 13 2 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [3 j+0 S4 A64])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":153:14 -1
+     (nil))
+(jump_insn 13 12 14 2 (set (pc)
+        (label_ref 87)) "/home/joshua/Code/c4c/gui-ai/logic.c":153:5 -1
+     (nil)
+ -> 87)
+(barrier 14 13 89)
+(code_label 89 14 15 4 70 (nil) [1 uses])
+(note 15 89 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 16 15 17 4 (set (reg:DI 88)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":154:22 -1
+     (nil))
+(insn 17 16 18 4 (set (reg:SI 89)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [3 j+0 S4 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":154:22 -1
+     (nil))
+(insn 18 17 19 4 (set (reg:DI 90)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -48 [0xffffffffffffffd0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":154:22 -1
+     (nil))
+(insn 19 18 20 4 (set (reg:DI 91)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -40 [0xffffffffffffffd8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":154:22 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:DI 36 r8)
+        (reg:DI 88)) "/home/joshua/Code/c4c/gui-ai/logic.c":154:22 -1
+     (nil))
+(insn 21 20 22 4 (set (reg:SI 2 cx)
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":154:22 -1
+     (nil))
+(insn 22 21 23 4 (set (reg:SI 1 dx)
+        (reg:SI 89)) "/home/joshua/Code/c4c/gui-ai/logic.c":154:22 -1
+     (nil))
+(insn 23 22 24 4 (set (reg:DI 4 si)
+        (reg:DI 90)) "/home/joshua/Code/c4c/gui-ai/logic.c":154:22 -1
+     (nil))
+(insn 24 23 25 4 (set (reg:DI 5 di)
+        (reg:DI 91)) "/home/joshua/Code/c4c/gui-ai/logic.c":154:22 -1
+     (nil))
+(call_insn 25 24 26 4 (set (reg:QI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("dropPiece") [flags 0x3]  <function_decl 0x7f7f046b0200 dropPiece>) [0 dropPiece S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":154:22 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:DI (use (reg:DI 36 r8))
+                        (nil)))))))
+(insn 26 25 27 4 (set (reg:QI 92)
+        (reg:QI 0 ax)) "/home/joshua/Code/c4c/gui-ai/logic.c":154:22 -1
+     (nil))
+(insn 27 26 28 4 (set (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -21 [0xffffffffffffffeb])) [6 dpRes+0 S1 A8])
+        (reg:QI 92)) "/home/joshua/Code/c4c/gui-ai/logic.c":154:22 -1
+     (nil))
+(insn 28 27 29 4 (set (reg:QI 93)
+        (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -21 [0xffffffffffffffeb])) [6 dpRes+0 S1 A8])) "/home/joshua/Code/c4c/gui-ai/logic.c":155:13 -1
+     (nil))
+(insn 29 28 30 4 (parallel [
+            (set (reg:QI 82 [ _1 ])
+                (xor:QI (reg:QI 93)
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":155:13 -1
+     (expr_list:REG_EQUAL (xor:QI (mem/c:QI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -21 [0xffffffffffffffeb])) [6 dpRes+0 S1 A8])
+            (const_int 1 [0x1]))
+        (nil)))
+(insn 30 29 31 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 82 [ _1 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":155:12 -1
+     (nil))
+(jump_insn 31 30 32 4 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 35)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":155:12 -1
+     (nil)
+ -> 35)
+(note 32 31 33 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 33 32 34 5 (set (pc)
+        (label_ref 84)) "/home/joshua/Code/c4c/gui-ai/logic.c":156:13 -1
+     (nil)
+ -> 84)
+(barrier 34 33 35)
+(code_label 35 34 36 6 65 (nil) [1 uses])
+(note 36 35 37 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 38 6 (set (reg:SI 94)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -52 [0xffffffffffffffcc])) [3 depth+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(insn 38 37 39 6 (parallel [
+            (set (reg:SI 83 [ _2 ])
+                (plus:SI (reg:SI 94)
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (expr_list:REG_EQUAL (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -52 [0xffffffffffffffcc])) [3 depth+0 S4 A32])
+            (const_int -1 [0xffffffffffffffff]))
+        (nil)))
+(insn 39 38 40 6 (set (reg:DF 95)
+        (mem/u/c:DF (symbol_ref/u:DI ("*.LC1") [flags 0x2]) [0  S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (expr_list:REG_EQUAL (const_double:DF +Inf [+Inf])
+        (nil)))
+(insn 40 39 41 6 (set (reg:DF 96)
+        (mem/u/c:DF (symbol_ref/u:DI ("*.LC0") [flags 0x2]) [0  S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (expr_list:REG_EQUAL (const_double:DF -Inf [-Inf])
+        (nil)))
+(insn 41 40 42 6 (set (reg:DI 97)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(insn 42 41 43 6 (set (reg:DI 98)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -48 [0xffffffffffffffd0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(insn 43 42 44 6 (set (reg:DI 99)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -40 [0xffffffffffffffd8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(insn 44 43 45 6 (set (reg:DF 21 xmm1)
+        (reg:DF 95)) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(insn 45 44 46 6 (set (reg:DF 20 xmm0)
+        (reg:DF 96)) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(insn 46 45 47 6 (set (reg:SI 36 r8)
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(insn 47 46 48 6 (set (reg:SI 2 cx)
+        (reg:SI 83 [ _2 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(insn 48 47 49 6 (set (reg:DI 1 dx)
+        (reg:DI 97)) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(insn 49 48 50 6 (set (reg:DI 4 si)
+        (reg:DI 98)) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(insn 50 49 51 6 (set (reg:DI 5 di)
+        (reg:DI 99)) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(call_insn 51 50 52 6 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("minimax") [flags 0x3]  <function_decl 0x7f7f046b0500 minimax>) [0 minimax S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:SI (use (reg:SI 36 r8))
+                        (expr_list:DF (use (reg:DF 20 xmm0))
+                            (expr_list:DF (use (reg:DF 21 xmm1))
+                                (nil)))))))))
+(insn 52 51 53 6 (set (reg:SI 100)
+        (reg:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(insn 53 52 54 6 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [3 score+0 S4 A32])
+        (reg:SI 100)) "/home/joshua/Code/c4c/gui-ai/logic.c":159:21 -1
+     (nil))
+(insn 54 53 55 6 (set (reg:DI 101)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [4 heights+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":160:9 -1
+     (nil))
+(insn 55 54 56 6 (set (reg:SI 102)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [3 j+0 S4 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":160:9 -1
+     (nil))
+(insn 56 55 57 6 (set (reg:DI 103)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -48 [0xffffffffffffffd0])) [2 red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":160:9 -1
+     (nil))
+(insn 57 56 58 6 (set (reg:DI 104)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -40 [0xffffffffffffffd8])) [2 yellow+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":160:9 -1
+     (nil))
+(insn 58 57 59 6 (set (reg:DI 36 r8)
+        (reg:DI 101)) "/home/joshua/Code/c4c/gui-ai/logic.c":160:9 -1
+     (nil))
+(insn 59 58 60 6 (set (reg:SI 2 cx)
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":160:9 -1
+     (nil))
+(insn 60 59 61 6 (set (reg:SI 1 dx)
+        (reg:SI 102)) "/home/joshua/Code/c4c/gui-ai/logic.c":160:9 -1
+     (nil))
+(insn 61 60 62 6 (set (reg:DI 4 si)
+        (reg:DI 103)) "/home/joshua/Code/c4c/gui-ai/logic.c":160:9 -1
+     (nil))
+(insn 62 61 63 6 (set (reg:DI 5 di)
+        (reg:DI 104)) "/home/joshua/Code/c4c/gui-ai/logic.c":160:9 -1
+     (nil))
+(call_insn 63 62 64 6 (call (mem:QI (symbol_ref:DI ("popPiece") [flags 0x3]  <function_decl 0x7f7f046b0300 popPiece>) [0 popPiece S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/logic.c":160:9 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:DI (use (reg:DI 36 r8))
+                        (nil)))))))
+(insn 64 63 65 6 (set (reg:DF 84 [ _3 ])
+        (float:DF (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -12 [0xfffffffffffffff4])) [3 score+0 S4 A32]))) "/home/joshua/Code/c4c/gui-ai/logic.c":161:19 -1
+     (nil))
+(insn 65 64 66 6 (set (reg:CCFP 17 flags)
+        (compare:CCFP (reg:DF 84 [ _3 ])
+            (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -8 [0xfffffffffffffff8])) [5 bestScore+0 S8 A64]))) "/home/joshua/Code/c4c/gui-ai/logic.c":161:12 -1
+     (nil))
+(jump_insn 66 65 106 6 (set (pc)
+        (if_then_else (gt (reg:CCFP 17 flags)
+                (const_int 0 [0]))
+            (label_ref:DI 108)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":161:12 806 {*jcc}
+     (nil)
+ -> 108)
+(note 106 66 67 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 67 106 68 7 (set (pc)
+        (label_ref 75)) "/home/joshua/Code/c4c/gui-ai/logic.c":161:12 -1
+     (nil)
+ -> 75)
+(barrier 68 67 108)
+(code_label 108 68 70 9 72 (nil) [1 uses])
+(note 70 108 71 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 71 70 72 9 (set (reg:DF 105)
+        (float:DF (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -12 [0xfffffffffffffff4])) [3 score+0 S4 A32]))) "/home/joshua/Code/c4c/gui-ai/logic.c":162:23 -1
+     (nil))
+(insn 72 71 73 9 (set (mem/c:DF (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [5 bestScore+0 S8 A64])
+        (reg:DF 105)) "/home/joshua/Code/c4c/gui-ai/logic.c":162:23 -1
+     (nil))
+(insn 73 72 74 9 (set (reg:SI 106)
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [3 j+0 S4 A64])) "/home/joshua/Code/c4c/gui-ai/logic.c":163:22 -1
+     (nil))
+(insn 74 73 75 9 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 bestMove+0 S4 A32])
+        (reg:SI 106)) "/home/joshua/Code/c4c/gui-ai/logic.c":163:22 -1
+     (nil))
+(code_label 75 74 76 10 67 (nil) [1 uses])
+(note 76 75 79 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 79 76 80 10 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -12 [0xfffffffffffffff4])) [3 score+0 S4 A32])
+            (const_int 99999 [0x1869f]))) "/home/joshua/Code/c4c/gui-ai/logic.c":165:12 -1
+     (nil))
+(jump_insn 80 79 81 10 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 84)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":165:12 -1
+     (nil)
+ -> 84)
+(note 81 80 82 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 82 81 83 11 (set (pc)
+        (label_ref 94)) "/home/joshua/Code/c4c/gui-ai/logic.c":166:13 -1
+     (nil)
+ -> 94)
+(barrier 83 82 84)
+(code_label 84 83 85 12 66 (nil) [2 uses])
+(note 85 84 86 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 86 85 87 12 (parallel [
+            (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -16 [0xfffffffffffffff0])) [3 j+0 S4 A64])
+                (plus:SI (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                            (const_int -16 [0xfffffffffffffff0])) [3 j+0 S4 A64])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/logic.c":153:34 -1
+     (nil))
+(code_label 87 86 88 13 64 (nil) [1 uses])
+(note 88 87 92 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 92 88 93 13 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -16 [0xfffffffffffffff0])) [3 j+0 S4 A64])
+            (const_int 6 [0x6]))) "/home/joshua/Code/c4c/gui-ai/logic.c":153:24 -1
+     (nil))
+(jump_insn 93 92 94 13 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 89)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/logic.c":153:24 -1
+     (nil)
+ -> 89)
+(code_label 94 93 95 14 69 (nil) [1 uses])
+(note 95 94 96 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 96 95 99 14 (set (reg:SI 85 [ _31 ])
+        (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [3 bestMove+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/logic.c":169:12 -1
+     (nil))
+(insn 99 96 103 14 (set (reg:SI 86 [ <retval> ])
+        (reg:SI 85 [ _31 ])) "/home/joshua/Code/c4c/gui-ai/logic.c":169:12 -1
+     (nil))
+(insn 103 99 104 14 (set (reg/i:SI 0 ax)
+        (reg:SI 86 [ <retval> ])) "/home/joshua/Code/c4c/gui-ai/logic.c":170:1 -1
+     (nil))
+(insn 104 103 0 14 (use (reg/i:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/logic.c":170:1 -1
+     (nil))

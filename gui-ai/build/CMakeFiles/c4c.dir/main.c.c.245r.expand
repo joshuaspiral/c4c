@@ -1,0 +1,1137 @@
+
+;; Function main (main, funcdef_no=4206, decl_uid=32098, cgraph_uid=4207, symbol_order=4211)
+
+Partition 4: size 56 align 16
+	e
+Partition 2: size 8 align 8
+	renderer_45
+Partition 1: size 8 align 8
+	window_43
+Partition 3: size 4 align 4
+	result_52
+Partition 0: size 4 align 4
+	gameover_32
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+;; Generating RTL for gimple basic block 20
+
+;; Generating RTL for gimple basic block 21
+
+;; Generating RTL for gimple basic block 22
+
+;; Generating RTL for gimple basic block 23
+
+;; Generating RTL for gimple basic block 24
+
+;; Generating RTL for gimple basic block 25
+
+;; Generating RTL for gimple basic block 26
+
+;; Generating RTL for gimple basic block 27
+
+;; Generating RTL for gimple basic block 28
+
+;; Generating RTL for gimple basic block 29
+
+;; Generating RTL for gimple basic block 30
+
+;; Generating RTL for gimple basic block 31
+
+;; Generating RTL for gimple basic block 32
+
+;; Generating RTL for gimple basic block 33
+
+;; Generating RTL for gimple basic block 34
+
+;; Generating RTL for gimple basic block 35
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 22 from 36 to 37.
+Redirecting jump 49 from 36 to 37.
+Redirecting jump 76 from 36 to 37.
+Forwarding edge 12->13 to 22 failed.
+Redirecting jump 149 from 36 to 37.
+Replacing insn 273 by jump 298
+deleting block 34
+Removing jump 298.
+Deleted label in block 35.
+deleting block 36
+Removing jump 285.
+Merging block 38 into block 37...
+Merged blocks 37 and 38.
+Merged 37 and 38 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 12->13 to 22 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 4 3 2 NOTE_INSN_FUNCTION_BEG)
+(insn 3 2 6 2 (parallel [
+            (set (mem/v/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                        (const_int -8 [0xfffffffffffffff8])) [4 D.32147+0 S8 A64])
+                (unspec:DI [
+                        (mem/v/f:DI (const_int 40 [0x28]) [0 MEM[(<address-space-1> long unsigned int *)40B]+0 S8 A64 AS1])
+                    ] UNSPEC_SP_SET))
+            (set (scratch:DI)
+                (const_int 0 [0]))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/main.c":18:12 -1
+     (nil))
+(insn 6 3 7 2 (set (reg:SI 5 di)
+        (const_int 32 [0x20])) "/home/joshua/Code/c4c/gui-ai/main.c":19:9 -1
+     (nil))
+(call_insn 7 6 8 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_Init") [flags 0x41]  <function_decl 0x7f0d16a9d200 SDL_Init>) [0 SDL_Init S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":19:9 -1
+     (nil)
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 82 [ _1 ])
+        (reg:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":19:9 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 82 [ _1 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":19:8 -1
+     (nil))
+(jump_insn 10 9 11 2 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 24)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":19:8 -1
+     (nil)
+ -> 24)
+(note 11 10 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(call_insn 12 11 13 4 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_GetError") [flags 0x41]  <function_decl 0x7f0d19555800 SDL_GetError>) [0 SDL_GetError S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
+     (nil)
+    (nil))
+(insn 13 12 14 4 (set (reg/f:DI 83 [ _2 ])
+        (reg:DI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
+     (nil))
+(insn 14 13 15 4 (set (reg/f:DI 84 [ stderr.0_3 ])
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f0d1a2fed80 stderr>) [43 stderr+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:DI 1 dx)
+        (reg/f:DI 83 [ _2 ])) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:DI 115)
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f0d1670df30 *.LC0>)) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
+     (nil))
+(insn 17 16 18 4 (set (reg:DI 4 si)
+        (reg:DI 115)) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f0d1670df30 *.LC0>)
+        (nil)))
+(insn 18 17 19 4 (set (reg:DI 5 di)
+        (reg/f:DI 84 [ stderr.0_3 ])) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
+     (nil))
+(insn 19 18 20 4 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
+     (nil))
+(call_insn 20 19 21 4 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f0d196ceb00 fprintf>) [0 __builtin_fprintf S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:DI (use (reg:DI 1 dx))
+                    (nil))))))
+(insn 21 20 22 4 (set (reg:SI 113 [ _34 ])
+        (const_int 1 [0x1])) "/home/joshua/Code/c4c/gui-ai/main.c":21:16 -1
+     (nil))
+(jump_insn 22 21 23 4 (set (pc)
+        (label_ref:DI 282)) "/home/joshua/Code/c4c/gui-ai/main.c":21:16 807 {jump}
+     (nil)
+ -> 282)
+(barrier 23 22 24)
+(code_label 24 23 25 5 2 (nil) [1 uses])
+(note 25 24 26 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 26 25 27 5 (set (reg:SI 37 r9)
+        (const_int 4 [0x4])) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:SI 36 r8)
+        (const_int 800 [0x320])) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:SI 2 cx)
+        (const_int 900 [0x384])) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
+     (nil))
+(insn 29 28 30 5 (set (reg:SI 1 dx)
+        (const_int 100 [0x64])) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
+     (nil))
+(insn 30 29 31 5 (set (reg:SI 4 si)
+        (const_int 100 [0x64])) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
+     (nil))
+(insn 31 30 32 5 (set (reg:DI 116)
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f0d1670d360 *.LC1>)) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
+     (nil))
+(insn 32 31 33 5 (set (reg:DI 5 di)
+        (reg:DI 116)) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f0d1670d360 *.LC1>)
+        (nil)))
+(call_insn 33 32 34 5 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_CreateWindow") [flags 0x41]  <function_decl 0x7f0d16995400 SDL_CreateWindow>) [0 SDL_CreateWindow S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:SI (use (reg:SI 36 r8))
+                        (expr_list:SI (use (reg:SI 37 r9))
+                            (nil))))))))
+(insn 34 33 35 5 (set (reg:DI 117)
+        (reg:DI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
+     (nil))
+(insn 35 34 36 5 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -80 [0xffffffffffffffb0])) [42 window+0 S8 A128])
+        (reg:DI 117)) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
+     (nil))
+(insn 36 35 37 5 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -80 [0xffffffffffffffb0])) [42 window+0 S8 A128])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":25:8 -1
+     (nil))
+(jump_insn 37 36 38 5 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 51)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":25:8 -1
+     (nil)
+ -> 51)
+(note 38 37 39 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(call_insn 39 38 40 6 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_GetError") [flags 0x41]  <function_decl 0x7f0d19555800 SDL_GetError>) [0 SDL_GetError S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
+     (nil)
+    (nil))
+(insn 40 39 41 6 (set (reg/f:DI 85 [ _4 ])
+        (reg:DI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
+     (nil))
+(insn 41 40 42 6 (set (reg/f:DI 86 [ stderr.1_5 ])
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f0d1a2fed80 stderr>) [43 stderr+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
+     (nil))
+(insn 42 41 43 6 (set (reg:DI 1 dx)
+        (reg/f:DI 85 [ _4 ])) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
+     (nil))
+(insn 43 42 44 6 (set (reg:DI 118)
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f0d1670dea0 *.LC2>)) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
+     (nil))
+(insn 44 43 45 6 (set (reg:DI 4 si)
+        (reg:DI 118)) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f0d1670dea0 *.LC2>)
+        (nil)))
+(insn 45 44 46 6 (set (reg:DI 5 di)
+        (reg/f:DI 86 [ stderr.1_5 ])) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
+     (nil))
+(insn 46 45 47 6 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
+     (nil))
+(call_insn 47 46 48 6 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f0d196ceb00 fprintf>) [0 __builtin_fprintf S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:DI (use (reg:DI 1 dx))
+                    (nil))))))
+(insn 48 47 49 6 (set (reg:SI 113 [ _34 ])
+        (const_int 1 [0x1])) "/home/joshua/Code/c4c/gui-ai/main.c":27:16 -1
+     (nil))
+(jump_insn 49 48 50 6 (set (pc)
+        (label_ref:DI 282)) "/home/joshua/Code/c4c/gui-ai/main.c":27:16 807 {jump}
+     (nil)
+ -> 282)
+(barrier 50 49 51)
+(code_label 51 50 52 7 4 (nil) [1 uses])
+(note 52 51 53 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 53 52 54 7 (set (reg:DI 119)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -80 [0xffffffffffffffb0])) [42 window+0 S8 A128])) "/home/joshua/Code/c4c/gui-ai/main.c":30:30 -1
+     (nil))
+(insn 54 53 55 7 (set (reg:SI 1 dx)
+        (const_int 6 [0x6])) "/home/joshua/Code/c4c/gui-ai/main.c":30:30 -1
+     (nil))
+(insn 55 54 56 7 (set (reg:SI 4 si)
+        (const_int -1 [0xffffffffffffffff])) "/home/joshua/Code/c4c/gui-ai/main.c":30:30 -1
+     (nil))
+(insn 56 55 57 7 (set (reg:DI 5 di)
+        (reg:DI 119)) "/home/joshua/Code/c4c/gui-ai/main.c":30:30 -1
+     (nil))
+(call_insn 57 56 58 7 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_CreateRenderer") [flags 0x41]  <function_decl 0x7f0d16a65b00 SDL_CreateRenderer>) [0 SDL_CreateRenderer S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":30:30 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (nil)))))
+(insn 58 57 59 7 (set (reg:DI 120)
+        (reg:DI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":30:30 -1
+     (nil))
+(insn 59 58 60 7 (set (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])
+        (reg:DI 120)) "/home/joshua/Code/c4c/gui-ai/main.c":30:30 -1
+     (nil))
+(insn 60 59 61 7 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":32:8 -1
+     (nil))
+(jump_insn 61 60 62 7 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 78)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":32:8 -1
+     (nil)
+ -> 78)
+(note 62 61 63 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 63 62 64 8 (set (reg:DI 121)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -80 [0xffffffffffffffb0])) [42 window+0 S8 A128])) "/home/joshua/Code/c4c/gui-ai/main.c":33:9 -1
+     (nil))
+(insn 64 63 65 8 (set (reg:DI 5 di)
+        (reg:DI 121)) "/home/joshua/Code/c4c/gui-ai/main.c":33:9 -1
+     (nil))
+(call_insn 65 64 66 8 (call (mem:QI (symbol_ref:DI ("SDL_DestroyWindow") [flags 0x41]  <function_decl 0x7f0d169a5700 SDL_DestroyWindow>) [0 SDL_DestroyWindow S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":33:9 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(call_insn 66 65 67 8 (set (reg:DI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_GetError") [flags 0x41]  <function_decl 0x7f0d19555800 SDL_GetError>) [0 SDL_GetError S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
+     (nil)
+    (nil))
+(insn 67 66 68 8 (set (reg/f:DI 87 [ _6 ])
+        (reg:DI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
+     (nil))
+(insn 68 67 69 8 (set (reg/f:DI 88 [ stderr.2_7 ])
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f0d1a2fed80 stderr>) [43 stderr+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
+     (nil))
+(insn 69 68 70 8 (set (reg:DI 1 dx)
+        (reg/f:DI 87 [ _6 ])) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
+     (nil))
+(insn 70 69 71 8 (set (reg:DI 122)
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f0d16733000 *.LC3>)) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
+     (nil))
+(insn 71 70 72 8 (set (reg:DI 4 si)
+        (reg:DI 122)) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f0d16733000 *.LC3>)
+        (nil)))
+(insn 72 71 73 8 (set (reg:DI 5 di)
+        (reg/f:DI 88 [ stderr.2_7 ])) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
+     (nil))
+(insn 73 72 74 8 (set (reg:QI 0 ax)
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
+     (nil))
+(call_insn 74 73 75 8 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f0d196ceb00 fprintf>) [0 __builtin_fprintf S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
+     (nil)
+    (expr_list (use (reg:QI 0 ax))
+        (expr_list:DI (use (reg:DI 5 di))
+            (expr_list:DI (use (reg:DI 4 si))
+                (expr_list:DI (use (reg:DI 1 dx))
+                    (nil))))))
+(insn 75 74 76 8 (set (reg:SI 113 [ _34 ])
+        (const_int 1 [0x1])) "/home/joshua/Code/c4c/gui-ai/main.c":35:16 -1
+     (nil))
+(jump_insn 76 75 77 8 (set (pc)
+        (label_ref:DI 282)) "/home/joshua/Code/c4c/gui-ai/main.c":35:16 807 {jump}
+     (nil)
+ -> 282)
+(barrier 77 76 78)
+(code_label 78 77 79 9 5 (nil) [1 uses])
+(note 79 78 80 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 80 79 277 9 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [1 gameover+0 S4 A64])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":39:9 -1
+     (nil))
+(code_label 277 80 81 10 19 (nil) [1 uses])
+(note 81 277 82 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 82 81 83 10 (set (pc)
+        (label_ref 185)) "/home/joshua/Code/c4c/gui-ai/main.c":41:15 -1
+     (nil)
+ -> 185)
+(barrier 83 82 191)
+(code_label 191 83 84 11 13 (nil) [1 uses])
+(note 84 191 85 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 85 84 86 11 (set (reg:SI 89 [ _8 ])
+        (mem/j/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -64 [0xffffffffffffffc0])) [5 e.type+0 S4 A128])) "/home/joshua/Code/c4c/gui-ai/main.c":42:22 -1
+     (nil))
+(insn 86 85 87 11 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 89 [ _8 ])
+            (const_int 256 [0x100]))) "/home/joshua/Code/c4c/gui-ai/main.c":42:13 -1
+     (nil))
+(jump_insn 87 86 88 11 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 94)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":42:13 -1
+     (nil)
+ -> 94)
+(note 88 87 89 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 89 88 90 12 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 89 [ _8 ])
+            (const_int 1025 [0x401]))) "/home/joshua/Code/c4c/gui-ai/main.c":42:13 -1
+     (nil))
+(jump_insn 90 89 93 12 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 99)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":42:13 -1
+     (nil)
+ -> 99)
+(note 93 90 91 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 91 93 92 13 (set (pc)
+        (label_ref 155)) "/home/joshua/Code/c4c/gui-ai/main.c":42:13 -1
+     (nil)
+ -> 155)
+(barrier 92 91 94)
+(code_label 94 92 95 14 7 (nil) [1 uses])
+(note 95 94 96 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 96 95 97 14 (set (reg:SI 5 di)
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":44:21 -1
+     (nil))
+(call_insn 97 96 98 14 (call (mem:QI (symbol_ref:DI ("exit") [flags 0x41]  <function_decl 0x7f0d196e7b00 exit>) [0 __builtin_exit S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":44:21 -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (expr_list:SI (use (reg:SI 5 di))
+        (nil)))
+(barrier 98 97 99)
+(code_label 99 98 100 15 8 (nil) [1 uses])
+(note 100 99 101 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 101 100 102 15 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -88 [0xffffffffffffffa8])) [1 gameover+0 S4 A64])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":48:24 -1
+     (nil))
+(jump_insn 102 101 103 15 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 142)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":48:24 -1
+     (nil)
+ -> 142)
+(note 103 102 104 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 104 103 105 16 (set (reg:SI 90 [ currPlayer.3_9 ])
+        (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7f0d169f8ea0 currPlayer>) [1 currPlayer+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":49:40 -1
+     (nil))
+(insn 105 104 106 16 (set (reg:SI 91 [ HUMAN.4_10 ])
+        (mem/c:SI (symbol_ref:DI ("HUMAN") [flags 0x2]  <var_decl 0x7f0d169f8d80 HUMAN>) [1 HUMAN+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":49:40 -1
+     (nil))
+(insn 106 105 107 16 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 90 [ currPlayer.3_9 ])
+            (reg:SI 91 [ HUMAN.4_10 ]))) "/home/joshua/Code/c4c/gui-ai/main.c":49:28 -1
+     (nil))
+(jump_insn 107 106 108 16 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 133)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":49:28 -1
+     (nil)
+ -> 133)
+(note 108 107 109 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 109 108 110 17 (set (reg:SI 92 [ HUMAN.5_11 ])
+        (mem/c:SI (symbol_ref:DI ("HUMAN") [flags 0x2]  <var_decl 0x7f0d169f8d80 HUMAN>) [1 HUMAN+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+     (nil))
+(insn 110 109 111 17 (set (reg:SI 93 [ _12 ])
+        (mem/j/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -44 [0xffffffffffffffd4])) [5 e.button.x+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":50:81 -1
+     (nil))
+(insn 111 110 112 17 (set (reg:DI 123)
+        (sign_extend:DI (reg:SI 93 [ _12 ]))) "/home/joshua/Code/c4c/gui-ai/main.c":50:84 -1
+     (nil))
+(insn 112 111 113 17 (parallel [
+            (set (reg:DI 124)
+                (mult:DI (reg:DI 123)
+                    (const_int 1374389535 [0x51eb851f])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/main.c":50:84 -1
+     (nil))
+(insn 113 112 114 17 (parallel [
+            (set (reg:DI 125)
+                (lshiftrt:DI (reg:DI 124)
+                    (const_int 32 [0x20])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/main.c":50:84 -1
+     (nil))
+(insn 114 113 115 17 (parallel [
+            (set (reg:SI 126)
+                (ashiftrt:SI (subreg:SI (reg:DI 125) 0)
+                    (const_int 5 [0x5])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/main.c":50:84 -1
+     (nil))
+(insn 115 114 116 17 (parallel [
+            (set (reg:SI 127)
+                (ashiftrt:SI (reg:SI 93 [ _12 ])
+                    (const_int 31 [0x1f])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/main.c":50:84 -1
+     (nil))
+(insn 116 115 117 17 (parallel [
+            (set (reg:SI 94 [ _13 ])
+                (minus:SI (reg:SI 126)
+                    (reg:SI 127)))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/main.c":50:84 -1
+     (expr_list:REG_EQUAL (div:SI (reg:SI 93 [ _12 ])
+            (const_int 100 [0x64]))
+        (nil)))
+(insn 117 116 118 17 (parallel [
+            (set (reg:SI 95 [ _14 ])
+                (plus:SI (reg:SI 94 [ _13 ])
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+     (nil))
+(insn 118 117 119 17 (set (reg:DI 36 r8)
+        (symbol_ref:DI ("heights") [flags 0x2]  <var_decl 0x7f0d1670d000 heights>)) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+     (nil))
+(insn 119 118 120 17 (set (reg:SI 2 cx)
+        (reg:SI 92 [ HUMAN.5_11 ])) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+     (nil))
+(insn 120 119 121 17 (set (reg:SI 1 dx)
+        (reg:SI 95 [ _14 ])) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+     (nil))
+(insn 121 120 122 17 (set (reg:DI 128)
+        (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+                (const_int 8 [0x8])))) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+     (nil))
+(insn 122 121 123 17 (set (reg:DI 4 si)
+        (reg:DI 128)) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+     (expr_list:REG_EQUAL (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+                (const_int 8 [0x8])))
+        (nil)))
+(insn 123 122 124 17 (set (reg:DI 129)
+        (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+     (nil))
+(insn 124 123 125 17 (set (reg:DI 5 di)
+        (reg:DI 129)) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+     (expr_list:REG_EQUAL (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+        (nil)))
+(call_insn 125 124 126 17 (set (reg:QI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("dropPiece") [flags 0x41]  <function_decl 0x7f0d16ae2c00 dropPiece>) [0 dropPiece S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:DI (use (reg:DI 36 r8))
+                        (nil)))))))
+(insn 126 125 127 17 (set (reg:QI 96 [ _15 ])
+        (reg:QI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+     (nil))
+(insn 127 126 128 17 (parallel [
+            (set (reg:QI 97 [ _16 ])
+                (xor:QI (reg:QI 96 [ _15 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/main.c":50:33 -1
+     (nil))
+(insn 128 127 129 17 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:QI 97 [ _16 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":50:32 -1
+     (nil))
+(jump_insn 129 128 130 17 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 133)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":50:32 -1
+     (nil)
+ -> 133)
+(note 130 129 131 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 131 130 132 18 (set (pc)
+        (label_ref 185)) "/home/joshua/Code/c4c/gui-ai/main.c":51:33 -1
+     (nil)
+ -> 185)
+(barrier 132 131 133)
+(code_label 133 132 134 19 11 (nil) [2 uses])
+(note 134 133 135 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 135 134 136 19 (set (reg:SI 98 [ currPlayer.6_17 ])
+        (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7f0d169f8ea0 currPlayer>) [1 currPlayer+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":53:94 -1
+     (nil))
+(insn 136 135 137 19 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 98 [ currPlayer.6_17 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":53:94 -1
+     (nil))
+(insn 137 136 138 19 (set (reg:QI 99 [ _18 ])
+        (eq:QI (reg:CCZ 17 flags)
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":53:94 -1
+     (nil))
+(insn 138 137 139 19 (set (reg:SI 100 [ _19 ])
+        (zero_extend:SI (reg:QI 99 [ _18 ]))) "/home/joshua/Code/c4c/gui-ai/main.c":53:94 -1
+     (nil))
+(insn 139 138 140 19 (set (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7f0d169f8ea0 currPlayer>) [1 currPlayer+0 S4 A32])
+        (reg:SI 100 [ _19 ])) "/home/joshua/Code/c4c/gui-ai/main.c":53:62 -1
+     (nil))
+(jump_insn 140 139 141 19 (set (pc)
+        (label_ref 151)) -1
+     (nil)
+ -> 151)
+(barrier 141 140 142)
+(code_label 142 141 143 20 10 (nil) [1 uses])
+(note 143 142 144 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(insn 144 143 145 20 (set (reg:DI 130)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -80 [0xffffffffffffffb0])) [42 window+0 S8 A128])) "/home/joshua/Code/c4c/gui-ai/main.c":55:25 -1
+     (nil))
+(insn 145 144 146 20 (set (reg:DI 5 di)
+        (reg:DI 130)) "/home/joshua/Code/c4c/gui-ai/main.c":55:25 -1
+     (nil))
+(call_insn 146 145 147 20 (call (mem:QI (symbol_ref:DI ("SDL_DestroyWindow") [flags 0x41]  <function_decl 0x7f0d169a5700 SDL_DestroyWindow>) [0 SDL_DestroyWindow S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":55:25 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(call_insn 147 146 148 20 (call (mem:QI (symbol_ref:DI ("SDL_Quit") [flags 0x41]  <function_decl 0x7f0d16a9d600 SDL_Quit>) [0 SDL_Quit S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":56:25 -1
+     (nil)
+    (nil))
+(insn 148 147 149 20 (set (reg:SI 113 [ _34 ])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":57:32 -1
+     (nil))
+(jump_insn 149 148 150 20 (set (pc)
+        (label_ref:DI 282)) "/home/joshua/Code/c4c/gui-ai/main.c":57:32 807 {jump}
+     (nil)
+ -> 282)
+(barrier 150 149 151)
+(code_label 151 150 152 21 12 (nil) [1 uses])
+(note 152 151 153 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 153 152 154 21 (set (pc)
+        (label_ref 185)) "/home/joshua/Code/c4c/gui-ai/main.c":59:21 -1
+     (nil)
+ -> 185)
+(barrier 154 153 155)
+(code_label 155 154 156 22 9 (nil) [1 uses])
+(note 156 155 157 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+(insn 157 156 158 22 (set (reg:SI 101 [ currPlayer.7_20 ])
+        (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7f0d169f8ea0 currPlayer>) [1 currPlayer+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":63:40 -1
+     (nil))
+(insn 158 157 159 22 (set (reg:SI 102 [ AI.8_21 ])
+        (mem/c:SI (symbol_ref:DI ("AI") [flags 0x2]  <var_decl 0x7f0d169f8e10 AI>) [1 AI+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":63:40 -1
+     (nil))
+(insn 159 158 160 22 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 101 [ currPlayer.7_20 ])
+            (reg:SI 102 [ AI.8_21 ]))) "/home/joshua/Code/c4c/gui-ai/main.c":63:28 -1
+     (nil))
+(jump_insn 160 159 161 22 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 185)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":63:28 -1
+     (nil)
+ -> 185)
+(note 161 160 162 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
+(insn 162 161 163 23 (set (reg:SI 103 [ AI.9_22 ])
+        (mem/c:SI (symbol_ref:DI ("AI") [flags 0x2]  <var_decl 0x7f0d169f8e10 AI>) [1 AI+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil))
+(insn 163 162 164 23 (set (reg:DI 131)
+        (symbol_ref:DI ("heights") [flags 0x2]  <var_decl 0x7f0d1670d000 heights>)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil))
+(insn 164 163 165 23 (set (reg:DI 2 cx)
+        (reg:DI 131)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (expr_list:REG_EQUAL (symbol_ref:DI ("heights") [flags 0x2]  <var_decl 0x7f0d1670d000 heights>)
+        (nil)))
+(insn 165 164 166 23 (set (reg:SI 1 dx)
+        (const_int 7 [0x7])) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil))
+(insn 166 165 167 23 (set (reg:DI 132)
+        (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+                (const_int 8 [0x8])))) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil))
+(insn 167 166 168 23 (set (reg:DI 4 si)
+        (reg:DI 132)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (expr_list:REG_EQUAL (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+                (const_int 8 [0x8])))
+        (nil)))
+(insn 168 167 169 23 (set (reg:DI 133)
+        (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil))
+(insn 169 168 170 23 (set (reg:DI 5 di)
+        (reg:DI 133)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (expr_list:REG_EQUAL (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+        (nil)))
+(call_insn 170 169 171 23 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("aiMove") [flags 0x41]  <function_decl 0x7f0d16ae9000 aiMove>) [0 aiMove S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:DI (use (reg:DI 2 cx))
+                    (nil))))))
+(insn 171 170 172 23 (set (reg:SI 104 [ _23 ])
+        (reg:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil))
+(insn 172 171 173 23 (set (reg:DI 36 r8)
+        (symbol_ref:DI ("heights") [flags 0x2]  <var_decl 0x7f0d1670d000 heights>)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil))
+(insn 173 172 174 23 (set (reg:SI 2 cx)
+        (reg:SI 103 [ AI.9_22 ])) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil))
+(insn 174 173 175 23 (set (reg:SI 1 dx)
+        (reg:SI 104 [ _23 ])) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil))
+(insn 175 174 176 23 (set (reg:DI 134)
+        (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+                (const_int 8 [0x8])))) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil))
+(insn 176 175 177 23 (set (reg:DI 4 si)
+        (reg:DI 134)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (expr_list:REG_EQUAL (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+                (const_int 8 [0x8])))
+        (nil)))
+(insn 177 176 178 23 (set (reg:DI 135)
+        (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil))
+(insn 178 177 179 23 (set (reg:DI 5 di)
+        (reg:DI 135)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (expr_list:REG_EQUAL (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+        (nil)))
+(call_insn 179 178 180 23 (set (reg:QI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("dropPiece") [flags 0x41]  <function_decl 0x7f0d16ae2c00 dropPiece>) [0 dropPiece S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:DI (use (reg:DI 36 r8))
+                        (nil)))))))
+(insn 180 179 181 23 (set (reg:SI 105 [ currPlayer.10_24 ])
+        (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7f0d169f8ea0 currPlayer>) [1 currPlayer+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":65:72 -1
+     (nil))
+(insn 181 180 182 23 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 105 [ currPlayer.10_24 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":65:72 -1
+     (nil))
+(insn 182 181 183 23 (set (reg:QI 106 [ _25 ])
+        (eq:QI (reg:CCZ 17 flags)
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":65:72 -1
+     (nil))
+(insn 183 182 184 23 (set (reg:SI 107 [ _26 ])
+        (zero_extend:SI (reg:QI 106 [ _25 ]))) "/home/joshua/Code/c4c/gui-ai/main.c":65:72 -1
+     (nil))
+(insn 184 183 185 23 (set (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7f0d169f8ea0 currPlayer>) [1 currPlayer+0 S4 A32])
+        (reg:SI 107 [ _26 ])) "/home/joshua/Code/c4c/gui-ai/main.c":65:40 -1
+     (nil))
+(code_label 185 184 186 24 6 (nil) [4 uses])
+(note 186 185 187 24 [bb 24] NOTE_INSN_BASIC_BLOCK)
+(insn 187 186 188 24 (parallel [
+            (set (reg:DI 136)
+                (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -64 [0xffffffffffffffc0])))
+            (clobber (reg:CC 17 flags))
+        ]) "/home/joshua/Code/c4c/gui-ai/main.c":41:16 -1
+     (nil))
+(insn 188 187 189 24 (set (reg:DI 5 di)
+        (reg:DI 136)) "/home/joshua/Code/c4c/gui-ai/main.c":41:16 -1
+     (nil))
+(call_insn 189 188 190 24 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_PollEvent") [flags 0x41]  <function_decl 0x7f0d16a1ca00 SDL_PollEvent>) [0 SDL_PollEvent S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":41:16 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 190 189 192 24 (set (reg:SI 108 [ _27 ])
+        (reg:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":41:16 -1
+     (nil))
+(insn 192 190 193 24 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 108 [ _27 ])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":41:16 -1
+     (nil))
+(jump_insn 193 192 194 24 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 191)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":41:16 -1
+     (nil)
+ -> 191)
+(note 194 193 195 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
+(insn 195 194 196 25 (set (reg:DI 137)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":71:9 -1
+     (nil))
+(insn 196 195 197 25 (set (reg:SI 36 r8)
+        (const_int 255 [0xff])) "/home/joshua/Code/c4c/gui-ai/main.c":71:9 -1
+     (nil))
+(insn 197 196 198 25 (set (reg:SI 2 cx)
+        (const_int 30 [0x1e])) "/home/joshua/Code/c4c/gui-ai/main.c":71:9 -1
+     (nil))
+(insn 198 197 199 25 (set (reg:SI 1 dx)
+        (const_int 30 [0x1e])) "/home/joshua/Code/c4c/gui-ai/main.c":71:9 -1
+     (nil))
+(insn 199 198 200 25 (set (reg:SI 4 si)
+        (const_int 30 [0x1e])) "/home/joshua/Code/c4c/gui-ai/main.c":71:9 -1
+     (nil))
+(insn 200 199 201 25 (set (reg:DI 5 di)
+        (reg:DI 137)) "/home/joshua/Code/c4c/gui-ai/main.c":71:9 -1
+     (nil))
+(call_insn 201 200 202 25 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_SetRenderDrawColor") [flags 0x41]  <function_decl 0x7f0d16a82300 SDL_SetRenderDrawColor>) [0 SDL_SetRenderDrawColor S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":71:9 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:SI (use (reg:SI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (expr_list:SI (use (reg:SI 2 cx))
+                    (expr_list:SI (use (reg:SI 36 r8))
+                        (nil)))))))
+(insn 202 201 203 25 (set (reg:DI 138)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":72:9 -1
+     (nil))
+(insn 203 202 204 25 (set (reg:DI 5 di)
+        (reg:DI 138)) "/home/joshua/Code/c4c/gui-ai/main.c":72:9 -1
+     (nil))
+(call_insn 204 203 205 25 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("SDL_RenderClear") [flags 0x41]  <function_decl 0x7f0d16a82700 SDL_RenderClear>) [0 SDL_RenderClear S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":72:9 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 205 204 206 25 (set (reg:DI 109 [ _28 ])
+        (mem/c:DI (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+                    (const_int 8 [0x8]))) [3 boards.red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":73:9 -1
+     (nil))
+(insn 206 205 207 25 (set (reg:DI 110 [ _29 ])
+        (mem/c:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>) [3 boards.yellow+0 S8 A128])) "/home/joshua/Code/c4c/gui-ai/main.c":73:9 -1
+     (nil))
+(insn 207 206 208 25 (set (reg:DI 139)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":73:9 -1
+     (nil))
+(insn 208 207 209 25 (set (reg:DI 1 dx)
+        (reg:DI 109 [ _28 ])) "/home/joshua/Code/c4c/gui-ai/main.c":73:9 -1
+     (nil))
+(insn 209 208 210 25 (set (reg:DI 4 si)
+        (reg:DI 110 [ _29 ])) "/home/joshua/Code/c4c/gui-ai/main.c":73:9 -1
+     (nil))
+(insn 210 209 211 25 (set (reg:DI 5 di)
+        (reg:DI 139)) "/home/joshua/Code/c4c/gui-ai/main.c":73:9 -1
+     (nil))
+(call_insn 211 210 212 25 (call (mem:QI (symbol_ref:DI ("renderBoard") [flags 0x41]  <function_decl 0x7f0d16709100 renderBoard>) [0 renderBoard S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":73:9 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:DI (use (reg:DI 1 dx))
+                (nil)))))
+(insn 212 211 213 25 (set (reg:DI 111 [ _30 ])
+        (mem/c:DI (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+                    (const_int 8 [0x8]))) [3 boards.red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
+     (nil))
+(insn 213 212 214 25 (set (reg:DI 112 [ _31 ])
+        (mem/c:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>) [3 boards.yellow+0 S8 A128])) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
+     (nil))
+(insn 214 213 215 25 (set (reg:SI 1 dx)
+        (const_int 1 [0x1])) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
+     (nil))
+(insn 215 214 216 25 (set (reg:DI 4 si)
+        (reg:DI 111 [ _30 ])) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
+     (nil))
+(insn 216 215 217 25 (set (reg:DI 5 di)
+        (reg:DI 112 [ _31 ])) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
+     (nil))
+(call_insn 217 216 218 25 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:DI ("evaluateBoard") [flags 0x41]  <function_decl 0x7f0d16ae2e00 evaluateBoard>) [0 evaluateBoard S1 A8])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (expr_list:SI (use (reg:SI 1 dx))
+                (nil)))))
+(insn 218 217 219 25 (set (reg:SI 140)
+        (reg:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
+     (nil))
+(insn 219 218 220 25 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -84 [0xffffffffffffffac])) [1 result+0 S4 A32])
+        (reg:SI 140)) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
+     (nil))
+(insn 220 219 221 25 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -84 [0xffffffffffffffac])) [1 result+0 S4 A32])
+            (const_int 420 [0x1a4]))) "/home/joshua/Code/c4c/gui-ai/main.c":76:12 -1
+     (nil))
+(jump_insn 221 220 222 25 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 224)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":76:12 -1
+     (nil)
+ -> 224)
+(note 222 221 223 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
+(insn 223 222 224 26 (set (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -88 [0xffffffffffffffa8])) [1 gameover+0 S4 A64])
+        (const_int 1 [0x1])) "/home/joshua/Code/c4c/gui-ai/main.c":77:22 -1
+     (nil))
+(code_label 224 223 225 27 14 (nil) [1 uses])
+(note 225 224 226 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
+(insn 226 225 227 27 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -84 [0xffffffffffffffac])) [1 result+0 S4 A32])
+            (const_int 100000 [0x186a0]))) "/home/joshua/Code/c4c/gui-ai/main.c":78:12 -1
+     (nil))
+(jump_insn 227 226 228 27 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 239)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":78:12 -1
+     (nil)
+ -> 239)
+(note 228 227 229 28 [bb 28] NOTE_INSN_BASIC_BLOCK)
+(insn 229 228 230 28 (set (reg:DI 141)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":79:13 -1
+     (nil))
+(insn 230 229 231 28 (set (reg:DI 142)
+        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f0d16733090 *.LC4>)) "/home/joshua/Code/c4c/gui-ai/main.c":79:13 -1
+     (nil))
+(insn 231 230 232 28 (set (reg:DI 4 si)
+        (reg:DI 142)) "/home/joshua/Code/c4c/gui-ai/main.c":79:13 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f0d16733090 *.LC4>)
+        (nil)))
+(insn 232 231 233 28 (set (reg:DI 5 di)
+        (reg:DI 141)) "/home/joshua/Code/c4c/gui-ai/main.c":79:13 -1
+     (nil))
+(call_insn 233 232 234 28 (call (mem:QI (symbol_ref:DI ("renderMessage") [flags 0x41]  <function_decl 0x7f0d16709200 renderMessage>) [0 renderMessage S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":79:13 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 234 233 235 28 (set (reg:DI 143)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":80:13 -1
+     (nil))
+(insn 235 234 236 28 (set (reg:DI 5 di)
+        (reg:DI 143)) "/home/joshua/Code/c4c/gui-ai/main.c":80:13 -1
+     (nil))
+(call_insn 236 235 237 28 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7f0d16a88f00 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":80:13 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(jump_insn 237 236 238 28 (set (pc)
+        (label_ref 267)) -1
+     (nil)
+ -> 267)
+(barrier 238 237 239)
+(code_label 239 238 240 29 15 (nil) [1 uses])
+(note 240 239 241 29 [bb 29] NOTE_INSN_BASIC_BLOCK)
+(insn 241 240 242 29 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -84 [0xffffffffffffffac])) [1 result+0 S4 A32])
+            (const_int -100000 [0xfffffffffffe7960]))) "/home/joshua/Code/c4c/gui-ai/main.c":81:19 -1
+     (nil))
+(jump_insn 242 241 243 29 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 254)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":81:19 -1
+     (nil)
+ -> 254)
+(note 243 242 244 30 [bb 30] NOTE_INSN_BASIC_BLOCK)
+(insn 244 243 245 30 (set (reg:DI 144)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":82:13 -1
+     (nil))
+(insn 245 244 246 30 (set (reg:DI 145)
+        (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7f0d16733120 *.LC5>)) "/home/joshua/Code/c4c/gui-ai/main.c":82:13 -1
+     (nil))
+(insn 246 245 247 30 (set (reg:DI 4 si)
+        (reg:DI 145)) "/home/joshua/Code/c4c/gui-ai/main.c":82:13 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7f0d16733120 *.LC5>)
+        (nil)))
+(insn 247 246 248 30 (set (reg:DI 5 di)
+        (reg:DI 144)) "/home/joshua/Code/c4c/gui-ai/main.c":82:13 -1
+     (nil))
+(call_insn 248 247 249 30 (call (mem:QI (symbol_ref:DI ("renderMessage") [flags 0x41]  <function_decl 0x7f0d16709200 renderMessage>) [0 renderMessage S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":82:13 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 249 248 250 30 (set (reg:DI 146)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":83:13 -1
+     (nil))
+(insn 250 249 251 30 (set (reg:DI 5 di)
+        (reg:DI 146)) "/home/joshua/Code/c4c/gui-ai/main.c":83:13 -1
+     (nil))
+(call_insn 251 250 252 30 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7f0d16a88f00 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":83:13 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(jump_insn 252 251 253 30 (set (pc)
+        (label_ref 267)) -1
+     (nil)
+ -> 267)
+(barrier 253 252 254)
+(code_label 254 253 255 31 17 (nil) [1 uses])
+(note 255 254 256 31 [bb 31] NOTE_INSN_BASIC_BLOCK)
+(insn 256 255 257 31 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -84 [0xffffffffffffffac])) [1 result+0 S4 A32])
+            (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":84:19 -1
+     (nil))
+(jump_insn 257 256 258 31 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 267)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":84:19 -1
+     (nil)
+ -> 267)
+(note 258 257 259 32 [bb 32] NOTE_INSN_BASIC_BLOCK)
+(insn 259 258 260 32 (set (reg:DI 147)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":85:13 -1
+     (nil))
+(insn 260 259 261 32 (set (reg:DI 148)
+        (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7f0d167331b0 *.LC6>)) "/home/joshua/Code/c4c/gui-ai/main.c":85:13 -1
+     (nil))
+(insn 261 260 262 32 (set (reg:DI 4 si)
+        (reg:DI 148)) "/home/joshua/Code/c4c/gui-ai/main.c":85:13 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7f0d167331b0 *.LC6>)
+        (nil)))
+(insn 262 261 263 32 (set (reg:DI 5 di)
+        (reg:DI 147)) "/home/joshua/Code/c4c/gui-ai/main.c":85:13 -1
+     (nil))
+(call_insn 263 262 264 32 (call (mem:QI (symbol_ref:DI ("renderMessage") [flags 0x41]  <function_decl 0x7f0d16709200 renderMessage>) [0 renderMessage S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":85:13 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (expr_list:DI (use (reg:DI 4 si))
+            (nil))))
+(insn 264 263 265 32 (set (reg:DI 149)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":86:13 -1
+     (nil))
+(insn 265 264 266 32 (set (reg:DI 5 di)
+        (reg:DI 149)) "/home/joshua/Code/c4c/gui-ai/main.c":86:13 -1
+     (nil))
+(call_insn 266 265 267 32 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7f0d16a88f00 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":86:13 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(code_label 267 266 268 33 16 (nil) [3 uses])
+(note 268 267 269 33 [bb 33] NOTE_INSN_BASIC_BLOCK)
+(insn 269 268 270 33 (set (reg:DI 150)
+        (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":88:9 -1
+     (nil))
+(insn 270 269 271 33 (set (reg:DI 5 di)
+        (reg:DI 150)) "/home/joshua/Code/c4c/gui-ai/main.c":88:9 -1
+     (nil))
+(call_insn 271 270 272 33 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7f0d16a88f00 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":88:9 -1
+     (nil)
+    (expr_list:DI (use (reg:DI 5 di))
+        (nil)))
+(insn 272 271 276 33 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                    (const_int -84 [0xffffffffffffffac])) [1 result+0 S4 A32])
+            (const_int 420 [0x1a4]))) "/home/joshua/Code/c4c/gui-ai/main.c":89:12 -1
+     (nil))
+(note 276 272 278 35 [bb 35] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 278 276 279 35 (set (pc)
+        (label_ref 277)) "/home/joshua/Code/c4c/gui-ai/main.c":40:18 -1
+     (nil)
+ -> 277)
+(barrier 279 278 282)
+(code_label 282 279 283 37 20 (nil) [4 uses])
+(note 283 282 284 37 [bb 37] NOTE_INSN_BASIC_BLOCK)
+(insn 284 283 288 37 (set (reg:SI 114 [ <retval> ])
+        (reg:SI 113 [ _34 ])) "/home/joshua/Code/c4c/gui-ai/main.c":99:1 -1
+     (nil))
+(insn 288 284 289 37 (parallel [
+            (set (reg:CCZ 17 flags)
+                (unspec:CCZ [
+                        (mem/v/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
+                                (const_int -8 [0xfffffffffffffff8])) [4 D.32147+0 S8 A64])
+                        (mem/v/f:DI (const_int 40 [0x28]) [0 MEM[(<address-space-1> long unsigned int *)40B]+0 S8 A64 AS1])
+                    ] UNSPEC_SP_TEST))
+            (clobber (scratch:DI))
+        ]) "/home/joshua/Code/c4c/gui-ai/main.c":99:1 -1
+     (nil))
+(jump_insn 289 288 296 37 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 292)
+            (pc))) "/home/joshua/Code/c4c/gui-ai/main.c":99:1 -1
+     (nil)
+ -> 292)
+(note 296 289 290 39 [bb 39] NOTE_INSN_BASIC_BLOCK)
+(call_insn 290 296 291 39 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7f0d16723800 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
+        (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":99:1 -1
+     (expr_list:REG_ARGS_SIZE (const_int 0 [0])
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (nil))
+(barrier 291 290 292)
+(code_label 292 291 297 40 21 (nil) [1 uses])
+(note 297 292 293 40 [bb 40] NOTE_INSN_BASIC_BLOCK)
+(insn 293 297 294 40 (set (reg/i:SI 0 ax)
+        (reg:SI 114 [ <retval> ])) "/home/joshua/Code/c4c/gui-ai/main.c":99:1 -1
+     (nil))
+(insn 294 293 0 40 (use (reg/i:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":99:1 -1
+     (nil))
