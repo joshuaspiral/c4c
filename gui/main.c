@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <SDL2/SDL.h>
+#include <unistd.h>
 #include "logic.h"
 #include "render.h"
 #define BOARDLEN 64
@@ -10,7 +11,6 @@
 Player currPlayer = RED; // Starting player
 Boards boards = {0b0, 0b0}; // Starting board
 uint8_t heights[] = {56, 57, 58, 59, 60, 61, 62}; // Stores top piece for each column
-
 
 int main() {
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
@@ -43,9 +43,14 @@ int main() {
 
                 case SDL_MOUSEBUTTONDOWN:
                     if (!gameover) {
-                        // TODO check for valid moves
-                        dropPiece(&boards.yellow, &boards.red, e.button.x / (SCREENBOARD_WIDTH / WIDTH) - 1, currPlayer, &heights);
+                        if (!dropPiece(&boards.yellow, &boards.red, e.button.x / (SCREENBOARD_WIDTH / WIDTH) - 1, currPlayer, &heights)) {
+                            break;
+                        }
                         currPlayer = ((currPlayer == YELLOW) ? RED : YELLOW);
+                    } else {
+                        SDL_DestroyWindow(window);
+                        SDL_Quit();
+                        return EXIT_SUCCESS;
                     }
                     break;
 
@@ -56,21 +61,22 @@ int main() {
         SDL_SetRenderDrawColor(renderer, 30, 30, 30, 255);
         SDL_RenderClear(renderer);
         renderBoard(renderer, boards.yellow, boards.red);
-        SDL_RenderPresent(renderer);
             
         int result = evaluateBoard(boards.yellow, boards.red);
         if (result != 420)
             gameover = 1;
         if (result == 100000) {
             renderMessage(renderer, "YELLOW WINS!");
-            printf("YELLOW wins!\n");
+            SDL_RenderPresent(renderer);
         } else if (result == -100000){
             renderMessage(renderer, "RED WINS!");
-            printf("RED wins!\n");
+            SDL_RenderPresent(renderer);
         } else if (result == 0) {
             renderMessage(renderer, "DRAW!");
-            printf("DRAW!\n");
-        } else if (result == 420){
+            SDL_RenderPresent(renderer);
+        }         
+        SDL_RenderPresent(renderer);
+        if (result == 420){
             continue;
         }
 
@@ -79,6 +85,5 @@ int main() {
     
     SDL_DestroyWindow(window);
     SDL_Quit();
-
     return EXIT_SUCCESS;
 }

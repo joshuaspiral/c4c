@@ -96,28 +96,42 @@ void renderBoard(SDL_Renderer *renderer, unsigned long long yellow, unsigned lon
     }
 }
 
-void get_text_and_rect(SDL_Renderer *renderer, int x, int y, char *text,
-        TTF_Font *font, SDL_Texture **texture, SDL_Rect *rect) {
-    int text_width;
-    int text_height;
-    SDL_Surface *surface;
-    SDL_Color textColor = {255, 255, 255, 0};
-
-    surface = TTF_RenderText_Solid(font, text, textColor);
-    *texture = SDL_CreateTextureFromSurface(renderer, surface);
-    text_width = surface->w;
-    text_height = surface->h;
-    SDL_FreeSurface(surface);
-    rect->x = x;
-    rect->y = y;
-    rect->w = text_width;
-    rect->h = text_height;
-}
 
 void renderMessage(SDL_Renderer *renderer, char *message) {
-    SDL_Rect rect;
-    SDL_Texture *texture;
-    TTF_Font* FiraCode = TTF_OpenFont("FiraCode-Regular.ttf", 12);
-    get_text_and_rect(renderer, 600, 700, message, FiraCode, &texture, &rect);
-    SDL_RenderCopy(renderer, texture, NULL, &rect);
+    if(TTF_Init()==-1) {
+    printf("TTF_Init: %s\n", TTF_GetError());
+    exit(2);
+    }
+    TTF_Font* FiraCode = TTF_OpenFont("./FiraCode-Regular.ttf", 40);
+    if (FiraCode == NULL) {
+        printf("Error loading font: %s\n", TTF_GetError());
+        exit(0);
+    }
+    SDL_Surface* surfaceMessage =
+        TTF_RenderText_Solid(FiraCode, message, WHITE); 
+
+    SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
+
+    SDL_Rect Message_rect; //create a rect
+    Message_rect.x = 250;  //controls the rect's x coordinate 
+    Message_rect.y = 700; // controls the rect's y coordinte
+    Message_rect.w = 400; // controls the width of the rect
+    Message_rect.h = 100; // controls the height of the rect
+
+    // (0,0) is on the top left of the window/screen,
+    // think a rect as the text's box,
+    // that way it would be very simple to understand
+
+    // Now since it's a texture, you have to put RenderCopy
+    // in your game loop area, the area where the whole code executes
+
+    // you put the renderer's name first, the Message,
+    // the crop size (you can ignore this if you don't want
+    // to dabble with cropping), and the rect which is the size
+    // and coordinate of your texture
+    SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
+
+    // Don't forget to free your surface and texture
+    /* SDL_FreeSurface(surfaceMessage); */
+    /* SDL_DestroyTexture(Message); */
 }
