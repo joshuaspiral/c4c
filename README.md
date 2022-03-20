@@ -5,9 +5,10 @@ Connect Four written in C to practice C
 - [X] Write Connect Four Two Player
 - [X] Write AI (https://en.wikipedia.org/wiki/Minimax)
 - [X] Write alpha-beta pruning optimisation
-- [ ] Further heuristic optimisations
 - [X] Bitboard optimisation (https://en.wikipedia.org/wiki/Bitboard)
-- [ ] GUI Game (https://www.raylib.com/ or SDL)
+- [X] GUI Game (https://www.raylib.com/ or SDL)
+- [ ] Further heuristic optimisations
+- [ ] Refactor
 
 # Usage
 ```
@@ -19,7 +20,10 @@ $ ./twoplayer or ./ai or ./ai_bitboard
 ./twoplayer - You can play with a friend.  
 ./ai - The AI implementation I wrote originally. Uses a 2D array of characters to represent the board.  
 ./ai_bitboard - The AI implementation with pseudo-bitboards. Uses two 1D arrays of 8 bit unsigned integers and evaluated via bitwise logic. (not really a bitboard but still faster than the original implementation).  
-./ai_realbitboard - The AI implementation with bitboards. Uses 1 2D array of a 64 bit unsigned integer and evaluated via bitwise logic.
+./ai_realbitboard - The AI implementation with REAL bitboards. Uses 1 2D array of two 64 bit unsigned integers and evaluated via bitwise logic.
+
+gui/ (Two player SDL implementatino)  
+gui-ai/ (AI SDL implementation)  
 
 # Benchmarks
 Done on a Ryzen 5 3600 with AI picking first
@@ -35,4 +39,4 @@ Done on a Ryzen 5 3600 with AI picking first
 | Bitboard AI           | 8     | 0.384628  | 45386033       |
 | Bitboard AI           | 9     | 2.373259  | 310528499      |
 
-Devlog [here](https://toxicfs.xyz/blog/making-a-connect-four-ai/)
+Explanation about the game [here](https://toxicfs.xyz/blog/making-a-connect-four-ai/)
