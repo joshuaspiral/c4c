@@ -128,7 +128,7 @@ Forwarding edge 12->13 to 22 failed.
         (const_int 32 [0x20])) "/home/joshua/Code/c4c/gui-ai/main.c":19:9 -1
      (nil))
 (call_insn 7 6 8 2 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_Init") [flags 0x41]  <function_decl 0x7f0d16a9d200 SDL_Init>) [0 SDL_Init S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_Init") [flags 0x41]  <function_decl 0x7fb170772200 SDL_Init>) [0 SDL_Init S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":19:9 -1
      (nil)
     (expr_list:SI (use (reg:SI 5 di))
@@ -149,7 +149,7 @@ Forwarding edge 12->13 to 22 failed.
  -> 24)
 (note 11 10 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (call_insn 12 11 13 4 (set (reg:DI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_GetError") [flags 0x41]  <function_decl 0x7f0d19555800 SDL_GetError>) [0 SDL_GetError S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_GetError") [flags 0x41]  <function_decl 0x7fb17322a800 SDL_GetError>) [0 SDL_GetError S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
      (nil)
     (nil))
@@ -157,17 +157,17 @@ Forwarding edge 12->13 to 22 failed.
         (reg:DI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
      (nil))
 (insn 14 13 15 4 (set (reg/f:DI 84 [ stderr.0_3 ])
-        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f0d1a2fed80 stderr>) [43 stderr+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7fb173fcdd80 stderr>) [43 stderr+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
      (nil))
 (insn 15 14 16 4 (set (reg:DI 1 dx)
         (reg/f:DI 83 [ _2 ])) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
      (nil))
 (insn 16 15 17 4 (set (reg:DI 115)
-        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f0d1670df30 *.LC0>)) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
+        (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7fb1703e2f30 *.LC0>)) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
      (nil))
 (insn 17 16 18 4 (set (reg:DI 4 si)
         (reg:DI 115)) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7f0d1670df30 *.LC0>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC0") [flags 0x2]  <var_decl 0x7fb1703e2f30 *.LC0>)
         (nil)))
 (insn 18 17 19 4 (set (reg:DI 5 di)
         (reg/f:DI 84 [ stderr.0_3 ])) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
@@ -176,7 +176,7 @@ Forwarding edge 12->13 to 22 failed.
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
      (nil))
 (call_insn 20 19 21 4 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f0d196ceb00 fprintf>) [0 __builtin_fprintf S1 A8])
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7fb17339bb00 fprintf>) [0 __builtin_fprintf S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":20:9 -1
      (nil)
     (expr_list (use (reg:QI 0 ax))
@@ -210,14 +210,14 @@ Forwarding edge 12->13 to 22 failed.
         (const_int 100 [0x64])) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
      (nil))
 (insn 31 30 32 5 (set (reg:DI 116)
-        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f0d1670d360 *.LC1>)) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
+        (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7fb1703e2360 *.LC1>)) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
      (nil))
 (insn 32 31 33 5 (set (reg:DI 5 di)
         (reg:DI 116)) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7f0d1670d360 *.LC1>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC1") [flags 0x2]  <var_decl 0x7fb1703e2360 *.LC1>)
         (nil)))
 (call_insn 33 32 34 5 (set (reg:DI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_CreateWindow") [flags 0x41]  <function_decl 0x7f0d16995400 SDL_CreateWindow>) [0 SDL_CreateWindow S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_CreateWindow") [flags 0x41]  <function_decl 0x7fb17066a400 SDL_CreateWindow>) [0 SDL_CreateWindow S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":24:26 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -248,7 +248,7 @@ Forwarding edge 12->13 to 22 failed.
  -> 51)
 (note 38 37 39 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (call_insn 39 38 40 6 (set (reg:DI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_GetError") [flags 0x41]  <function_decl 0x7f0d19555800 SDL_GetError>) [0 SDL_GetError S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_GetError") [flags 0x41]  <function_decl 0x7fb17322a800 SDL_GetError>) [0 SDL_GetError S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
      (nil)
     (nil))
@@ -256,17 +256,17 @@ Forwarding edge 12->13 to 22 failed.
         (reg:DI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
      (nil))
 (insn 41 40 42 6 (set (reg/f:DI 86 [ stderr.1_5 ])
-        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f0d1a2fed80 stderr>) [43 stderr+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7fb173fcdd80 stderr>) [43 stderr+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
      (nil))
 (insn 42 41 43 6 (set (reg:DI 1 dx)
         (reg/f:DI 85 [ _4 ])) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
      (nil))
 (insn 43 42 44 6 (set (reg:DI 118)
-        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f0d1670dea0 *.LC2>)) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
+        (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7fb1703e2ea0 *.LC2>)) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
      (nil))
 (insn 44 43 45 6 (set (reg:DI 4 si)
         (reg:DI 118)) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7f0d1670dea0 *.LC2>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC2") [flags 0x2]  <var_decl 0x7fb1703e2ea0 *.LC2>)
         (nil)))
 (insn 45 44 46 6 (set (reg:DI 5 di)
         (reg/f:DI 86 [ stderr.1_5 ])) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
@@ -275,7 +275,7 @@ Forwarding edge 12->13 to 22 failed.
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
      (nil))
 (call_insn 47 46 48 6 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f0d196ceb00 fprintf>) [0 __builtin_fprintf S1 A8])
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7fb17339bb00 fprintf>) [0 __builtin_fprintf S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":26:9 -1
      (nil)
     (expr_list (use (reg:QI 0 ax))
@@ -307,7 +307,7 @@ Forwarding edge 12->13 to 22 failed.
         (reg:DI 119)) "/home/joshua/Code/c4c/gui-ai/main.c":30:30 -1
      (nil))
 (call_insn 57 56 58 7 (set (reg:DI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_CreateRenderer") [flags 0x41]  <function_decl 0x7f0d16a65b00 SDL_CreateRenderer>) [0 SDL_CreateRenderer S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_CreateRenderer") [flags 0x41]  <function_decl 0x7fb17073ab00 SDL_CreateRenderer>) [0 SDL_CreateRenderer S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":30:30 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -341,13 +341,13 @@ Forwarding edge 12->13 to 22 failed.
 (insn 64 63 65 8 (set (reg:DI 5 di)
         (reg:DI 121)) "/home/joshua/Code/c4c/gui-ai/main.c":33:9 -1
      (nil))
-(call_insn 65 64 66 8 (call (mem:QI (symbol_ref:DI ("SDL_DestroyWindow") [flags 0x41]  <function_decl 0x7f0d169a5700 SDL_DestroyWindow>) [0 SDL_DestroyWindow S1 A8])
+(call_insn 65 64 66 8 (call (mem:QI (symbol_ref:DI ("SDL_DestroyWindow") [flags 0x41]  <function_decl 0x7fb17067a700 SDL_DestroyWindow>) [0 SDL_DestroyWindow S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":33:9 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (nil)))
 (call_insn 66 65 67 8 (set (reg:DI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_GetError") [flags 0x41]  <function_decl 0x7f0d19555800 SDL_GetError>) [0 SDL_GetError S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_GetError") [flags 0x41]  <function_decl 0x7fb17322a800 SDL_GetError>) [0 SDL_GetError S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
      (nil)
     (nil))
@@ -355,17 +355,17 @@ Forwarding edge 12->13 to 22 failed.
         (reg:DI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
      (nil))
 (insn 68 67 69 8 (set (reg/f:DI 88 [ stderr.2_7 ])
-        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7f0d1a2fed80 stderr>) [43 stderr+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
+        (mem/f/c:DI (symbol_ref:DI ("stderr") [flags 0x40]  <var_decl 0x7fb173fcdd80 stderr>) [43 stderr+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
      (nil))
 (insn 69 68 70 8 (set (reg:DI 1 dx)
         (reg/f:DI 87 [ _6 ])) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
      (nil))
 (insn 70 69 71 8 (set (reg:DI 122)
-        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f0d16733000 *.LC3>)) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
+        (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7fb170408000 *.LC3>)) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
      (nil))
 (insn 71 70 72 8 (set (reg:DI 4 si)
         (reg:DI 122)) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7f0d16733000 *.LC3>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC3") [flags 0x2]  <var_decl 0x7fb170408000 *.LC3>)
         (nil)))
 (insn 72 71 73 8 (set (reg:DI 5 di)
         (reg/f:DI 88 [ stderr.2_7 ])) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
@@ -374,7 +374,7 @@ Forwarding edge 12->13 to 22 failed.
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
      (nil))
 (call_insn 74 73 75 8 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7f0d196ceb00 fprintf>) [0 __builtin_fprintf S1 A8])
+        (call (mem:QI (symbol_ref:DI ("fprintf") [flags 0x41]  <function_decl 0x7fb17339bb00 fprintf>) [0 __builtin_fprintf S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":34:9 -1
      (nil)
     (expr_list (use (reg:QI 0 ax))
@@ -443,7 +443,7 @@ Forwarding edge 12->13 to 22 failed.
 (insn 96 95 97 14 (set (reg:SI 5 di)
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":44:21 -1
      (nil))
-(call_insn 97 96 98 14 (call (mem:QI (symbol_ref:DI ("exit") [flags 0x41]  <function_decl 0x7f0d196e7b00 exit>) [0 __builtin_exit S1 A8])
+(call_insn 97 96 98 14 (call (mem:QI (symbol_ref:DI ("exit") [flags 0x41]  <function_decl 0x7fb1733b4b00 exit>) [0 __builtin_exit S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":44:21 -1
      (expr_list:REG_ARGS_SIZE (const_int 0 [0])
         (expr_list:REG_NORETURN (const_int 0 [0])
@@ -468,10 +468,10 @@ Forwarding edge 12->13 to 22 failed.
  -> 142)
 (note 103 102 104 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
 (insn 104 103 105 16 (set (reg:SI 90 [ currPlayer.3_9 ])
-        (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7f0d169f8ea0 currPlayer>) [1 currPlayer+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":49:40 -1
+        (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7fb1706cdea0 currPlayer>) [1 currPlayer+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":49:40 -1
      (nil))
 (insn 105 104 106 16 (set (reg:SI 91 [ HUMAN.4_10 ])
-        (mem/c:SI (symbol_ref:DI ("HUMAN") [flags 0x2]  <var_decl 0x7f0d169f8d80 HUMAN>) [1 HUMAN+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":49:40 -1
+        (mem/c:SI (symbol_ref:DI ("HUMAN") [flags 0x2]  <var_decl 0x7fb1706cdd80 HUMAN>) [1 HUMAN+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":49:40 -1
      (nil))
 (insn 106 105 107 16 (set (reg:CCZ 17 flags)
         (compare:CCZ (reg:SI 90 [ currPlayer.3_9 ])
@@ -486,7 +486,7 @@ Forwarding edge 12->13 to 22 failed.
  -> 133)
 (note 108 107 109 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
 (insn 109 108 110 17 (set (reg:SI 92 [ HUMAN.5_11 ])
-        (mem/c:SI (symbol_ref:DI ("HUMAN") [flags 0x2]  <var_decl 0x7f0d169f8d80 HUMAN>) [1 HUMAN+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+        (mem/c:SI (symbol_ref:DI ("HUMAN") [flags 0x2]  <var_decl 0x7fb1706cdd80 HUMAN>) [1 HUMAN+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
      (nil))
 (insn 110 109 111 17 (set (reg:SI 93 [ _12 ])
         (mem/j/c:SI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -540,7 +540,7 @@ Forwarding edge 12->13 to 22 failed.
         ]) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
      (nil))
 (insn 118 117 119 17 (set (reg:DI 36 r8)
-        (symbol_ref:DI ("heights") [flags 0x2]  <var_decl 0x7f0d1670d000 heights>)) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+        (symbol_ref:DI ("heights") [flags 0x2]  <var_decl 0x7fb1703e2000 heights>)) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
      (nil))
 (insn 119 118 120 17 (set (reg:SI 2 cx)
         (reg:SI 92 [ HUMAN.5_11 ])) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
@@ -549,23 +549,23 @@ Forwarding edge 12->13 to 22 failed.
         (reg:SI 95 [ _14 ])) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
      (nil))
 (insn 121 120 122 17 (set (reg:DI 128)
-        (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+        (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)
                 (const_int 8 [0x8])))) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
      (nil))
 (insn 122 121 123 17 (set (reg:DI 4 si)
         (reg:DI 128)) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
-     (expr_list:REG_EQUAL (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+     (expr_list:REG_EQUAL (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)
                 (const_int 8 [0x8])))
         (nil)))
 (insn 123 122 124 17 (set (reg:DI 129)
-        (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
+        (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
      (nil))
 (insn 124 123 125 17 (set (reg:DI 5 di)
         (reg:DI 129)) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
-     (expr_list:REG_EQUAL (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+     (expr_list:REG_EQUAL (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)
         (nil)))
 (call_insn 125 124 126 17 (set (reg:QI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("dropPiece") [flags 0x41]  <function_decl 0x7f0d16ae2c00 dropPiece>) [0 dropPiece S1 A8])
+        (call (mem:QI (symbol_ref:DI ("dropPiece") [flags 0x41]  <function_decl 0x7fb1707b7c00 dropPiece>) [0 dropPiece S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":50:34 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -604,7 +604,7 @@ Forwarding edge 12->13 to 22 failed.
 (code_label 133 132 134 19 11 (nil) [2 uses])
 (note 134 133 135 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
 (insn 135 134 136 19 (set (reg:SI 98 [ currPlayer.6_17 ])
-        (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7f0d169f8ea0 currPlayer>) [1 currPlayer+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":53:94 -1
+        (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7fb1706cdea0 currPlayer>) [1 currPlayer+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":53:94 -1
      (nil))
 (insn 136 135 137 19 (set (reg:CCZ 17 flags)
         (compare:CCZ (reg:SI 98 [ currPlayer.6_17 ])
@@ -617,7 +617,7 @@ Forwarding edge 12->13 to 22 failed.
 (insn 138 137 139 19 (set (reg:SI 100 [ _19 ])
         (zero_extend:SI (reg:QI 99 [ _18 ]))) "/home/joshua/Code/c4c/gui-ai/main.c":53:94 -1
      (nil))
-(insn 139 138 140 19 (set (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7f0d169f8ea0 currPlayer>) [1 currPlayer+0 S4 A32])
+(insn 139 138 140 19 (set (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7fb1706cdea0 currPlayer>) [1 currPlayer+0 S4 A32])
         (reg:SI 100 [ _19 ])) "/home/joshua/Code/c4c/gui-ai/main.c":53:62 -1
      (nil))
 (jump_insn 140 139 141 19 (set (pc)
@@ -634,12 +634,12 @@ Forwarding edge 12->13 to 22 failed.
 (insn 145 144 146 20 (set (reg:DI 5 di)
         (reg:DI 130)) "/home/joshua/Code/c4c/gui-ai/main.c":55:25 -1
      (nil))
-(call_insn 146 145 147 20 (call (mem:QI (symbol_ref:DI ("SDL_DestroyWindow") [flags 0x41]  <function_decl 0x7f0d169a5700 SDL_DestroyWindow>) [0 SDL_DestroyWindow S1 A8])
+(call_insn 146 145 147 20 (call (mem:QI (symbol_ref:DI ("SDL_DestroyWindow") [flags 0x41]  <function_decl 0x7fb17067a700 SDL_DestroyWindow>) [0 SDL_DestroyWindow S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":55:25 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (nil)))
-(call_insn 147 146 148 20 (call (mem:QI (symbol_ref:DI ("SDL_Quit") [flags 0x41]  <function_decl 0x7f0d16a9d600 SDL_Quit>) [0 SDL_Quit S1 A8])
+(call_insn 147 146 148 20 (call (mem:QI (symbol_ref:DI ("SDL_Quit") [flags 0x41]  <function_decl 0x7fb170772600 SDL_Quit>) [0 SDL_Quit S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":56:25 -1
      (nil)
     (nil))
@@ -661,10 +661,10 @@ Forwarding edge 12->13 to 22 failed.
 (code_label 155 154 156 22 9 (nil) [1 uses])
 (note 156 155 157 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
 (insn 157 156 158 22 (set (reg:SI 101 [ currPlayer.7_20 ])
-        (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7f0d169f8ea0 currPlayer>) [1 currPlayer+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":63:40 -1
+        (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7fb1706cdea0 currPlayer>) [1 currPlayer+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":63:40 -1
      (nil))
 (insn 158 157 159 22 (set (reg:SI 102 [ AI.8_21 ])
-        (mem/c:SI (symbol_ref:DI ("AI") [flags 0x2]  <var_decl 0x7f0d169f8e10 AI>) [1 AI+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":63:40 -1
+        (mem/c:SI (symbol_ref:DI ("AI") [flags 0x2]  <var_decl 0x7fb1706cde10 AI>) [1 AI+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":63:40 -1
      (nil))
 (insn 159 158 160 22 (set (reg:CCZ 17 flags)
         (compare:CCZ (reg:SI 101 [ currPlayer.7_20 ])
@@ -679,36 +679,36 @@ Forwarding edge 12->13 to 22 failed.
  -> 185)
 (note 161 160 162 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
 (insn 162 161 163 23 (set (reg:SI 103 [ AI.9_22 ])
-        (mem/c:SI (symbol_ref:DI ("AI") [flags 0x2]  <var_decl 0x7f0d169f8e10 AI>) [1 AI+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+        (mem/c:SI (symbol_ref:DI ("AI") [flags 0x2]  <var_decl 0x7fb1706cde10 AI>) [1 AI+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
      (nil))
 (insn 163 162 164 23 (set (reg:DI 131)
-        (symbol_ref:DI ("heights") [flags 0x2]  <var_decl 0x7f0d1670d000 heights>)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+        (symbol_ref:DI ("heights") [flags 0x2]  <var_decl 0x7fb1703e2000 heights>)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
      (nil))
 (insn 164 163 165 23 (set (reg:DI 2 cx)
         (reg:DI 131)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
-     (expr_list:REG_EQUAL (symbol_ref:DI ("heights") [flags 0x2]  <var_decl 0x7f0d1670d000 heights>)
+     (expr_list:REG_EQUAL (symbol_ref:DI ("heights") [flags 0x2]  <var_decl 0x7fb1703e2000 heights>)
         (nil)))
 (insn 165 164 166 23 (set (reg:SI 1 dx)
         (const_int 7 [0x7])) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
      (nil))
 (insn 166 165 167 23 (set (reg:DI 132)
-        (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+        (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)
                 (const_int 8 [0x8])))) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
      (nil))
 (insn 167 166 168 23 (set (reg:DI 4 si)
         (reg:DI 132)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
-     (expr_list:REG_EQUAL (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+     (expr_list:REG_EQUAL (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)
                 (const_int 8 [0x8])))
         (nil)))
 (insn 168 167 169 23 (set (reg:DI 133)
-        (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+        (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
      (nil))
 (insn 169 168 170 23 (set (reg:DI 5 di)
         (reg:DI 133)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
-     (expr_list:REG_EQUAL (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+     (expr_list:REG_EQUAL (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)
         (nil)))
 (call_insn 170 169 171 23 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("aiMove") [flags 0x41]  <function_decl 0x7f0d16ae9000 aiMove>) [0 aiMove S1 A8])
+        (call (mem:QI (symbol_ref:DI ("aiMove") [flags 0x41]  <function_decl 0x7fb1707be000 aiMove>) [0 aiMove S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -720,7 +720,7 @@ Forwarding edge 12->13 to 22 failed.
         (reg:SI 0 ax)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
      (nil))
 (insn 172 171 173 23 (set (reg:DI 36 r8)
-        (symbol_ref:DI ("heights") [flags 0x2]  <var_decl 0x7f0d1670d000 heights>)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+        (symbol_ref:DI ("heights") [flags 0x2]  <var_decl 0x7fb1703e2000 heights>)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
      (nil))
 (insn 173 172 174 23 (set (reg:SI 2 cx)
         (reg:SI 103 [ AI.9_22 ])) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
@@ -729,23 +729,23 @@ Forwarding edge 12->13 to 22 failed.
         (reg:SI 104 [ _23 ])) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
      (nil))
 (insn 175 174 176 23 (set (reg:DI 134)
-        (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+        (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)
                 (const_int 8 [0x8])))) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
      (nil))
 (insn 176 175 177 23 (set (reg:DI 4 si)
         (reg:DI 134)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
-     (expr_list:REG_EQUAL (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+     (expr_list:REG_EQUAL (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)
                 (const_int 8 [0x8])))
         (nil)))
 (insn 177 176 178 23 (set (reg:DI 135)
-        (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
+        (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
      (nil))
 (insn 178 177 179 23 (set (reg:DI 5 di)
         (reg:DI 135)) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
-     (expr_list:REG_EQUAL (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+     (expr_list:REG_EQUAL (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)
         (nil)))
 (call_insn 179 178 180 23 (set (reg:QI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("dropPiece") [flags 0x41]  <function_decl 0x7f0d16ae2c00 dropPiece>) [0 dropPiece S1 A8])
+        (call (mem:QI (symbol_ref:DI ("dropPiece") [flags 0x41]  <function_decl 0x7fb1707b7c00 dropPiece>) [0 dropPiece S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":64:29 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -755,7 +755,7 @@ Forwarding edge 12->13 to 22 failed.
                     (expr_list:DI (use (reg:DI 36 r8))
                         (nil)))))))
 (insn 180 179 181 23 (set (reg:SI 105 [ currPlayer.10_24 ])
-        (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7f0d169f8ea0 currPlayer>) [1 currPlayer+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":65:72 -1
+        (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7fb1706cdea0 currPlayer>) [1 currPlayer+0 S4 A32])) "/home/joshua/Code/c4c/gui-ai/main.c":65:72 -1
      (nil))
 (insn 181 180 182 23 (set (reg:CCZ 17 flags)
         (compare:CCZ (reg:SI 105 [ currPlayer.10_24 ])
@@ -768,7 +768,7 @@ Forwarding edge 12->13 to 22 failed.
 (insn 183 182 184 23 (set (reg:SI 107 [ _26 ])
         (zero_extend:SI (reg:QI 106 [ _25 ]))) "/home/joshua/Code/c4c/gui-ai/main.c":65:72 -1
      (nil))
-(insn 184 183 185 23 (set (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7f0d169f8ea0 currPlayer>) [1 currPlayer+0 S4 A32])
+(insn 184 183 185 23 (set (mem/c:SI (symbol_ref:DI ("currPlayer") [flags 0x2]  <var_decl 0x7fb1706cdea0 currPlayer>) [1 currPlayer+0 S4 A32])
         (reg:SI 107 [ _26 ])) "/home/joshua/Code/c4c/gui-ai/main.c":65:40 -1
      (nil))
 (code_label 185 184 186 24 6 (nil) [4 uses])
@@ -784,7 +784,7 @@ Forwarding edge 12->13 to 22 failed.
         (reg:DI 136)) "/home/joshua/Code/c4c/gui-ai/main.c":41:16 -1
      (nil))
 (call_insn 189 188 190 24 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_PollEvent") [flags 0x41]  <function_decl 0x7f0d16a1ca00 SDL_PollEvent>) [0 SDL_PollEvent S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_PollEvent") [flags 0x41]  <function_decl 0x7fb1706f1a00 SDL_PollEvent>) [0 SDL_PollEvent S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":41:16 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -824,7 +824,7 @@ Forwarding edge 12->13 to 22 failed.
         (reg:DI 137)) "/home/joshua/Code/c4c/gui-ai/main.c":71:9 -1
      (nil))
 (call_insn 201 200 202 25 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_SetRenderDrawColor") [flags 0x41]  <function_decl 0x7f0d16a82300 SDL_SetRenderDrawColor>) [0 SDL_SetRenderDrawColor S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_SetRenderDrawColor") [flags 0x41]  <function_decl 0x7fb170757300 SDL_SetRenderDrawColor>) [0 SDL_SetRenderDrawColor S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":71:9 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -841,17 +841,17 @@ Forwarding edge 12->13 to 22 failed.
         (reg:DI 138)) "/home/joshua/Code/c4c/gui-ai/main.c":72:9 -1
      (nil))
 (call_insn 204 203 205 25 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("SDL_RenderClear") [flags 0x41]  <function_decl 0x7f0d16a82700 SDL_RenderClear>) [0 SDL_RenderClear S1 A8])
+        (call (mem:QI (symbol_ref:DI ("SDL_RenderClear") [flags 0x41]  <function_decl 0x7fb170757700 SDL_RenderClear>) [0 SDL_RenderClear S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":72:9 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
         (nil)))
 (insn 205 204 206 25 (set (reg:DI 109 [ _28 ])
-        (mem/c:DI (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+        (mem/c:DI (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)
                     (const_int 8 [0x8]))) [3 boards.red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":73:9 -1
      (nil))
 (insn 206 205 207 25 (set (reg:DI 110 [ _29 ])
-        (mem/c:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>) [3 boards.yellow+0 S8 A128])) "/home/joshua/Code/c4c/gui-ai/main.c":73:9 -1
+        (mem/c:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>) [3 boards.yellow+0 S8 A128])) "/home/joshua/Code/c4c/gui-ai/main.c":73:9 -1
      (nil))
 (insn 207 206 208 25 (set (reg:DI 139)
         (mem/f/c:DI (plus:DI (reg/f:DI 77 virtual-stack-vars)
@@ -866,7 +866,7 @@ Forwarding edge 12->13 to 22 failed.
 (insn 210 209 211 25 (set (reg:DI 5 di)
         (reg:DI 139)) "/home/joshua/Code/c4c/gui-ai/main.c":73:9 -1
      (nil))
-(call_insn 211 210 212 25 (call (mem:QI (symbol_ref:DI ("renderBoard") [flags 0x41]  <function_decl 0x7f0d16709100 renderBoard>) [0 renderBoard S1 A8])
+(call_insn 211 210 212 25 (call (mem:QI (symbol_ref:DI ("renderBoard") [flags 0x41]  <function_decl 0x7fb1703de100 renderBoard>) [0 renderBoard S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":73:9 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -874,11 +874,11 @@ Forwarding edge 12->13 to 22 failed.
             (expr_list:DI (use (reg:DI 1 dx))
                 (nil)))))
 (insn 212 211 213 25 (set (reg:DI 111 [ _30 ])
-        (mem/c:DI (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>)
+        (mem/c:DI (const:DI (plus:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>)
                     (const_int 8 [0x8]))) [3 boards.red+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
      (nil))
 (insn 213 212 214 25 (set (reg:DI 112 [ _31 ])
-        (mem/c:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7f0d169f8f30 boards>) [3 boards.yellow+0 S8 A128])) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
+        (mem/c:DI (symbol_ref:DI ("boards") [flags 0x2]  <var_decl 0x7fb1706cdf30 boards>) [3 boards.yellow+0 S8 A128])) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
      (nil))
 (insn 214 213 215 25 (set (reg:SI 1 dx)
         (const_int 1 [0x1])) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
@@ -890,7 +890,7 @@ Forwarding edge 12->13 to 22 failed.
         (reg:DI 112 [ _31 ])) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
      (nil))
 (call_insn 217 216 218 25 (set (reg:SI 0 ax)
-        (call (mem:QI (symbol_ref:DI ("evaluateBoard") [flags 0x41]  <function_decl 0x7f0d16ae2e00 evaluateBoard>) [0 evaluateBoard S1 A8])
+        (call (mem:QI (symbol_ref:DI ("evaluateBoard") [flags 0x41]  <function_decl 0x7fb1707b7e00 evaluateBoard>) [0 evaluateBoard S1 A8])
             (const_int 0 [0]))) "/home/joshua/Code/c4c/gui-ai/main.c":75:22 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -941,16 +941,16 @@ Forwarding edge 12->13 to 22 failed.
                 (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":79:13 -1
      (nil))
 (insn 230 229 231 28 (set (reg:DI 142)
-        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f0d16733090 *.LC4>)) "/home/joshua/Code/c4c/gui-ai/main.c":79:13 -1
+        (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7fb170408090 *.LC4>)) "/home/joshua/Code/c4c/gui-ai/main.c":79:13 -1
      (nil))
 (insn 231 230 232 28 (set (reg:DI 4 si)
         (reg:DI 142)) "/home/joshua/Code/c4c/gui-ai/main.c":79:13 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7f0d16733090 *.LC4>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC4") [flags 0x2]  <var_decl 0x7fb170408090 *.LC4>)
         (nil)))
 (insn 232 231 233 28 (set (reg:DI 5 di)
         (reg:DI 141)) "/home/joshua/Code/c4c/gui-ai/main.c":79:13 -1
      (nil))
-(call_insn 233 232 234 28 (call (mem:QI (symbol_ref:DI ("renderMessage") [flags 0x41]  <function_decl 0x7f0d16709200 renderMessage>) [0 renderMessage S1 A8])
+(call_insn 233 232 234 28 (call (mem:QI (symbol_ref:DI ("renderMessage") [flags 0x41]  <function_decl 0x7fb1703de200 renderMessage>) [0 renderMessage S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":79:13 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -963,7 +963,7 @@ Forwarding edge 12->13 to 22 failed.
 (insn 235 234 236 28 (set (reg:DI 5 di)
         (reg:DI 143)) "/home/joshua/Code/c4c/gui-ai/main.c":80:13 -1
      (nil))
-(call_insn 236 235 237 28 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7f0d16a88f00 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
+(call_insn 236 235 237 28 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7fb17075df00 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":80:13 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -993,16 +993,16 @@ Forwarding edge 12->13 to 22 failed.
                 (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":82:13 -1
      (nil))
 (insn 245 244 246 30 (set (reg:DI 145)
-        (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7f0d16733120 *.LC5>)) "/home/joshua/Code/c4c/gui-ai/main.c":82:13 -1
+        (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7fb170408120 *.LC5>)) "/home/joshua/Code/c4c/gui-ai/main.c":82:13 -1
      (nil))
 (insn 246 245 247 30 (set (reg:DI 4 si)
         (reg:DI 145)) "/home/joshua/Code/c4c/gui-ai/main.c":82:13 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7f0d16733120 *.LC5>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC5") [flags 0x2]  <var_decl 0x7fb170408120 *.LC5>)
         (nil)))
 (insn 247 246 248 30 (set (reg:DI 5 di)
         (reg:DI 144)) "/home/joshua/Code/c4c/gui-ai/main.c":82:13 -1
      (nil))
-(call_insn 248 247 249 30 (call (mem:QI (symbol_ref:DI ("renderMessage") [flags 0x41]  <function_decl 0x7f0d16709200 renderMessage>) [0 renderMessage S1 A8])
+(call_insn 248 247 249 30 (call (mem:QI (symbol_ref:DI ("renderMessage") [flags 0x41]  <function_decl 0x7fb1703de200 renderMessage>) [0 renderMessage S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":82:13 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -1015,7 +1015,7 @@ Forwarding edge 12->13 to 22 failed.
 (insn 250 249 251 30 (set (reg:DI 5 di)
         (reg:DI 146)) "/home/joshua/Code/c4c/gui-ai/main.c":83:13 -1
      (nil))
-(call_insn 251 250 252 30 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7f0d16a88f00 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
+(call_insn 251 250 252 30 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7fb17075df00 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":83:13 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -1045,16 +1045,16 @@ Forwarding edge 12->13 to 22 failed.
                 (const_int -72 [0xffffffffffffffb8])) [41 renderer+0 S8 A64])) "/home/joshua/Code/c4c/gui-ai/main.c":85:13 -1
      (nil))
 (insn 260 259 261 32 (set (reg:DI 148)
-        (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7f0d167331b0 *.LC6>)) "/home/joshua/Code/c4c/gui-ai/main.c":85:13 -1
+        (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7fb1704081b0 *.LC6>)) "/home/joshua/Code/c4c/gui-ai/main.c":85:13 -1
      (nil))
 (insn 261 260 262 32 (set (reg:DI 4 si)
         (reg:DI 148)) "/home/joshua/Code/c4c/gui-ai/main.c":85:13 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7f0d167331b0 *.LC6>)
+     (expr_list:REG_EQUAL (symbol_ref/f:DI ("*.LC6") [flags 0x2]  <var_decl 0x7fb1704081b0 *.LC6>)
         (nil)))
 (insn 262 261 263 32 (set (reg:DI 5 di)
         (reg:DI 147)) "/home/joshua/Code/c4c/gui-ai/main.c":85:13 -1
      (nil))
-(call_insn 263 262 264 32 (call (mem:QI (symbol_ref:DI ("renderMessage") [flags 0x41]  <function_decl 0x7f0d16709200 renderMessage>) [0 renderMessage S1 A8])
+(call_insn 263 262 264 32 (call (mem:QI (symbol_ref:DI ("renderMessage") [flags 0x41]  <function_decl 0x7fb1703de200 renderMessage>) [0 renderMessage S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":85:13 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -1067,7 +1067,7 @@ Forwarding edge 12->13 to 22 failed.
 (insn 265 264 266 32 (set (reg:DI 5 di)
         (reg:DI 149)) "/home/joshua/Code/c4c/gui-ai/main.c":86:13 -1
      (nil))
-(call_insn 266 265 267 32 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7f0d16a88f00 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
+(call_insn 266 265 267 32 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7fb17075df00 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":86:13 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -1081,7 +1081,7 @@ Forwarding edge 12->13 to 22 failed.
 (insn 270 269 271 33 (set (reg:DI 5 di)
         (reg:DI 150)) "/home/joshua/Code/c4c/gui-ai/main.c":88:9 -1
      (nil))
-(call_insn 271 270 272 33 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7f0d16a88f00 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
+(call_insn 271 270 272 33 (call (mem:QI (symbol_ref:DI ("SDL_RenderPresent") [flags 0x41]  <function_decl 0x7fb17075df00 SDL_RenderPresent>) [0 SDL_RenderPresent S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":88:9 -1
      (nil)
     (expr_list:DI (use (reg:DI 5 di))
@@ -1120,7 +1120,7 @@ Forwarding edge 12->13 to 22 failed.
      (nil)
  -> 292)
 (note 296 289 290 39 [bb 39] NOTE_INSN_BASIC_BLOCK)
-(call_insn 290 296 291 39 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7f0d16723800 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
+(call_insn 290 296 291 39 (call (mem:QI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0x7fb1703f8800 __stack_chk_fail>) [0 __stack_chk_fail S1 A8])
         (const_int 0 [0])) "/home/joshua/Code/c4c/gui-ai/main.c":99:1 -1
      (expr_list:REG_ARGS_SIZE (const_int 0 [0])
         (expr_list:REG_NORETURN (const_int 0 [0])

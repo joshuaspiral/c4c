@@ -19,14 +19,16 @@ typedef struct{
 
 
 // Drops the piece onto a column
-bool dropPiece(unsigned long long *yellow, unsigned long long *red, int col, Player player, uint8_t (*heights)[7]);
+bool dropPiece(unsigned long long *yellow, unsigned long long *red, int col, Player player, uint8_t *heights);
  
 // Pops the last played piece of a column
-void popPiece(unsigned long long *yellow, unsigned long long *red, int col, Player player, uint8_t (*heights)[7]);
+void popPiece(unsigned long long *yellow, unsigned long long *red, int col, Player player, uint8_t *heights);
 
 // Evaluates the board's current state for enum Player piece. Returns integer score.
 int evaluateBoard(unsigned long long bitboard, unsigned long long oppBitboard, int depth);
 
-int minimax(unsigned long long *yellow, unsigned long long *red, uint8_t (*heights)[WIDTH], int depth, bool isMaximising, double alpha, double beta);
+// Minimax algorithm
+int minimax(unsigned long long *yellow, unsigned long long *red, uint8_t *heights, int depth, bool isMaximising, double alpha, double beta);
 
-int aiMove(unsigned long long *yellow, unsigned long long *red, int depth, uint8_t (*heights)[WIDTH]);
+// Ran when it is the AI's turn
+int aiMove(unsigned long long *yellow, unsigned long long *red, int depth, uint8_t *heights);

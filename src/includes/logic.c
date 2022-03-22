@@ -1,24 +1,24 @@
-#include "logic.h"
+#include "includes/logic.h"
 #define BOARDLEN 64
 
 
-// Drops the piece onto a column
-bool dropPiece(unsigned long long *yellow, unsigned long long *red, int col, Player player, uint8_t *heights) {
+// Drops the piece onto a column, returns 0 on success and 1 on failure
+int dropPiece(unsigned long long *yellow, unsigned long long *red, int col, Player player, uint8_t *heights) {
     // Check if height of next piece is in the board boundaries
     if (heights[col] < 16 || col < 0 || col > 6)
-        return false;
+        return 1;
     // Check piece
     if (player == YELLOW)
-        // Calculates new column using the height of the next piece
+        // Calculates new bitboard using the height of the next piece
         *yellow ^= 1ULL << (BOARDLEN - 1 - heights[col]);
     else
         *red ^= 1ULL << (BOARDLEN - 1 - heights[col]);
     // Move for next use
     heights[col] -= 8;
-    return true;
+    return 0;
 }
 
-// Pops the last played piece of a column
+// Pops the last played piece of a player for a certain column
 void popPiece(unsigned long long *yellow, unsigned long long *red, int col, Player player, uint8_t *heights) {
     heights[col] += 8;
     if (player == YELLOW)
@@ -31,7 +31,6 @@ void popPiece(unsigned long long *yellow, unsigned long long *red, int col, Play
 // Evaluates the board's current state for enum Player piece. Returns integer score.
 int evaluateBoard(unsigned long long bitboard, unsigned long long oppBitboard, int depth) {
     int score = 0;
-    // Center heuristic TODO
     unsigned long long shifted = 1L << (63 - 19);
     for (int i = 0; i < HEIGHT; i++) {
         if (bitboard & shifted)
