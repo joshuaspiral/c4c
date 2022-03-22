@@ -161,9 +161,6 @@ int aiMove(unsigned long long *yellow, unsigned long long *red, int depth, uint8
             bestScore = score;
             bestMove = j;
         }
-        if (score >= 100000) {
-            break;
-        }
     }
     return bestMove;
 }

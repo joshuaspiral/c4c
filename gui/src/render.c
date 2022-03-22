@@ -1,4 +1,4 @@
-#include "render.h"
+#include "../includes/render.h"
 const unsigned short COLUMN_WIDTH = SCREENBOARD_WIDTH / WIDTH;
 SDL_Color WHITE = {.r = 255, .g = 255, .b = 255, 255};
 

@@ -1,4 +1,5 @@
-#include "logic.h"
+#include "../includes/logic.h"
+#include <stdio.h>
 #define BOARDLEN 64
 
 
@@ -161,9 +162,6 @@ int aiMove(unsigned long long *yellow, unsigned long long *red, int depth, uint8
         if (score > bestScore) {
             bestScore = score;
             bestMove = j;
-        }
-        if (score >= 100000) {
-            break;
         }
     }
     return bestMove;
