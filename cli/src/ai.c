@@ -1,4 +1,4 @@
-#include "includes/logic.h"
+#include "../includes/logic.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,6 +8,9 @@
 #define ANSI_COLOR_RED "\x1b[31m"
 #define ANSI_COLOR_YELLOW "\x1b[33m"
 #define ANSI_COLOR_RESET "\x1b[0m"
+
+Player HUMAN = RED;
+Player AI = YELLOW;
 
 Player currPlayer = RED;    // Starting player
 Boards boards = {0b0, 0b0}; // Starting board
@@ -42,28 +45,39 @@ void printBoard() {
 }
 
 int main() {
-    printf("Try to beat your friend!\n");
+    int depth;
+    printf("AI depth? (how many moves ahead it thinks): ");
+    scanf("%d", &depth);
+    printf("Try to beat the AI!\n");
     while (true) {
-        printBoard();
-        int col;
-        if (currPlayer == YELLOW)
-            printf(ANSI_COLOR_YELLOW "Yellow, enter your move between 1-9: " ANSI_COLOR_RESET);
-        else
-            printf(ANSI_COLOR_RED "Red, enter your move between 1-9: " ANSI_COLOR_RESET);
-        scanf("%d", &col);
-        while (dropPiece(&boards.yellow, &boards.red, col - 1, currPlayer, heights) !=
-                0) {
-            printf("Reenter your move between 1-9: ");
+        if (currPlayer == HUMAN) {
+            printBoard();
+            int col;
+            printf("Enter your move between 1-9: ");
             scanf("%d", &col);
+            while (dropPiece(&boards.yellow, &boards.red, col - 1, HUMAN, heights) !=
+                    0) {
+                printf("Reenter your move between 1-9: ");
+                scanf("%d", &col);
+            }
+        } else {
+            clock_t start = clock();
+            printf("AI is thinking...\n");
+            dropPiece(&boards.yellow, &boards.red,
+                    aiMove(&boards.yellow, &boards.red, depth, heights), AI,
+                    heights);
+            clock_t end = clock();
+            printf("Time took for AI's move: %lf\n",
+                    (double)(end - start) / CLOCKS_PER_SEC);
         }
-        currPlayer = (currPlayer + 1) % 2; // Switch players
+        currPlayer = ((currPlayer == YELLOW) ? RED : YELLOW);
         int result = evaluateBoard(boards.yellow, boards.red, 1);
         if (result == 100000) {
-            printf(ANSI_COLOR_YELLOW "YELLOW WINS!\n" ANSI_COLOR_RESET);
+            printf(ANSI_COLOR_YELLOW "AI WINS!\n" ANSI_COLOR_RESET);
             printBoard();
             return EXIT_SUCCESS;
         } else if (result == -100000) {
-            printf(ANSI_COLOR_RED "RED WINS!\n" ANSI_COLOR_RESET);
+            printf(ANSI_COLOR_RED "HUMAN WINS!\n" ANSI_COLOR_RESET);
             printBoard();
             return EXIT_SUCCESS;
         } else if (result == 0) {

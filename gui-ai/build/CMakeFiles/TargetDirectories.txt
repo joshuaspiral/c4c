@@ -1,3 +1,0 @@
-/home/joshua/Code/c4c/gui-ai/build/CMakeFiles/c4c.dir
-/home/joshua/Code/c4c/gui-ai/build/CMakeFiles/edit_cache.dir
-/home/joshua/Code/c4c/gui-ai/build/CMakeFiles/rebuild_cache.dir

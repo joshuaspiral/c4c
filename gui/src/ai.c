@@ -4,9 +4,12 @@
 #include <stdint.h>
 #include <SDL2/SDL.h>
 #include <unistd.h>
-#include "logic.h"
-#include "render.h"
+#include "../includes/logic.h"
+#include "../includes/render.h"
 #define BOARDLEN 64
+
+Player HUMAN = RED;
+Player AI = YELLOW;
 
 Player currPlayer = RED; // Starting player
 Boards boards = {0b0, 0b0}; // Starting board
@@ -43,10 +46,11 @@ int main() {
 
                 case SDL_MOUSEBUTTONDOWN:
                     if (!gameover) {
-                        if (!dropPiece(&boards.yellow, &boards.red, e.button.x / (SCREENBOARD_WIDTH / WIDTH) - 1, currPlayer, &heights)) {
-                            break;
-                        }
-                        currPlayer = ((currPlayer == YELLOW) ? RED : YELLOW);
+                        if (currPlayer == HUMAN) {
+                            if (!dropPiece(&boards.yellow, &boards.red, e.button.x / (SCREENBOARD_WIDTH / WIDTH) - 1, HUMAN, heights)) {
+                                break;
+                            }
+                        }                         currPlayer = ((currPlayer == YELLOW) ? RED : YELLOW);
                     } else {
                         SDL_DestroyWindow(window);
                         SDL_Quit();
@@ -54,7 +58,13 @@ int main() {
                     }
                     break;
 
-                default: {}
+                default: 
+                    {
+                        if (currPlayer == AI) {
+                            dropPiece(&boards.yellow, &boards.red, aiMove(&boards.yellow, &boards.red, 7, heights), AI, heights);
+                            currPlayer = ((currPlayer == YELLOW) ? RED : YELLOW);
+                        }
+                    }
             }
         }
 
@@ -62,14 +72,14 @@ int main() {
         SDL_RenderClear(renderer);
         renderBoard(renderer, boards.yellow, boards.red);
             
-        int result = evaluateBoard(boards.yellow, boards.red);
+        int result = evaluateBoard(boards.yellow, boards.red, 1);
         if (result != 420)
             gameover = 1;
         if (result == 100000) {
-            renderMessage(renderer, "YELLOW WINS!");
+            renderMessage(renderer, "AI WINS!");
             SDL_RenderPresent(renderer);
         } else if (result == -100000){
-            renderMessage(renderer, "RED WINS!");
+            renderMessage(renderer, "HUMAN WINS!");
             SDL_RenderPresent(renderer);
         } else if (result == 0) {
             renderMessage(renderer, "DRAW!");

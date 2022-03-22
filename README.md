@@ -8,25 +8,20 @@ Connect Four written in C to practice C
 - [X] Bitboard optimisation (https://en.wikipedia.org/wiki/Bitboard)
 - [X] GUI Game (https://www.raylib.com/ or SDL)
 - [ ] Further heuristic optimisations
-- [ ] Refactor
+- [X] Refactor
 
 # Usage
-```
-$ make or make ai/ai_bitboard/twoplayer
-$ ./twoplayer or ./ai or ./ai_bitboard
-```
+`cd` to the directory and run `make` to compile. The executable binaries will be in the same directory.
 
 # Details
-./twoplayer - You can play with a friend.  
-./ai - The AI implementation I wrote originally. Uses a 2D array of characters to represent the board.  
-./ai_bitboard - The AI implementation with pseudo-bitboards. Uses two 1D arrays of 8 bit unsigned integers and evaluated via bitwise logic. (not really a bitboard but still faster than the original implementation).  
-./ai_realbitboard - The AI implementation with REAL bitboards. Uses 1 2D array of two 64 bit unsigned integers and evaluated via bitwise logic.
-
-gui/ (Two player SDL implementatino)  
-gui-ai/ (AI SDL implementation)  
+./gui/ (Graphical Connect Four written using the [SDL](https://www.libsdl.org/) development library)
+./cli/ (Command-line Connect Four written in pure C)
 
 # Benchmarks
+A little bit about the implementations.
+The latest implementations are using bitboards to store the board position. Here is a benchmark of the different implementations (you can find the older implementations in archive/).
 Done on a Ryzen 5 3600 with AI picking first
+
 | Implementation        | Depth | Time (s)  | Visited nodes  |
 |-----------------------|-------|-----------|----------------|
 | 2D Array Board AI     | 7     | 1.250252  | 6634026        |
@@ -35,8 +30,8 @@ Done on a Ryzen 5 3600 with AI picking first
 | "Pseudo-bitboard" AI  | 7     | 0.171348  | 6602778        |
 | "Pseudo-bitboard" AI  | 8     | 1.180703  | 45414144       |
 | "Pseudo-bitboard" AI  | 9     | 8.299119  | 310985082      |
-| Bitboard AI           | 7     | 0.051276  | 6601433        |
-| Bitboard AI           | 8     | 0.384628  | 45386033       |
-| Bitboard AI           | 9     | 2.373259  | 310528499      |
+| Bitboard AI (latest)  | 7     | 0.051276  | 6601433        |
+| Bitboard AI (latest)  | 8     | 0.384628  | 45386033       |
+| Bitboard AI (latest)  | 9     | 2.373259  | 310528499      |
 
-Explanation about the game [here](https://toxicfs.xyz/blog/making-a-connect-four-ai/)
+Explanation about the development process [here](https://toxicfs.xyz/blog/making-a-connect-four-ai/).

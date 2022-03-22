@@ -1,4 +1,4 @@
-#include "includes/logic.h"
+#include "../includes/logic.h"
 #define BOARDLEN 64
 
 
