@@ -18,8 +18,8 @@ typedef struct{
 } Boards;
 
 
-// Drops the piece onto a column
-bool dropPiece(unsigned long long *yellow, unsigned long long *red, int col, Player player, uint8_t *heights);
+// Drops the piece onto a column, returns 0 on success and 1 on failure
+int dropPiece(unsigned long long *yellow, unsigned long long *red, int col, Player player, uint8_t *heights);
  
 // Pops the last played piece of a column
 void popPiece(unsigned long long *yellow, unsigned long long *red, int col, Player player, uint8_t *heights);

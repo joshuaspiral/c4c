@@ -304,9 +304,6 @@ int aiMove(int depth) {
             bestScore = score;
             bestMove = j;
         }
-        if (score >= 100000) {
-            break;
-        }
     }
     printf("Nodes visited: %llu\n", count);
     count = 0;

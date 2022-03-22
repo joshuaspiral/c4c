@@ -1,7 +1,6 @@
 #pragma once
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
-#include <stdint.h>
 #include "logic.h"
 #define RENDER_H
 #define SCREEN_WIDTH 900

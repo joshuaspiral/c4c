@@ -1,4 +1,4 @@
-#include "includes/logic.h"
+#include "../includes/logic.h"
 #define BOARDLEN 64
 
 
@@ -155,7 +155,7 @@ int aiMove(unsigned long long *yellow, unsigned long long *red, int depth, uint8
             continue;
         }
 
-        int score = minimax(yellow, red, heights, depth - 1, false, -INFINITY, INFINITY);
+        int score = minimax(yellow, red, heights, depth, false, -INFINITY, INFINITY);
         popPiece(yellow, red, j, YELLOW, heights);
         if (score > bestScore) {
             bestScore = score;
